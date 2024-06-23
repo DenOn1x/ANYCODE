@@ -1,0 +1,47 @@
+:root {
+
+}
+
+html {
+  height: 100%;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #070707;
+}
+
+.container {
+  max-width: 1320 + px;
+  padding: 0 15px;
+  margin: 0 auto;
+  @media screen and (min-width: 480px) {
+    max-width: 400px;
+  }
+
+  @media screen and (min-width: 575.98px) {
+    max-width: 480px;
+  }
+
+  @media screen and (min-width: 767.98px) {
+    padding: 0 20px;
+    max-width: 705px;
+  }
+
+  @media screen and (min-width: 991.98px) {
+    padding: 0 30px;
+    max-width: 990px;
+  }
+
+  @media screen and (min-width: 1199.98px) {
+    max-width: 1200px;
+  }
+
+  @media screen and (min-width: 1439.98px) {
+    max-width: 1420px;
+  }
+
+}
