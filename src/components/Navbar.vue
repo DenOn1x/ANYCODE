@@ -21,6 +21,11 @@
         </router-link>
       </li>
       <li>
+        <router-link to="/vacansies" class="link">
+          <span class="text">Вакансии</span>
+        </router-link>
+      </li>
+      <li>
         <router-link to="/contacts" class="link">
           <span class="text">Контакты</span>
         </router-link>
@@ -30,5 +35,22 @@
 </template>
 
 <style scoped>
+nav {
+
+  ul {
+    display: grid;
+    gap: 20px;
+
+    li {
+      a {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 124%;
+        color: #FFF;
+        text-decoration: none;
+      }
+    }
+  }
+}
 
 </style>

@@ -21,8 +21,11 @@ const props = defineProps({
   background: none;
   border: .5px solid #747474;
   border-radius: 10px;
+  font-family: 'Inter';
   color: #FFF;
   font-size: 16px;
+  font-weight: 400;
+  line-height: 124%;
 }
 
 </style>
