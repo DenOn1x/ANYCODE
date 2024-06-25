@@ -7,27 +7,27 @@
     <ul>
       <li>
         <router-link to="/about" class="link">
-          <span class="text">О нас</span>
+          <span class="text">{{$t('about')}}</span>
         </router-link>
       </li>
       <li>
         <router-link to="/services" class="link">
-          <span class="text">Услуги</span>
+          <span class="text">{{$t('services')}}</span>
         </router-link>
       </li>
       <li>
         <router-link to="/products" class="link">
-          <span class="text">Наши продукты</span>
+          <span class="text">{{$t('products')}}</span>
         </router-link>
       </li>
       <li>
-        <router-link to="/vacansies" class="link">
-          <span class="text">Вакансии</span>
+        <router-link to="/vacancies" class="link">
+          <span class="text">{{$t('vacancies')}}</span>
         </router-link>
       </li>
       <li>
         <router-link to="/contacts" class="link">
-          <span class="text">Контакты</span>
+          <span class="text">{{$t('contacts')}}</span>
         </router-link>
       </li>
     </ul>
