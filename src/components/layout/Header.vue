@@ -120,8 +120,9 @@ const toggleMenu = () => {
 
 .header__toggle {
   display: flex;
-  width: 18px;
-  height: 18px;
+  min-width: 20px;
+  width: 20px;
+  height: 24px;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
@@ -134,7 +135,7 @@ const toggleMenu = () => {
     span {
       margin: -1px 1px -1px -1px;
       background-color: #fff;
-      width: 18px;
+      width: 20px;
     }
 
     span:nth-of-type(1) {
@@ -154,10 +155,10 @@ const toggleMenu = () => {
 
 
   span {
-    width: 18px;
+    width: 20px;
     height: 2px;
     background-color: #fff;
-    margin: 2px 0;
+    margin: 3px 0;
     border-radius: 6px;
     transition-property: margin, transform;
     transition-duration: .3s;
@@ -166,7 +167,7 @@ const toggleMenu = () => {
     transform: rotate(0);
 
     &:nth-of-type(2) {
-      width: 16px;
+      width: 18px;
     }
   }
 }
