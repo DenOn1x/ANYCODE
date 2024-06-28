@@ -7,10 +7,9 @@ import ic_inst from '@/assets/images/svg/ic_inst.svg'
 import ic_wp from '@/assets/images/svg/ic_wp.svg'
 
 import Button from "@/UI/Button.vue";
-// import Select from "@/UI/Select.vue";
+import MultilangSelect from "@/UI/MultilangSelect.vue";
 
 import Navbar from "@/components/Navbar.vue";
-import Select from "@/UI/Select.vue";
 
 
 const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
@@ -18,6 +17,11 @@ const toggleMenu = () => {
   is_expanded.value = !is_expanded.value
   localStorage.setItem("is_expanded", is_expanded.value)
 }
+
+const closeMenu = () => {
+  is_expanded.value = false;
+  localStorage.setItem("is_expanded", is_expanded.value.toString());
+};
 
 
 </script>
@@ -64,9 +68,9 @@ const toggleMenu = () => {
           </div>
         </div>
         <div class="header__actions">
+          <MultilangSelect/>
           <Button label="Заказать звонок"
                   color="stroke"/>
-          <Select/>
           <a href="tel:" class="header__phone phone--md"></a>
 
         </div>
@@ -75,7 +79,10 @@ const toggleMenu = () => {
 
 
   </header>
-  <div :class="`overlay ${is_expanded ? 'is-expanded' : ''}`"></div>
+  <div
+      :class="`overlay ${is_expanded ? 'is-expanded' : ''}`"
+      @click="closeMenu"
+  ></div>
 </template>
 
 <style scoped>
@@ -110,12 +117,15 @@ const toggleMenu = () => {
   justify-content: space-between;
   padding: 20px 0;
   gap: 20px;
+  @media screen and (min-width: 767.98px) {
+    gap: 40px;
+  }
 }
 
 .header__content-mini {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .header__toggle {
@@ -128,6 +138,9 @@ const toggleMenu = () => {
   flex-direction: column;
   transition: .8s ease;
   cursor: pointer;
+  @media screen and (min-width: 767.98px) {
+    display: none;
+  }
 
   &.is-expanded {
     transform: rotate(450deg);
@@ -176,18 +189,30 @@ const toggleMenu = () => {
   a {
     img {
       display: block;
-      width: 180px;
-      height: 28px;
+      min-width: 168px;
+      width: 168px;
+      height: 38px;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left center;
       transition: .3s ease;
+      @media screen and (min-width: 767.98px) {
+        min-width: 248px;
+        width: 248px;
+        height: 44px;
+      }
     }
   }
 }
 
 .header__menu {
   display: none;
+  @media screen and (min-width: 767.98px) {
+    display: block;
+    .container {
+      display: contents;
+    }
+  }
 
   &.is-expanded {
     display: block;
@@ -213,6 +238,9 @@ const toggleMenu = () => {
   display: flex;
   flex-direction: column;
   padding: 20px 0;
+  @media screen and (min-width: 767.98px) {
+    padding: 0;
+  }
 }
 
 .header__menu-bottom {
@@ -221,6 +249,9 @@ const toggleMenu = () => {
   margin-top: 20px;
   padding-top: 20px;
   border-top: .5px solid #747474;
+  @media screen and (min-width: 767.98px) {
+    display: none;
+  }
 }
 
 .header__menu-bottom-call {
@@ -266,6 +297,9 @@ const toggleMenu = () => {
 
   .btn {
     display: none;
+    @media screen and (min-width: 1199.98px) {
+      display: block;
+    }
   }
 }
 
@@ -279,10 +313,22 @@ const toggleMenu = () => {
     display: block;
     min-width: 20px;
     width: 20px;
-    height: 18px;
+    height: 17.36px;
     background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjg5MTUgNC4wNTgwOUMxMS42MzgyIDQuMjAzNzggMTIuMzI0NSA0LjU2ODk4IDEyLjg2MjUgNS4xMDY5NkMxMy40MDA0IDUuNjQ0OTQgMTMuNzY1NiA2LjMzMTIxIDEzLjkxMTMgNy4wNzc5NU0xMC44OTE1IDFDMTIuNDQyOSAxLjE3MjM1IDEzLjg4OTYgMS44NjcxIDE0Ljk5NDEgMi45NzAxOEMxNi4wOTg1IDQuMDczMjYgMTYuNzk1MSA1LjUxOTEgMTYuOTY5NCA3LjA3MDNNMTYuMjA0OSAxMy4xNzEyVjE1LjQ2NDhDMTYuMjA1OCAxNS42Nzc3IDE2LjE2MjEgMTUuODg4NCAxNi4wNzY4IDE2LjA4MzVDMTUuOTkxNSAxNi4yNzg2IDE1Ljg2NjQgMTYuNDUzNyAxNS43MDk1IDE2LjU5NzdDMTUuNTUyNiAxNi43NDE2IDE1LjM2NzQgMTYuODUxMiAxNS4xNjU3IDE2LjkxOTRDMTQuOTY0IDE2Ljk4NzYgMTQuNzUwMyAxNy4wMTMgMTQuNTM4MiAxNi45OTM4QzEyLjE4NTcgMTYuNzM4MiA5LjkyNTg4IDE1LjkzNDMgNy45NDA0MiAxNC42NDY3QzYuMDkzMiAxMy40NzI5IDQuNTI3MDggMTEuOTA2OCAzLjM1MzI5IDEwLjA1OTZDMi4wNjEyMyA4LjA2NTEgMS4yNTcxNSA1Ljc5NDMxIDEuMDA2MjEgMy40MzExOEMwLjk4NzEgMy4yMTk3NiAxLjAxMjIzIDMuMDA2NjkgMS4wNzk5OCAyLjgwNTUxQzEuMTQ3NzQgMi42MDQzNCAxLjI1NjY0IDIuNDE5NDggMS4zOTk3NiAyLjI2MjdDMS41NDI4NyAyLjEwNTkyIDEuNzE3MDYgMS45ODA2NiAxLjkxMTI0IDEuODk0ODlDMi4xMDU0MiAxLjgwOTEyIDIuMzE1MzMgMS43NjQ3MiAyLjUyNzYgMS43NjQ1Mkg0LjgyMTE3QzUuMTkyMiAxLjc2MDg3IDUuNTUxODkgMS44OTIyNiA1LjgzMzIxIDIuMTM0MTlDNi4xMTQ1MyAyLjM3NjEzIDYuMjk4MjggMi43MTIxMSA2LjM1MDIxIDMuMDc5NUM2LjQ0NzAyIDMuODEzNDkgNi42MjY1NSA0LjUzNDE4IDYuODg1MzggNS4yMjc4MUM2Ljk4ODI0IDUuNTAxNDUgNy4wMTA1IDUuNzk4ODQgNi45NDk1MiA2LjA4NDc0QzYuODg4NTUgNi4zNzA2NSA2Ljc0Njg5IDYuNjMzMDggNi41NDEzNCA2Ljg0MDk1TDUuNTcwNCA3LjgxMTg5QzYuNjU4NzQgOS43MjU5IDguMjQzNTEgMTEuMzEwNyAxMC4xNTc1IDEyLjM5OUwxMS4xMjg1IDExLjQyODFDMTEuMzM2MyAxMS4yMjI1IDExLjU5ODggMTEuMDgwOSAxMS44ODQ3IDExLjAxOTlDMTIuMTcwNiAxMC45NTg5IDEyLjQ2OCAxMC45ODEyIDEyLjc0MTYgMTEuMDg0QzEzLjQzNTIgMTEuMzQyOSAxNC4xNTU5IDExLjUyMjQgMTQuODg5OSAxMS42MTkyQzE1LjI2MTMgMTEuNjcxNiAxNS42MDA1IDExLjg1ODcgMTUuODQyOSAxMi4xNDQ4QzE2LjA4NTQgMTIuNDMxIDE2LjIxNDIgMTIuNzk2MiAxNi4yMDQ5IDEzLjE3MTJaIiBzdHJva2U9IiMxRjFGMUYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=) no-repeat;
     background-size: contain;
     filter: brightness(255);
+  }
+
+  @media screen and (min-width: 767.98px) {
+    padding: 15px;
+    &:before {
+      min-width: 22px;
+      width: 22px;
+      height: 19.84px;
+    }
+  }
+  @media screen and (min-width: 1199.98px) {
+    display: none;
   }
 }
 </style>
