@@ -21,6 +21,7 @@ const props = defineProps({
   background: none;
   border: .5px solid #747474;
   border-radius: 10px;
+  cursor: pointer;
   font-family: 'Inter';
   color: #FFF;
   font-size: 16px;
