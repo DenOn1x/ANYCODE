@@ -1,7 +1,12 @@
 {
-  "about": "About",
-  "contacts": "Contacts",
-  "services": "Services",
-  "products": "Products",
-  "vacancies": "Vacancies"
+  "navigation": {
+    "about": "About us",
+    "contacts": "Contacts",
+    "services": "Services",
+    "products": "Our products",
+    "vacancies": "Vacancies"
+  },
+  "lead": {
+    "title": "Turn your idea into functional IT product"
+  }
 }

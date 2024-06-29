@@ -1,7 +1,12 @@
 {
-  "about": "О нас",
-  "contacts": "Контакты",
-  "services": "Услуги",
-  "products": "Наши продукты",
-  "vacancies": "Вакансии"
+  "navigation": {
+    "about": "О нас",
+    "contacts": "Контакты",
+    "services": "Услуги",
+    "products": "Наши продукты",
+    "vacancies": "Вакансии"
+  },
+  "lead": {
+    "title" : "Реализуем вашу идею в современное IT-решение"
+  }
 }

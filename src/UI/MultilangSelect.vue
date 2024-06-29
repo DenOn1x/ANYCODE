@@ -1,10 +1,10 @@
 <script setup>
-import {ref, getCurrentInstance, onMounted, onUnmounted} from 'vue';
+import { ref, getCurrentInstance, onMounted, onUnmounted, computed } from 'vue';
 import ic_chevron from "@/assets/images/svg/ic_chevron.svg";
 
 const options = [
-  {value: 'en', label: 'EN'},
-  {value: 'ru', label: 'РУ'}
+  { value: 'en', label: 'EN' },
+  { value: 'ru', label: 'РУ' }
 ];
 
 const selectedLanguage = ref(options[0].label);
@@ -23,7 +23,7 @@ const toggleDropdown = () => {
 
 const changeLanguage = (locale) => {
   instance.proxy.$i18n.locale = locale;
-  instance.proxy.$router.push({path: `/${locale}`});
+  instance.proxy.$router.push({ path: `/${locale}` });
 };
 
 const handleClickOutside = (event) => {
@@ -39,6 +39,11 @@ onMounted(() => {
 onUnmounted(() => {
   document.removeEventListener('click', handleClickOutside);
 });
+
+// Computed property to filter out the selected language from options
+const filteredOptions = computed(() => {
+  return options.filter(option => option.label !== selectedLanguage.value);
+});
 </script>
 
 <template>
@@ -52,13 +57,12 @@ onUnmounted(() => {
       </span>
     </div>
     <div class="options">
-      <div v-for="option in options" :key="option.value" class="option" @click="selectOption(option)">
+      <div v-for="option in filteredOptions" :key="option.value" class="option" @click="selectOption(option)">
         {{ option.label }}
       </div>
     </div>
   </div>
 </template>
-
 
 <style scoped>
 @import "@/styles/common.scss";
@@ -160,6 +164,4 @@ onUnmounted(() => {
     transform: scaleY(1);
   }
 }
-
-
 </style>
