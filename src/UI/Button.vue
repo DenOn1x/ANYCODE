@@ -29,4 +29,18 @@ const props = defineProps({
   line-height: 124%;
 }
 
+.btn-fill {
+  padding: 15px 20px;
+  background: none;
+  border: .5px solid transparent;
+  background: #7DFF7A;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Inter';
+  color: #070707;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 124%;
+}
+
 </style>

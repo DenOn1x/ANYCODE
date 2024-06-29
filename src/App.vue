@@ -3,12 +3,10 @@ import LayoutHeader from '@/components/layout/Header.vue'
 </script>
 
 <template>
-<!--  <div class="container">-->
-    <layout-header/>
-    <div class="content">
-      <router-view/>
-    </div>
-<!--  </div>-->
+  <layout-header/>
+  <main class="page">
+    <router-view/>
+  </main>
 </template>
 
 <style lang="scss">

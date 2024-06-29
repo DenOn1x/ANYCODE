@@ -7,27 +7,27 @@
     <ul>
       <li>
         <router-link to="/about" class="link">
-          <span class="text">{{ $t('about') }}</span>
+          <span class="text">{{ $t('navigation.about') }}</span>
         </router-link>
       </li>
       <li>
         <router-link to="/services" class="link">
-          <span class="text">{{ $t('services') }}</span>
+          <span class="text">{{ $t('navigation.services') }}</span>
         </router-link>
       </li>
       <li>
         <router-link to="/products" class="link">
-          <span class="text">{{ $t('products') }}</span>
+          <span class="text">{{ $t('navigation.products') }}</span>
         </router-link>
       </li>
       <li>
         <router-link to="/vacancies" class="link">
-          <span class="text">{{ $t('vacancies') }}</span>
+          <span class="text">{{ $t('navigation.vacancies') }}</span>
         </router-link>
       </li>
       <li>
         <router-link to="/contacts" class="link">
-          <span class="text">{{ $t('contacts') }}</span>
+          <span class="text">{{ $t('navigation.contacts') }}</span>
         </router-link>
       </li>
     </ul>
