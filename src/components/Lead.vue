@@ -106,7 +106,7 @@ import ic_wp from "@/assets/images/svg/ic_wp.svg";
     }
 
     &__heading {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 700;
       line-height: 148%;
       color: #FFF;
