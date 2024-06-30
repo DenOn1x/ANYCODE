@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "production": "^0.0.2",
     "vue": "^3.4.21",
     "vue-follow-tooltip": "^1.0.0",
     "vue-i18n": "^9.13.1",
