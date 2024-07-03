@@ -40,7 +40,6 @@ onUnmounted(() => {
   document.removeEventListener('click', handleClickOutside);
 });
 
-// Computed property to filter out the selected language from options
 const filteredOptions = computed(() => {
   return options.filter(option => option.label !== selectedLanguage.value);
 });

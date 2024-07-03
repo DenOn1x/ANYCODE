@@ -6,6 +6,7 @@ import ic_fb from "@/assets/images/svg/ic_fb.svg";
 import ic_tg from "@/assets/images/svg/ic_tg.svg";
 import ic_inst from "@/assets/images/svg/ic_inst.svg";
 import ic_wp from "@/assets/images/svg/ic_wp.svg";
+
 </script>
 
 <template>

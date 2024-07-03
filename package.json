@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "@splidejs/vue-splide": "^0.6.12",
     "production": "^0.0.2",
     "vue": "^3.4.21",
     "vue-follow-tooltip": "^1.0.0",
