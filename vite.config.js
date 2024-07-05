@@ -13,6 +13,7 @@ export default defineConfig({
     //     port: 6666,
     // },
     build: {
+        assetsInlineLimit: Number.MAX_SAFE_INTEGER,
         rollupOptions: {
             output: {
                 assetFileNames: (assetInfo) => {
