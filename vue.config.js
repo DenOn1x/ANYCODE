@@ -6,14 +6,27 @@ module.export = {
         module: {
             rules: [
                 {
-                    test: /\.(png|jpe?g|gif|svg)$/,
+                    test: /\.(png|jpe?g|gif)$/,
                     use: [
                         {
                             loader: 'file-loader',
                             options: {
                                 name: '[name].[hash].[ext]',
                                 outputPath: 'assets/images',
-                                publicPath: '/assets/images',
+                                publicPath: 'assets/images',
+                            },
+                        },
+                    ],
+                },
+                {
+                    test: /\.svg$/,
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                name: '[name].[hash].[ext]',
+                                outputPath: 'assets/images/svg',
+                                publicPath: 'assets/images/svg',
                             },
                         },
                     ],
