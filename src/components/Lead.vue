@@ -1,11 +1,7 @@
 <script setup>
 import Button from "@/UI/Button.vue";
 import anycodeImg from "@/assets/images/anycode-ball.png";
-import ic_chevron_help from "@/assets/images/svg/ic_chevron_help.svg";
-import ic_fb from "@/assets/images/svg/ic_fb.svg";
-import ic_tg from "@/assets/images/svg/ic_tg.svg";
-import ic_inst from "@/assets/images/svg/ic_inst.svg";
-import ic_wp from "@/assets/images/svg/ic_wp.svg";
+import BaseIcon from "@/UI/BaseIcon.vue";
 
 </script>
 
@@ -36,7 +32,7 @@ import ic_wp from "@/assets/images/svg/ic_wp.svg";
         </div>
         <div class="lead__bg">
           <div class="lead__bg-help">
-            <span :style="{ backgroundImage: `url(${ic_chevron_help})` }"></span>
+              <BaseIcon name="ic_chevron_help"/>
           </div>
           <picture>
             <img :src="anycodeImg" alt="anycodeMain"/>
@@ -50,10 +46,26 @@ import ic_wp from "@/assets/images/svg/ic_wp.svg";
             <li>Команда профессионалов</li>
           </ul>
           <ul class="lead__socials">
-            <li><a href="#"><span :style="{ backgroundImage: `url(${ic_fb})` }"></span></a></li>
-            <li><a href="#"><span :style="{ backgroundImage: `url(${ic_tg})` }"></span></a></li>
-            <li><a href="#"><span :style="{ backgroundImage: `url(${ic_inst})` }"></span></a></li>
-            <li><a href="#"><span :style="{ backgroundImage: `url(${ic_wp})` }"></span></a></li>
+            <li>
+              <a href="#">
+                <BaseIcon name="ic_fb"/>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <BaseIcon name="ic_tg"/>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <BaseIcon name="ic_inst"/>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <BaseIcon name="ic_wp"/>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -237,7 +249,7 @@ import ic_wp from "@/assets/images/svg/ic_wp.svg";
       top: calc(60% + 20px);
     }
 
-    span {
+    svg path {
       display: block;
       min-width: 24px;
       width: 24px;
@@ -337,7 +349,7 @@ import ic_wp from "@/assets/images/svg/ic_wp.svg";
 
     li {
       a {
-        span {
+        svg {
           display: block;
           min-width: 24px;
           width: 24px;
