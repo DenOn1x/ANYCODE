@@ -69,6 +69,10 @@ const splideOptions = {
 <style lang="scss" scoped>
 .other-products {
   margin-top: 60px;
+  margin-bottom: 60px;
+  @media screen and (min-width: 991.98px) {
+    margin-bottom: 0;
+  }
   @media screen and (min-width: 1199.98px) {
     margin-top: 80px;
   }

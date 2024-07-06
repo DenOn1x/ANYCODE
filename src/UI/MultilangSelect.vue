@@ -1,10 +1,10 @@
 <script setup>
-import { ref, getCurrentInstance, onMounted, onUnmounted, computed } from 'vue';
-import ic_chevron from "@/assets/images/svg/ic_chevron.svg";
+import {ref, getCurrentInstance, onMounted, onUnmounted, computed} from 'vue';
+import icChevron from "@/assets/images/svg/ic_chevron.svg?url";
 
 const options = [
-  { value: 'en', label: 'EN' },
-  { value: 'ru', label: 'РУ' }
+  {value: 'en', label: 'EN'},
+  {value: 'ru', label: 'РУ'}
 ];
 
 const selectedLanguage = ref(options[0].label);
@@ -23,7 +23,7 @@ const toggleDropdown = () => {
 
 const changeLanguage = (locale) => {
   instance.proxy.$i18n.locale = locale;
-  instance.proxy.$router.push({ path: `/${locale}` });
+  instance.proxy.$router.push({path: `/${locale}`});
 };
 
 const handleClickOutside = (event) => {
@@ -49,11 +49,10 @@ const filteredOptions = computed(() => {
   <div class="custom-select" :class="{ open: isOpen }">
     <div class="selected-option" @click="toggleDropdown">
       {{ selectedLanguage }}
-      <span class="arrow"
-            :class="{ 'arrow-up': isOpen, 'arrow-down': !isOpen }"
-            :style="{ backgroundImage: `url(${ic_chevron})` }"
-      >
-      </span>
+      <img class="arrow"
+           :src="icChevron" alt=""
+           :class="{ 'arrow-up': isOpen, 'arrow-down': !isOpen }"
+      />
     </div>
     <div class="options">
       <div v-for="option in filteredOptions" :key="option.value" class="option" @click="selectOption(option)">
