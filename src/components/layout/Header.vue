@@ -1,18 +1,18 @@
 <script setup>
-import {ref} from 'vue'
-import logoURL from '@/assets/images/svg/anycode.svg'
-import ic_fb from '@/assets/images/svg/ic_fb.svg'
-import ic_tg from '@/assets/images/svg/ic_tg.svg'
-import ic_inst from '@/assets/images/svg/ic_inst.svg'
-import ic_wp from '@/assets/images/svg/ic_wp.svg'
+import {ref, watch} from 'vue'
+import logoURL from '@/assets/images/svg/anycode.svg?url'
+import ic_fb from '@/assets/images/svg/ic_fb.svg?url'
+import ic_tg from '@/assets/images/svg/ic_tg.svg?url'
+import ic_inst from '@/assets/images/svg/ic_inst.svg?url'
+import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
 
 import Button from "@/UI/Button.vue";
 import MultilangSelect from "@/UI/MultilangSelect.vue";
 
 import Navbar from "@/components/Navbar.vue";
 
-
 const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
+
 const toggleMenu = () => {
   is_expanded.value = !is_expanded.value
   localStorage.setItem("is_expanded", is_expanded.value)
@@ -22,6 +22,14 @@ const closeMenu = () => {
   is_expanded.value = false;
   localStorage.setItem("is_expanded", is_expanded.value.toString());
 };
+
+watch(is_expanded, (newValue) => {
+  if (newValue) {
+    document.body.classList.add('no-scroll');
+  } else {
+    document.body.classList.remove('no-scroll');
+  }
+});
 
 
 </script>
@@ -54,17 +62,31 @@ const closeMenu = () => {
                   <a href="mailto:">test@gmail.com</a>
                 </div>
                 <ul class="header__socials">
-                  <li><a href="#"><span :style="{ backgroundImage: `url(${ic_fb})` }"></span></a></li>
-                  <li><a href="#"><span :style="{ backgroundImage: `url(${ic_tg})` }"></span></a></li>
-                  <li><a href="#"><span :style="{ backgroundImage: `url(${ic_inst})` }"></span></a></li>
-                  <li><a href="#"><span :style="{ backgroundImage: `url(${ic_wp})` }"></span></a></li>
+                  <li>
+                    <a href="#">
+                      <img :src="ic_fb" alt=""/>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img :src="ic_tg" alt=""/>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img :src="ic_inst" alt=""/>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img :src="ic_wp" alt=""/>
+                    </a>
+                  </li>
                 </ul>
                 <Button label="Оставить заявку"
                         color="stroke"/>
               </div>
-
             </div>
-
           </div>
         </div>
         <div class="header__actions">
@@ -72,12 +94,9 @@ const closeMenu = () => {
           <Button label="Заказать звонок"
                   color="stroke"/>
           <a href="tel:" class="header__phone phone--md"></a>
-
         </div>
       </div>
     </div>
-
-
   </header>
   <div
       :class="`overlay ${is_expanded ? 'is-expanded' : ''}`"
@@ -85,30 +104,42 @@ const closeMenu = () => {
   ></div>
 </template>
 
+
 <style scoped>
 @import "@/styles/common.scss";
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 .overlay {
+  display: none;
+
   &.is-expanded {
     display: block;
-    position: absolute;
+    position: fixed;
     left: 0;
-    top: 0;
-    right: 0;
     bottom: 0;
+    width: 100%;
+    height: 100%;
     z-index: 2;
     backdrop-filter: blur(40px);
     background: rgba(255, 255, 255, 0.1);
     animation: showBlockBottom .5s linear forwards;
     transition-delay: .2s;
   }
-
 }
 
 .header {
-  position: relative;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
   background: #070707;
   z-index: 11;
+  @media screen and (min-width: 767.98px) {
+    position: relative;
+  }
 }
 
 .header__wrapper {
@@ -165,7 +196,6 @@ const closeMenu = () => {
       transition: .3s ease;
     }
   }
-
 
   span {
     width: 20px;
@@ -275,7 +305,7 @@ const closeMenu = () => {
 
   li {
     a {
-      span {
+      img {
         display: block;
         min-width: 24px;
         width: 24px;

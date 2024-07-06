@@ -1,7 +1,12 @@
 <script setup>
 import Button from "@/UI/Button.vue";
 import anycodeImg from "@/assets/images/anycode-ball.png";
-import BaseIcon from "@/UI/BaseIcon.vue";
+import IconChevronHelp from "@/assets/images/svg/ic_chevron_help.svg?url";
+import ic_fb from '@/assets/images/svg/ic_fb.svg?url'
+import ic_tg from '@/assets/images/svg/ic_tg.svg?url'
+import ic_inst from '@/assets/images/svg/ic_inst.svg?url'
+import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
+
 
 </script>
 
@@ -32,7 +37,7 @@ import BaseIcon from "@/UI/BaseIcon.vue";
         </div>
         <div class="lead__bg">
           <div class="lead__bg-help">
-              <BaseIcon name="ic_chevron_help"/>
+            <img :src="IconChevronHelp" alt=""/>
           </div>
           <picture>
             <img :src="anycodeImg" alt="anycodeMain"/>
@@ -48,22 +53,22 @@ import BaseIcon from "@/UI/BaseIcon.vue";
           <ul class="lead__socials">
             <li>
               <a href="#">
-                <BaseIcon name="ic_fb"/>
+                <img :src="ic_fb" alt=""/>
               </a>
             </li>
             <li>
               <a href="#">
-                <BaseIcon name="ic_tg"/>
+                <img :src="ic_tg" alt=""/>
               </a>
             </li>
             <li>
               <a href="#">
-                <BaseIcon name="ic_inst"/>
+                <img :src="ic_inst" alt=""/>
               </a>
             </li>
             <li>
               <a href="#">
-                <BaseIcon name="ic_wp"/>
+                <img :src="ic_wp" alt=""/>
               </a>
             </li>
           </ul>
@@ -249,7 +254,7 @@ import BaseIcon from "@/UI/BaseIcon.vue";
       top: calc(60% + 20px);
     }
 
-    svg path {
+    img {
       display: block;
       min-width: 24px;
       width: 24px;
@@ -260,7 +265,6 @@ import BaseIcon from "@/UI/BaseIcon.vue";
       transform: rotate(45deg);
       transition: 0.3s ease;
       animation: moveArrowDiagonal 2s infinite;
-
     }
 
     @media screen and (min-width: 991.98px) {
@@ -349,7 +353,7 @@ import BaseIcon from "@/UI/BaseIcon.vue";
 
     li {
       a {
-        svg {
+        img {
           display: block;
           min-width: 24px;
           width: 24px;
@@ -363,6 +367,7 @@ import BaseIcon from "@/UI/BaseIcon.vue";
       }
     }
   }
-
 }
+
+
 </style>

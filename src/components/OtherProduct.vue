@@ -1,5 +1,6 @@
 <script setup>
-import ic_chevron_green from "@/assets/images/svg/ic_chevron_green.svg";
+import icChevronGreen from "@/assets/images/svg/ic_chevron_green.svg?url"
+
 
 defineProps({
   number: Number,
@@ -24,7 +25,7 @@ defineProps({
       </div>
       <router-link to="#">
         <div class="card-other-product__arrow">
-          <span :style="{ backgroundImage: `url(${ic_chevron_green})` }"></span>
+          <img :src="icChevronGreen" alt=""/>
         </div>
       </router-link>
       <div class="card-other-product__view">
@@ -164,7 +165,7 @@ defineProps({
       position: static;
     }
 
-    span {
+    img {
       display: block;
       min-width: 24px;
       width: 24px;
