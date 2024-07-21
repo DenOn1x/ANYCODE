@@ -2,6 +2,7 @@
 import OtherProduct from "@/components/OtherProduct.vue";
 import {Splide, SplideSlide} from "@splidejs/vue-splide";
 import '@splidejs/vue-splide/css';
+import Button from "@/UI/Button.vue";
 
 const splideOptions = {
   type: 'loop',
@@ -25,7 +26,10 @@ const splideOptions = {
 <template>
   <section class="other-products">
     <div class="container">
-      <h2>Продукт уже есть?</h2>
+      <div class="other-products__top">
+        <h2>Продукт уже есть?</h2>
+        <div class="other-products__desc">Проведем аудит продукта, составим план изменений и организуем разработку</div>
+      </div>
       <div class="other-products__cards">
         <Splide :options="splideOptions" aria-label="">
           <SplideSlide>
@@ -62,6 +66,8 @@ const splideOptions = {
           </SplideSlide>
         </Splide>
       </div>
+      <Button label="Оставить заявку"
+              color="fill"/>
     </div>
   </section>
 </template>
@@ -77,25 +83,53 @@ const splideOptions = {
     margin-top: 80px;
   }
 
-  h2 {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 148%;
-    color: #FFF;
+  &__top {
+    display: grid;
+    gap: 5px;
     margin-bottom: 20px;
 
-    @media screen and (min-width: 767.98px) {
-      font-size: 32px;
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 148%;
+      color: #FFF;
+
+      @media screen and (min-width: 767.98px) {
+        font-size: 32px;
+      }
+      @media screen and (min-width: 991.98px) {
+        font-size: 44px;
+        line-height: 132%;
+      }
+      @media screen and (min-width: 1199.98px) {
+        font-size: 52px;
+      }
+      @media screen and (min-width: 1639.98px) {
+        font-size: 58px;
+      }
     }
-    @media screen and (min-width: 991.98px) {
-      font-size: 44px;
-      line-height: 132%;
+  }
+
+  &__desc {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 148%;
+    color: #747474;
+    @media screen and (min-width: 767.98px) {
+      font-size: 16px;
     }
     @media screen and (min-width: 1199.98px) {
-      font-size: 52px;
+      font-size: 20px;
     }
-    @media screen and (min-width: 1639.98px) {
-      font-size: 58px;
+  }
+
+  .btn-fill {
+    margin-top: 60px;
+    width: 100%;
+    @media screen and (min-width: 767.98px) {
+      display: flex;
+      margin: 40px auto 0;
+      width: initial;
     }
   }
 }

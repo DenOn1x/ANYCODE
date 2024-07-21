@@ -27,8 +27,8 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
               </div>
             </div>
             <div class="content-lead__bottom">
-              <Button label="Оставить заявку" color="stroke"/>
-              <Button label="Рассчитать стоимость " color="fill"/>
+              <Button label="Оставить заявку" color="fill"/>
+              <Button label="Рассчитать стоимость" color="stroke"/>
               <div class="content-lead__bottom-clue">
                 Ответьте на 5 вопросов и получите расчет стоимости и рекомендации по разработке
               </div>
