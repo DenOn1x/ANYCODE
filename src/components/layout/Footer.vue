@@ -71,10 +71,6 @@ const contactInfo = [
     value: "anycodesupport@gmail.com",
     href: "mailto:anycodesupport@gmail.com",
   },
-  {
-    value: "Политика конфиденциальности",
-    href: "#",
-  },
 ];
 
 </script>
@@ -128,7 +124,7 @@ const contactInfo = [
               </transition>
             </div>
             <div class="footer__col footer-col-addition">
-              <div class="title">Дополнительно</div>
+              <div class="title">Контакты</div>
               <div class="footer-col-addition__content">
                 <div
                     v-for="info in contactInfo"
@@ -141,6 +137,9 @@ const contactInfo = [
 
             </div>
           </div>
+        </div>
+        <div class="footer__bottom">
+          <a href="#">Политика конфиденциальности</a>
         </div>
       </div>
     </div>
@@ -384,6 +383,22 @@ const contactInfo = [
     }
   }
 
+  .footer__bottom {
+    margin-top: 20px;
+
+    a {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 124%;
+      color: #FFF;
+      text-decoration: none;
+      position: relative;
+      @media screen and (min-width: 991.98px) {
+        font-size: 16px;
+      }
+    }
+  }
+
   .footer-col-addition {
     .title {
       font-size: 16px;
@@ -415,7 +430,7 @@ const contactInfo = [
         gap: 10px;
         padding: 5px;
         border-radius: 10px;
-        border: .5px solid #FFF;
+        border: .5px solid #747474;
         @media screen and (min-width: 1199.98px) {
           font-size: 16px;
         }

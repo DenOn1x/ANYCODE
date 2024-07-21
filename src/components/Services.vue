@@ -101,9 +101,6 @@ import ServicesCard from "@/components/ServicesCard.vue";
     @media screen and (min-width: 767.98px) {
       font-size: 16px;
     }
-    @media screen and (min-width: 991.98px) {
-
-    }
     @media screen and (min-width: 1199.98px) {
       font-size: 20px;
     }
