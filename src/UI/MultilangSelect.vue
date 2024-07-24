@@ -70,7 +70,7 @@ const filteredOptions = computed(() => {
   display: inline-block;
   padding: 10px 0;
   width: 62px;
-  border: .5px solid #747474;
+  border: .5px solid #ffffff5c;
   border-radius: 10px;
 
   @media screen and (min-width: 767.98px) {
@@ -117,7 +117,7 @@ const filteredOptions = computed(() => {
     line-height: 124%;
     cursor: pointer;
     padding: 10px;
-    border: .5px solid #747474;
+    border: .5px solid #ffffff5c;
     border-top: none;
     border-bottom: none;
     border-radius: 10px;

@@ -1,6 +1,6 @@
 <script setup>
 import Button from "@/UI/Button.vue";
-import anycodeImg from "@/assets/images/anycode-ball.png";
+import anycodeImg from "@/assets/images/anycode-ball-1.png";
 import IconChevronHelp from "@/assets/images/svg/ic_chevron_help.svg?url";
 import ic_fb from '@/assets/images/svg/ic_fb.svg?url'
 import ic_tg from '@/assets/images/svg/ic_tg.svg?url'
@@ -143,7 +143,10 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
       }
 
       span {
-        color: #7DFF7A;
+        //color: #7DFF7A;
+        background-image: linear-gradient(120deg, #101b10 5%, #24ff00 30%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
 
@@ -151,7 +154,7 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
       font-size: 14px;
       font-weight: 400;
       line-height: 142%;
-      color: #747474;
+      color: #ffffff5c;
       @media screen and (min-width: 767.98px) {
         font-size: 16px;
       }
@@ -247,7 +250,7 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 1px solid #747474;
+    border: 1px solid #ffffff5c;
     align-items: center;
     justify-content: center;
     @media screen and (min-width: 1199.98px) {
@@ -302,7 +305,7 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
       font-size: 14px;
       font-weight: 400;
       line-height: 142%;
-      color: #747474;
+      color: #ffffff5c;
       width: fit-content;
       text-align: center;
       position: relative;
@@ -334,7 +337,7 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
         width: calc(100% + 20px);
         transform: translate(-50%, 0);
         height: 1px;
-        background: #747474;
+        background: #ffffff5c;
       }
     }
   }
@@ -343,7 +346,7 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
     display: flex;
     align-items: center;
     width: fit-content;
-    border: 1px solid #747474;
+    border: 1px solid #ffffff5c;
     border-radius: 10px;
     padding: 10px;
     gap: 10px;

@@ -278,7 +278,7 @@ body.no-scroll {
   gap: 20px;
   margin-top: 20px;
   padding-top: 20px;
-  border-top: .5px solid #747474;
+  border-top: .5px solid #ffffff5c;
   @media screen and (min-width: 767.98px) {
     display: none;
   }
@@ -292,7 +292,7 @@ body.no-scroll {
     font-size: 14px;
     font-weight: 400;
     line-height: 124%;
-    color: #747474;
+    color: #ffffff5c;
     text-decoration: none;
   }
 }
@@ -335,7 +335,7 @@ body.no-scroll {
 
 .phone--md {
   padding: 10px;
-  border: .5px solid #747474;
+  border: .5px solid #ffffff5c;
   border-radius: 10px;
 
   &:before {
