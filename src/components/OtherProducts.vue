@@ -114,7 +114,7 @@ const splideOptions = {
     font-size: 14px;
     font-weight: 700;
     line-height: 148%;
-    color: #747474;
+    color: #ffffff5c;
     @media screen and (min-width: 767.98px) {
       font-size: 16px;
     }

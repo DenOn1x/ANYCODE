@@ -56,7 +56,7 @@ const socialLinks = [
     gap: 20px;
     border-radius: 10px;
     padding: 12px;
-    background: linear-gradient(45deg, rgb(125, 255, 112) 0%, rgba(255, 255, 255, .01) 35%);
+    background: linear-gradient(45deg, #24ff00 0%, rgba(255, 255, 255, .01) 35%);
     @media screen and (min-width: 767.98px) {
       padding: 24px;
     }
@@ -111,7 +111,7 @@ const socialLinks = [
       font-size: 14px;
       font-weight: 400;
       line-height: 132%;
-      color: #7DFF7A;
+      color: #24ff00;
       margin-top: 5px;
     }
 
@@ -119,7 +119,7 @@ const socialLinks = [
       font-size: 14px;
       font-weight: 700;
       line-height: 148%;
-      color: #747474;
+      color: #ffffff5c;
       margin-top: 10px;
     }
 

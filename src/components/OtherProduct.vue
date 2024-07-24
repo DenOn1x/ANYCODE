@@ -51,7 +51,7 @@ defineProps({
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: .5px solid #747474;
+    border: .5px solid #ffffff5c;
     border-radius: 10px;
     padding: 24px;
     background: linear-gradient(135deg, rgba(125, 255, 112, 1) 0%, rgba(0, 0, 0, 1) 25%);
@@ -67,8 +67,8 @@ defineProps({
       background: none;
       border-radius: 0;
       border: 0;
-      border-top: .5px solid #747474;
-      border-bottom: .5px solid #747474;
+      border-top: .5px solid #ffffff5c;
+      border-bottom: .5px solid #ffffff5c;
       margin: -1px 0;
 
       &:hover {
@@ -101,12 +101,14 @@ defineProps({
     font-size: 14px;
     font-weight: 400;
     line-height: 100%;
-    color: #7DFF7A;
+    background-image: linear-gradient(120deg, #101b10 5%, #24ff00 30%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     width: fit-content;
     position: relative;
     @media screen and (min-width: 991.98px) {
       display: block;
-      font-size: 20px;
+      font-size: 32px;
       line-height: 124%;
     }
 
@@ -114,7 +116,7 @@ defineProps({
       content: '';
       width: 100%;
       height: 1px;
-      background: #7DFF7A;
+      background: #24ff00;
       position: absolute;
       left: 0;
       bottom: -5px;
@@ -142,7 +144,7 @@ defineProps({
     font-size: 14px;
     font-weight: 700;
     line-height: 148%;
-    color: #747474;
+    color: #ffffff5c;
     flex: 0 0 20%;
     padding-bottom: 42px;
     @media screen and (min-width: 991.98px) {
@@ -154,7 +156,7 @@ defineProps({
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid #7DFF7A;
+    border: 1px solid #24ff00;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,7 +232,8 @@ defineProps({
         transform-style: preserve-3d;
         border-radius: 100%;
         box-sizing: border-box;
-        box-shadow: 0 0 60px rgba(#7DFF7A, 1), inset 0 0 60px rgba(#7DFF7A, 1);
+        box-shadow: 0 0 20px rgba(#000, 1), inset 0 0 20px rgba(#24ff00, 1);
+
 
         &::before, &::after {
           content: '';
@@ -239,9 +242,10 @@ defineProps({
           width: 10%;
           height: 10%;
           border-radius: 100%;
-          background: rgba(#7DFF7A, 1);
+          background: rgba(#24ff00, 1);
           box-sizing: border-box;
-          box-shadow: 0 0 60px 2px rgba(#7DFF7A, 1);
+          box-shadow: 0 0 20px rgba(#000, 1), inset 0 0 20px rgba(#24ff00, 1);
+
         }
 
         &::before {

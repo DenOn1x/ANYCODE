@@ -57,7 +57,7 @@ const selectOption = (option) => {
   font-weight: 700;
   line-height: 132%;
   color: #FFF;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .quiz-start__content {
@@ -147,7 +147,7 @@ const selectOption = (option) => {
 }
 
 .custom-radio-button input[type="radio"]:checked + .custom-radio-button__img:before {
-  background-color: #7DFF7A;
+  background-color: #24ff00;
 }
 
 .custom-radio-button input[type="radio"]:checked + .custom-radio-button__img:after {

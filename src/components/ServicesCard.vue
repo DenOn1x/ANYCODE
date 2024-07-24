@@ -37,9 +37,12 @@ defineProps({
   @media screen and (min-width: 1199.98px) {
     &:before {
       content: '';
-      width: 2px;
+      width: .5px;
       height: 100%;
-      background: #7DFF7A;
+      //background: #7DFF7A;
+      background: #24ff00;
+      //-webkit-background-clip: text;
+      //-webkit-text-fill-color: transparent;
       position: absolute;
       left: 0;
       top: 0;
@@ -66,7 +69,11 @@ defineProps({
     font-size: 84px;
     font-weight: 700;
     line-height: 100%;
-    color: #7DFF7A;
+    //color: #7DFF7A;
+
+    background-image: linear-gradient(120deg, #101b10 5%, #24ff00 30%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   &__title {
@@ -81,7 +88,7 @@ defineProps({
     font-size: 14px;
     font-weight: 700;
     line-height: 148%;
-    color: #747474;
+    color: #ffffff5c;
     position: relative;
     padding-left: 25px;
 
@@ -89,7 +96,7 @@ defineProps({
       content: '';
       width: 10px;
       height: 10px;
-      background: #7DFF7A;
+      background: #24ff00;
       border-radius: 50%;
       position: absolute;
       left: 0;
@@ -100,7 +107,7 @@ defineProps({
       content: '';
       width: 14px;
       height: 14px;
-      border: 1px solid #7DFF7A;
+      border: 1px solid #24ff00;
       border-radius: 50%;
       position: absolute;
       left: -3px;

@@ -93,7 +93,7 @@ const teamMembers = [
       font-size: 14px;
       font-weight: 700;
       line-height: 148%;
-      color: #7DFF7A;
+      color: #24ff00;
       margin-bottom: -5px;
       @media screen and (min-width: 767.98px) {
         font-size: 16px;
@@ -135,7 +135,7 @@ const teamMembers = [
       font-size: 14px;
       font-weight: 700;
       line-height: 148%;
-      color: #747474;
+      color: #ffffff5c;
       @media screen and (min-width: 767.98px) {
         font-size: 16px;
       }
