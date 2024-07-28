@@ -35,33 +35,41 @@ const splideOptions = {
           <SplideSlide>
             <OtherProduct
                 number="01"
-                title="Название продукта"
-                subTitle="Разработка"
-                text="Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"
+                title="Электронная коммерция (интернет-магазин)"
+                subTitle="Разработка / Дизайн"
+                text="Сделаем редизайн вашего текущего сайта. Превратим процесс оформления заказов в интуитивное и приятное приключение для ваших клиентов. Внедрим умные алгоритмы для подбора товаров, чтобы предлагать наиболее подходящие варианты. Обновим навигацию и сортировку, чтобы пользователи легко находили нужные товары. Оптимизируем скорость загрузки страниц, чтобы посетители мгновенно получали доступ к нужной информации."
             />
           </SplideSlide>
           <SplideSlide>
             <OtherProduct
                 number="02"
-                title="Название продукта"
-                subTitle="Дизайн"
-                text="Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"
+                title="Мобильное приложение"
+                subTitle="Разработка"
+                text="Мы проведем оценку удобства интерфейса и пользовательского опыта. Предложим улучшения для упрощения навигации, увеличения скорости работы приложения и добавления новых функций, например, системы рекомендаций или интеграции с платёжными системами."
             />
           </SplideSlide>
           <SplideSlide>
             <OtherProduct
                 number="03"
-                title="Название продукта"
+                title="CRM-система"
                 subTitle="Разработка"
-                text="Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"
+                text="Анализ текущих процессов и пользовательского опыта. Мы поможем оптимизировать функциональность системы, улучшить пользовательский интерфейс, интегрировать дополнительные модули, такие как автоматизация маркетинга или аналитика продаж."
             />
           </SplideSlide>
           <SplideSlide>
             <OtherProduct
                 number="04"
-                title="Название продукта"
+                title="Интеграция с внешними сервисами"
                 subTitle="Разработка"
-                text="Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"
+                text="Добавим интеграции с популярными внешними сервисами и платформами, такими как платежные системы, социальные сети и аналитические инструменты."
+            />
+          </SplideSlide>
+          <SplideSlide>
+            <OtherProduct
+                number="05"
+                title="Обновление дизайна"
+                subTitle="Дизайн"
+                text="Освежим визуальный стиль вашего продукта, делая его современным и привлекательным для пользователей."
             />
           </SplideSlide>
         </Splide>

@@ -17,8 +17,8 @@
             <div class="statistics__text">пользователей наших продуктов</div>
           </div>
           <div class="statistics__item">
-            <div class="statistics__counter"><span>1</span> $</div>
-            <div class="statistics__text">выручка за 2024 год</div>
+            <div class="statistics__counter"><span><500 000</span> $</div>
+            <div class="statistics__text">выручка за 2023 год</div>
           </div>
           <div class="statistics__item">
             <div class="statistics__counter"><span>32</span> проекта</div>

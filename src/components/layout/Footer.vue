@@ -87,9 +87,7 @@ const contactInfo = [
               </router-link>
             </div>
             <div class="footer__about">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-              amet architecto blanditiis, corporis earum numquam perspiciatis
-              reprehenderit sed similique sunt.
+              Разработка инновационных цифровых решений, обеспечивающих высокое качество и эффективные результаты для вашего бизнеса.
             </div>
             <ul class="footer__socials">
               <li v-for="link in socialLinks" :key="link.src">
