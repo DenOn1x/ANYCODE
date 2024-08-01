@@ -1,5 +1,6 @@
 <script setup>
 
+import Button from "@/UI/Button.vue";
 </script>
 
 <template>
@@ -27,6 +28,7 @@
             <input type="text" name="your-phone" id="NUMBER" placeholder="">
             <span class="quiz-end__error"></span>
           </div>
+          <button>Отправить</button>
         </div>
       </div>
     </div>

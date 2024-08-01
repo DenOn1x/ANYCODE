@@ -14,40 +14,40 @@ import personDesigner from "@/assets/images/team/person-designer.png?url";
 
 const teamMembers = [
   {
-    title: "Astralopitek",
+    title: "Павел",
     role: "Frontend developer",
-    desc: "Lorem ipsum dolor sit amet.",
-    imgSrc: personDevelop
+    desc: "Мастер фронтенд-разработки с богатым опытом в создании пользовательских интерфейсов, Павел отличается гибкостью и умением адаптироваться. Его целеустремленность и инициативность ведут к успешным результатам.",
+    imgSrc: personDevelop,
   },
   {
-    title: "Astralopitek",
-    role: "Frontend developer",
-    desc: "Lorem ipsum dolor sit amet.",
-    imgSrc: personDeveloperF
-  },
-  {
-    title: "Astralopitek",
+    title: "Антон",
     role: "Backend developer",
-    desc: "Lorem ipsum dolor sit amet.",
-    imgSrc: personDeveloperB
+    desc: "Специалист с более чем 10-летним стажем и глубокими познаниями в архитектуре серверных систем. Его опыт и экспертиза обеспечивают разработку инновационных решений, повышающих производительность и безопасность проектов.",
+    imgSrc: personDeveloperF,
   },
   {
-    title: "Test Test",
+    title: "Максим",
     role: "Frontend developer",
-    desc: "Lorem ipsum dolor sit amet.",
-    imgSrc: personProj
+    desc: "Эксперт в области фронтенд-разработки. Его глубокое внимание к пользовательскому опыту и умение эффективно решать сложные задачи способствуют успешной реализации проектов, которые превосходят ожидания клиентов.",
+    imgSrc: personDeveloperB,
   },
   {
-    title: "Test Test",
-    role: "Frontend developer",
-    desc: "Lorem ipsum dolor sit amet.",
-    imgSrc: personMarketingG
+    title: "Александ",
+    role: "Backend developer",
+    desc: "Эксперт в области разработки серверных решений с акцентом на масштабируемость и производительность. Его аналитический подход и навыки позволяют успешно решать сложные задачи и обеспечивать надежность систем.",
+    imgSrc: personProj,
   },
   {
-    title: "Test Test",
-    role: "Frontend developer",
-    desc: "Lorem ipsum dolor sit amet.",
-    imgSrc: personDesigner
+    title: "Екатерина",
+    role: "UI/UX Designer",
+    desc: "Опытный дизайнер Екатерина отличается своим вниманием к деталям и креативностью. Она создает визуальные решения, которые привлекают и удерживают внимание, всегда учитывая индивидуальные потребности каждого клиента.",
+    imgSrc: personMarketingG,
+  },
+  {
+    title: "Александра",
+    role: "IOS developer",
+    desc: "Специалист по разработке iOS-приложений, известная своим вниманием к пользовательскому опыту и инновационным подходом. Она создаёт приложения, которые не только функциональны, но и приятны в использовании.",
+    imgSrc: personDesigner,
   },
 ];
 
@@ -58,9 +58,8 @@ const teamMembers = [
   <section class="our-team">
     <div class="container">
       <div class="our-team__top">
-        <div class="title">Наша команда</div>
         <h2>В чем сила?</h2>
-        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, veniam?</div>
+        <div class="desc">Наша команда - это сердце и душа вашего проекта.</div>
       </div>
       <div class="our-team__body">
         <TeamItem

@@ -62,7 +62,7 @@ watch(splideRef, (newVal) => {
   <section class="quiz">
     <div class="container">
       <div class="quiz__top">
-        <h2>Квиз</h2>
+        <h2>Пройдите тест за 1 минуту и получите бесплатную консультацию по вашему проекту</h2>
         <div class="quiz__desc">Подберём лучшие технологии под ваш продукт и задачи</div>
       </div>
       <div class="quiz__wrapper">

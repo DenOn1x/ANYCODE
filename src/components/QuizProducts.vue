@@ -29,6 +29,16 @@
           Личный кабинет
         </label>
         <label class="custom-checkbox">
+          <input type="checkbox" value="4"/>
+          <span class="checkmark"></span>
+          Мобильное приложение
+        </label>
+        <label class="custom-checkbox">
+          <input type="checkbox" value="4"/>
+          <span class="checkmark"></span>
+          Дизайн
+        </label>
+        <label class="custom-checkbox">
           <input type="checkbox" value="5"/>
           <span class="checkmark"></span>
           Не знаю, нужна консультация

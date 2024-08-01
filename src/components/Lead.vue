@@ -204,7 +204,8 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
     z-index: -1;
     width: 100%;
     height: 100%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0); // Начальное состояние с уменьшенным размером
+    animation: scaleUp 1s ease-out forwards;
     @media screen and (min-width: 767.98px) {
       max-width: 440px;
     }
@@ -238,6 +239,15 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
           left: 0;
         }
       }
+    }
+  }
+
+  @keyframes scaleUp {
+    0% {
+      transform: translate(-50%, -50%) scale(0); // Начальное состояние: маленький размер
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1); // Конечное состояние: полный размер
     }
   }
 

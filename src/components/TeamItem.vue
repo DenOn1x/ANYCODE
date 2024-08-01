@@ -35,6 +35,7 @@ const socialLinks = [
         <div class="content-team__desc">{{ desc }}</div>
       </div>
       <div class="content-team__bottom">
+        <div>Связаться с нами</div>
         <ul class="content-team__socials">
           <li v-for="link in socialLinks" :key="link.src">
             <a :href="link.href">

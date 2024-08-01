@@ -13,11 +13,11 @@
             <div class="statistics__text">средний стаж сотрудников</div>
           </div>
           <div class="statistics__item">
-            <div class="statistics__counter"><span>1</span>+</div>
-            <div class="statistics__text">пользователей наших продуктов</div>
+            <div class="statistics__counter"><span><10</span></div>
+            <div class="statistics__text">поддерживаемых проектов</div>
           </div>
           <div class="statistics__item">
-            <div class="statistics__counter"><span><500 000</span> $</div>
+            <div class="statistics__counter"><span><250 000</span> $</div>
             <div class="statistics__text">выручка за 2023 год</div>
           </div>
           <div class="statistics__item">

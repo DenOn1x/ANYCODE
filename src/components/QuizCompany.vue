@@ -22,6 +22,39 @@ const selectedOption = ref('');
           <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
           <span class="quiz-company__text">Туризм</span>
         </label>
+
+        <label class="custom-radio-button">
+          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
+          <span class="quiz-company__text">Ритейл</span>
+        </label>
+        <label class="custom-radio-button">
+          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
+          <span class="quiz-company__text">Медицина</span>
+        </label>
+        <label class="custom-radio-button">
+          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
+          <span class="quiz-company__text">Образование</span>
+        </label>
+        <label class="custom-radio-button">
+          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
+          <span class="quiz-company__text">Стартап</span>
+        </label>
+        <label class="custom-radio-button">
+          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
+          <span class="quiz-company__text">Медиа и развлечения</span>
+        </label>
+        <label class="custom-radio-button">
+          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
+          <span class="quiz-company__text">Гостинично-ресторанный бизнес</span>
+        </label>
+        <label class="custom-radio-button">
+          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
+          <span class="quiz-company__text">Я частное лицо</span>
+        </label>
+        <label class="custom-radio-button">
+          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
+          <span class="quiz-company__text">Другое</span>
+        </label>
       </div>
     </div>
   </div>
