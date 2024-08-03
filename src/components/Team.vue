@@ -61,16 +61,20 @@ const teamMembers = [
         <h2>В чем сила?</h2>
         <div class="desc">Наша команда - это сердце и душа вашего проекта.</div>
       </div>
-      <div class="our-team__body">
-        <TeamItem
-            v-for="member in teamMembers"
-            :key="member.title"
-            :title="member.title"
-            :role="member.role"
-            :desc="member.desc"
-            :imgSrc="member.imgSrc"
-        />
+    </div>
+    <div class="our-team__wrapper">
+      <div class="container">
+        <div class="our-team__body">
+          <TeamItem
+              v-for="member in teamMembers"
+              :key="member.title"
+              :title="member.title"
+              :role="member.role"
+              :desc="member.desc"
+              :imgSrc="member.imgSrc"
+          />
 
+        </div>
       </div>
     </div>
   </section>
@@ -80,31 +84,17 @@ const teamMembers = [
 .our-team {
   margin-top: 60px;
   @media screen and (min-width: 1199.98px) {
-    margin-top: 80px;
+    margin-top: 100px;
   }
 
   &__top {
     display: grid;
     gap: 5px;
-    margin-bottom: 20px;
-
-    .title {
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 148%;
-      color: #24ff00;
-      margin-bottom: -5px;
-      @media screen and (min-width: 767.98px) {
-        font-size: 16px;
-      }
-      @media screen and (min-width: 1199.98px) {
-        font-size: 20px;
-      }
-    }
+    margin-bottom: 40px;
 
     h2 {
       font-size: 24px;
-      font-weight: 700;
+      font-weight: 400;
       line-height: 148%;
       color: #FFF;
 
@@ -116,25 +106,22 @@ const teamMembers = [
         font-size: 32px;
       }
       @media screen and (min-width: 991.98px) {
-        font-size: 44px;
+        font-size: 38px;
         line-height: 132%;
       }
       @media screen and (min-width: 1199.98px) {
-        font-size: 52px;
+        font-size: 44px;
         br {
           display: block;
         }
-      }
-      @media screen and (min-width: 1639.98px) {
-        font-size: 58px;
       }
     }
 
     .desc {
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 300;
       line-height: 148%;
-      color: #ffffff5c;
+      color: #FFF;
       @media screen and (min-width: 767.98px) {
         font-size: 16px;
       }
@@ -144,10 +131,22 @@ const teamMembers = [
     }
   }
 
+  &__wrapper {
+    border-radius: 20px;
+    max-width: 90%;
+    margin: auto;
+    box-shadow: rgba(255, 255, 255, 0.55) 0 0 30px;
+    padding: 40px 0;
+    @media screen and (min-width: 991.98px) {
+      border-radius: 40px;
+      padding: 60px 0;
+    }
+  }
+
   &__body {
     display: grid;
-    gap: 10px;
-    @media screen and (min-width: 767.98px) {
+    gap: 20px;
+    @media screen and (min-width: 991.98px) {
       grid-template-columns: repeat(2, 1fr);
     }
     @media screen and (min-width: 1199.98px) {

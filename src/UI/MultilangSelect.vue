@@ -3,8 +3,8 @@ import {ref, getCurrentInstance, onMounted, onUnmounted, computed} from 'vue';
 import icChevron from "@/assets/images/svg/ic_chevron.svg?url";
 
 const options = [
-  {value: 'en', label: 'EN'},
-  {value: 'ru', label: 'РУ'}
+  {value: 'en', label: 'en'},
+  {value: 'ru', label: 'ру'}
 ];
 
 const selectedLanguage = ref(options[0].label);
@@ -70,12 +70,12 @@ const filteredOptions = computed(() => {
   display: inline-block;
   padding: 10px 0;
   width: 62px;
-  border: .5px solid #ffffff5c;
+  border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 10px;
 
   @media screen and (min-width: 767.98px) {
-    padding: 15px 0;
-    width: 74px;
+    padding: 12px 0;
+    width: 64px;
   }
 
   &.open {
@@ -96,9 +96,7 @@ const filteredOptions = computed(() => {
   font-weight: 400;
   line-height: 124%;
   cursor: pointer;
-  @media screen and (min-width: 767.98px) {
-    font-size: 16px;
-  }
+
 }
 
 .options {

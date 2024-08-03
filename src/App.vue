@@ -1,14 +1,18 @@
 <script setup>
 import LayoutHeader from '@/components/layout/Header.vue'
 import LayoutFooter from '@/components/layout/Footer.vue'
+import CustomCursor from "@/UI/Cursor.vue";
 </script>
 
 <template>
-  <layout-header/>
-  <main class="page">
-    <router-view/>
-  </main>
-  <layout-footer/>
+  <CustomCursor>
+    <layout-header/>
+    <main class="page">
+      <router-view/>
+    </main>
+    <layout-footer/>
+  </CustomCursor>
+
 
 </template>
 

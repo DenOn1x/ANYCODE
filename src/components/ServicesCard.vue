@@ -20,7 +20,7 @@ defineProps({
       </div>
     </div>
     <Button label="Подробнее"
-            color="stroke"/>
+            color="fill"/>
   </div>
 </template>
 
@@ -40,7 +40,7 @@ defineProps({
       width: .5px;
       height: 100%;
       //background: #7DFF7A;
-      background: #24ff00;
+      background: #7470ff;
       //-webkit-background-clip: text;
       //-webkit-text-fill-color: transparent;
       position: absolute;
@@ -71,24 +71,24 @@ defineProps({
     line-height: 100%;
     //color: #7DFF7A;
 
-    background-image: linear-gradient(120deg, #101b10 5%, #24ff00 30%);
+    background-image: linear-gradient(120deg, #101b10 5%, #7470ff 30%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   &__title {
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 600;
     line-height: 132%;
     color: #FFF;
     margin-bottom: 10px;
   }
 
   &__text {
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 300;
     line-height: 148%;
-    color: #ffffff5c;
+    color: rgba(255, 255, 255, 0.7);
     position: relative;
     padding-left: 25px;
 
@@ -96,7 +96,7 @@ defineProps({
       content: '';
       width: 10px;
       height: 10px;
-      background: #24ff00;
+      background: #7470ff;
       border-radius: 50%;
       position: absolute;
       left: 0;
@@ -107,7 +107,7 @@ defineProps({
       content: '';
       width: 14px;
       height: 14px;
-      border: 1px solid #24ff00;
+      border: 1px solid #7470ff;
       border-radius: 50%;
       position: absolute;
       left: -3px;

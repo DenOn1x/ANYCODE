@@ -1,5 +1,5 @@
 <script setup>
-import icChevronGreen from "@/assets/images/svg/ic_chevron_green.svg?url"
+import icChevronPrpl from "@/assets/images/svg/ic_chevron_prpl.svg?url"
 
 
 defineProps({
@@ -25,7 +25,7 @@ defineProps({
       </div>
       <router-link to="#">
         <div class="card-other-product__arrow">
-          <img :src="icChevronGreen" alt=""/>
+          <img :src="icChevronPrpl" alt="ic_chevron"/>
         </div>
       </router-link>
       <div class="card-other-product__view">
@@ -45,21 +45,20 @@ defineProps({
 <style lang="scss" scoped>
 
 .card-other-product {
-
+  height: 100%;
 
   &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: .5px solid #ffffff5c;
+    border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     padding: 24px;
-    background: linear-gradient(135deg, rgba(125, 255, 112, 1) 0%, rgba(0, 0, 0, 1) 25%);
     position: relative;
+    height: 100%;
 
     @media screen and (min-width: 991.98px) {
+      display: flex;
       flex-direction: row;
       align-items: center;
+      gap: 40px;
       padding: 60px 0;
       border: none;
       overflow: hidden;
@@ -67,9 +66,7 @@ defineProps({
       background: none;
       border-radius: 0;
       border: 0;
-      border-top: .5px solid #ffffff5c;
-      border-bottom: .5px solid #ffffff5c;
-      margin: -1px 0;
+
 
       &:hover {
         .card-other-product__view {
@@ -101,7 +98,7 @@ defineProps({
     font-size: 14px;
     font-weight: 400;
     line-height: 100%;
-    background-image: linear-gradient(120deg, #101b10 5%, #24ff00 30%);
+    background-image: linear-gradient(120deg, #101b10 5%, #7470ff 30%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     width: fit-content;
@@ -116,7 +113,7 @@ defineProps({
       content: '';
       width: 100%;
       height: 1px;
-      background: #24ff00;
+      background: #7470ff;
       position: absolute;
       left: 0;
       bottom: -5px;
@@ -124,12 +121,14 @@ defineProps({
   }
 
   &__title {
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 600;
     line-height: 132%;
     color: #FFF;
-    @media screen and (min-width: 1199.98px) {
-      font-size: 32px;
+    margin-bottom: 5px;
+    @media screen and (min-width: 991.98px) {
+      margin: 0;
+      flex: 0 0 25%;
     }
   }
 
@@ -137,18 +136,29 @@ defineProps({
     font-size: 14px;
     font-weight: 400;
     line-height: 132%;
-    color: #FFF;
+    color: #7470ff;
+    @media screen and (min-width: 991.98px) {
+      flex: 0 0 10%;
+    }
   }
 
   &__text {
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 300;
     line-height: 148%;
-    color: #ffffff5c;
+    color: rgba(255, 255, 255, 0.7);
     flex: 0 0 20%;
-    padding-bottom: 42px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+
     @media screen and (min-width: 991.98px) {
-      padding: 0;
+      display: block;
+      overflow: visible;
+      flex: 1;
     }
   }
 
@@ -156,7 +166,7 @@ defineProps({
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid #24ff00;
+    border: 1px solid #7470ff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -232,7 +242,7 @@ defineProps({
         transform-style: preserve-3d;
         border-radius: 100%;
         box-sizing: border-box;
-        box-shadow: 0 0 20px rgba(#000, 1), inset 0 0 20px rgba(#24ff00, 1);
+        box-shadow: 0 0 20px rgba(#000, 1), inset 0 0 20px rgba(#FFF, 1);
 
 
         &::before, &::after {
@@ -242,9 +252,9 @@ defineProps({
           width: 10%;
           height: 10%;
           border-radius: 100%;
-          background: rgba(#24ff00, 1);
+          background: rgba(#FFF, 1);
           box-sizing: border-box;
-          box-shadow: 0 0 20px rgba(#000, 1), inset 0 0 20px rgba(#24ff00, 1);
+          box-shadow: 0 0 20px rgba(#000, 1), inset 0 0 20px rgba(#FFF, 1);
 
         }
 

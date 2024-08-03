@@ -71,8 +71,9 @@ const toggleAccordion = (itemId) => {
   flex-direction: column;
 
   .accordion__item {
-    border-top: .5px solid #ffffff5c;
-    border-bottom: .5px solid #ffffff5c;
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    margin: -1px 0;
     cursor: pointer;
 
     @media screen and (min-width: 991.98px) {
@@ -121,22 +122,22 @@ const toggleAccordion = (itemId) => {
     }
 
     .name {
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 148%;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 132%;
       color: #FFF;
 
       @media screen and (min-width: 991.98px) {
-        font-size: 24px;
+        font-size: 20px;
       }
     }
 
     .icon {
       img {
         display: block;
-        min-width: 18px;
-        width: 18px;
-        height: 12px;
+        min-width: 14px;
+        width: 14px;
+        height: 10px;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -173,10 +174,10 @@ const toggleAccordion = (itemId) => {
     }
 
     p {
-      font-size: 16px;
-      font-weight: 400;
+      font-size: 13px;
+      font-weight: 300;
       line-height: 148%;
-      color: #FFF;
+      color: rgba(255, 255, 255, 0.7);
 
       &:not(:last-child) {
         margin-bottom: 20px;

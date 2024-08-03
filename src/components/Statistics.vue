@@ -30,44 +30,58 @@
   </section>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 
 .statistics {
   margin-top: 60px;
-  padding: 60px 0;
-  box-shadow: 0 0 20px black, inset 0 0 40px #24ff00;
+  background: #c7ced1;
   @media screen and (min-width: 1199.98px) {
-    margin-top: 80px;
+    margin-top: 100px;
+  }
+
+  &__wrapper {
+    padding: 60px 0;
+    @media screen and (min-width: 991.98px) {
+      padding: 80px 0;
+    }
   }
 
   h2 {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 148%;
-    color: #FFF;
     text-align: center;
+    color: #070707;
+    text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
     margin-bottom: 40px;
 
     @media screen and (min-width: 767.98px) {
       font-size: 32px;
     }
     @media screen and (min-width: 991.98px) {
-      font-size: 44px;
+      font-size: 38px;
       line-height: 132%;
     }
     @media screen and (min-width: 1199.98px) {
-      font-size: 52px;
-    }
-    @media screen and (min-width: 1639.98px) {
-      font-size: 58px;
+      font-size: 44px;
     }
   }
 
   .statistics__content {
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
-    gap: 80px;
+    gap: 40px;
+    @media screen and (min-width: 767.98px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (min-width: 991.98px) {
+      display: flex;
+      flex-direction: row;
+    }
+    @media screen and (min-width: 1199.98px) {
+      gap: 80px;
+    }
   }
 
   .statistics__item {
@@ -83,14 +97,18 @@
     font-size: 32px;
     font-weight: 400;
     line-height: 148%;
-    color: #FFF;
+    color: #070707;
+    text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+    @media screen and (min-width: 1199.98px) {
+      font-size: 38px;
+    }
   }
 
   .statistics__text {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 148%;
-    color: #FFF;
+    color: #070707;
     position: relative;
     padding-top: 10px;
 
@@ -102,7 +120,7 @@
       left: 50%;
       top: 0;
       transform: translate(-50%, 0);
-      background: #24ff00;
+      background: #070707;
     }
   }
 

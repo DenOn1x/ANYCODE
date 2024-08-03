@@ -3,7 +3,6 @@
 import Accordion from "@/components/Accordion.vue";
 
 
-
 </script>
 
 <template>
@@ -19,30 +18,28 @@ import Accordion from "@/components/Accordion.vue";
 .faq {
   margin-top: 60px;
   @media screen and (min-width: 1199.98px) {
-    margin-top: 80px;
+    margin-top: 100px;
   }
 
   h2 {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 148%;
     color: #FFF;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 
     @media screen and (min-width: 767.98px) {
       font-size: 32px;
     }
     @media screen and (min-width: 991.98px) {
-      font-size: 44px;
+      font-size: 38px;
       line-height: 132%;
     }
     @media screen and (min-width: 1199.98px) {
-      font-size: 52px;
-    }
-    @media screen and (min-width: 1639.98px) {
-      font-size: 58px;
+      font-size: 44px;
     }
   }
+
 
 }
 </style>

@@ -149,6 +149,7 @@ body.no-scroll {
   padding: 20px 0;
   gap: 20px;
   @media screen and (min-width: 767.98px) {
+    justify-content: flex-start;
     gap: 40px;
   }
 }
@@ -219,16 +220,16 @@ body.no-scroll {
   a {
     img {
       display: block;
-      min-width: 168px;
-      width: 168px;
+      min-width: 148px;
+      width: 148px;
       height: 38px;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left center;
       transition: .3s ease;
       @media screen and (min-width: 767.98px) {
-        min-width: 248px;
-        width: 248px;
+        min-width: 202px;
+        width: 202px;
         height: 44px;
       }
     }
@@ -325,17 +326,22 @@ body.no-scroll {
   align-items: center;
   gap: 10px;
 
+  @media screen and (min-width: 767.98px) {
+    margin-left: auto;
+  }
+
   .btn {
     display: none;
     @media screen and (min-width: 1199.98px) {
       display: block;
+      padding: 12px 20px;
     }
   }
 }
 
 .phone--md {
   padding: 10px;
-  border: .5px solid #ffffff5c;
+  border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 10px;
 
   &:before {
@@ -350,7 +356,7 @@ body.no-scroll {
   }
 
   @media screen and (min-width: 767.98px) {
-    padding: 15px;
+    padding: 11px;
     &:before {
       min-width: 22px;
       width: 22px;

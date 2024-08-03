@@ -58,7 +58,7 @@ const imgArray = [
     margin-bottom: 0;
   }
   @media screen and (min-width: 1199.98px) {
-    margin-top: 80px;
+    margin-top: 100px;
   }
 
   &__wrapper {

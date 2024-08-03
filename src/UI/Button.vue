@@ -19,25 +19,27 @@ const props = defineProps({
 .btn-stroke {
   padding: 15px 20px;
   background: none;
-  border: .5px solid #ffffff5c;
+  border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   cursor: pointer;
-  font-family: 'Inter';
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  font-family: 'Atyp';
   color: #FFF;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 124%;
 }
 
 .btn-fill {
   padding: 15px 20px;
-  border: .5px solid transparent;
-  background: #24ff00;
+  border: 1px solid transparent;
+  background: #7470ff;
   border-radius: 10px;
   cursor: pointer;
-  font-family: 'Inter';
-  color: #070707;
-  font-size: 16px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  font-family: 'Atyp';
+  color: #FFF;
+  font-size: 14px;
   font-weight: 400;
   line-height: 124%;
 }

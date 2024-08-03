@@ -1,6 +1,7 @@
 <script setup>
+import {onMounted} from 'vue';
 import Button from "@/UI/Button.vue";
-import anycodeImg from "@/assets/images/anycode-ball-1.png";
+import anycodeImg from "@/assets/images/tt1.png";
 import IconChevronHelp from "@/assets/images/svg/ic_chevron_help.svg?url";
 import ic_fb from '@/assets/images/svg/ic_fb.svg?url'
 import ic_tg from '@/assets/images/svg/ic_tg.svg?url'
@@ -12,6 +13,7 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
 
 <template>
   <section class="lead">
+
     <div class="container">
       <div class="lead__wrapper">
         <div class="lead__manual">
@@ -76,15 +78,26 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
       </div>
     </div>
   </section>
+
+
 </template>
 
 <style lang="scss" scoped>
 
 .lead {
   position: relative;
+  overflow: hidden;
+  z-index: 0;
+  border-radius: 20px;
+  background: #c7ced1;
+  max-width: 90%;
+  margin: 10px auto 0;
+  @media screen and (min-width: 991.98px){
+    border-radius: 40px;
+  }
 
   &__wrapper {
-    padding: 20px 0;
+    padding: 40px 0;
     @media screen and (min-width: 767.98px) {
       display: grid;
       grid-template-columns: 65% 30%;
@@ -93,8 +106,12 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
       padding: 60px 0;
     }
     @media screen and (min-width: 991.98px) {
-      grid-template-columns: 70% 25%;
-      padding: 80px 0;
+      grid-template-columns: 75% 25%;
+      gap: 10px;
+      padding: 100px 0;
+    }
+    @media screen and (min-width: 1199.98px) {
+      padding: 120px 0;
     }
   }
 
@@ -125,14 +142,16 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
 
     &__heading {
       font-size: 26px;
-      font-weight: 700;
+      font-weight: 400;
       line-height: 148%;
-      color: #FFF;
+      color: #070707;
+      text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+      0px -5px 35px rgba(255, 255, 255, 0.3);
       @media screen and (min-width: 767.98px) {
         font-size: 32px;
       }
       @media screen and (min-width: 991.98px) {
-        font-size: 48px;
+        font-size: 46px;
         line-height: 142%;
       }
       @media screen and (min-width: 1199.98px) {
@@ -144,7 +163,7 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
 
       span {
         //color: #7DFF7A;
-        background-image: linear-gradient(120deg, #101b10 5%, #24ff00 30%);
+        background-image: linear-gradient(120deg, #101b10 5%, #7470ff 30%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
@@ -154,7 +173,7 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
       font-size: 14px;
       font-weight: 400;
       line-height: 142%;
-      color: #ffffff5c;
+      color: #070707;
       @media screen and (min-width: 767.98px) {
         font-size: 16px;
       }
@@ -167,7 +186,6 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
       }
 
       span {
-        font-weight: 700;
         color: #FFF;
       }
     }
@@ -204,8 +222,7 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
     z-index: -1;
     width: 100%;
     height: 100%;
-    transform: translate(-50%, -50%) scale(0); // Начальное состояние с уменьшенным размером
-    animation: scaleUp 1s ease-out forwards;
+    transform: translate(-50%, -50%);
     @media screen and (min-width: 767.98px) {
       max-width: 440px;
     }
@@ -213,7 +230,7 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
       max-width: 480px;
     }
     @media screen and (min-width: 1199.98px) {
-      max-width: 540px;
+      max-width: 580px;
     }
     @media screen and (min-width: 1639.98px) {
       max-width: 620px;
@@ -226,6 +243,9 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
         padding-bottom: 100%;
         height: 0;
         overflow: hidden;
+      }
+      @media screen and (min-width: 991.98px) {
+        padding-bottom: 110%;
       }
 
       img {
@@ -242,25 +262,16 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
     }
   }
 
-  @keyframes scaleUp {
-    0% {
-      transform: translate(-50%, -50%) scale(0); // Начальное состояние: маленький размер
-    }
-    100% {
-      transform: translate(-50%, -50%) scale(1); // Конечное состояние: полный размер
-    }
-  }
-
   &__bg-help {
     display: none;
     position: absolute;
     left: 50%;
     top: 60%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 1px solid #ffffff5c;
+    border: 1px solid #070707;
     align-items: center;
     justify-content: center;
     @media screen and (min-width: 1199.98px) {
@@ -310,12 +321,15 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
     flex-direction: column;
     align-items: flex-end;
     gap: 40px;
+    @media screen and (min-width: 1199.98px) {
+      gap: 60px;
+    }
 
     li {
       font-size: 14px;
       font-weight: 400;
       line-height: 142%;
-      color: #ffffff5c;
+      color: #070707;
       width: fit-content;
       text-align: center;
       position: relative;
@@ -347,7 +361,7 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
         width: calc(100% + 20px);
         transform: translate(-50%, 0);
         height: 1px;
-        background: #ffffff5c;
+        background: #070707;
       }
     }
   }
@@ -356,12 +370,12 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
     display: flex;
     align-items: center;
     width: fit-content;
-    border: 1px solid #ffffff5c;
+    border: 1px solid #070707;
     border-radius: 10px;
     padding: 10px;
     gap: 10px;
     @media screen and (min-width: 1199.98px) {
-      gap: 15px;
+      gap: 20px;
     }
 
     li {
@@ -375,6 +389,7 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
           background-repeat: no-repeat;
           background-position: center;
           transition: 0.3s ease;
+          filter: grayscale(0) brightness(0);
           cursor: pointer;
         }
       }
