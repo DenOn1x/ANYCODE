@@ -51,18 +51,18 @@
 
 <style scoped>
 .quiz__counter {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 300;
   line-height: 132%;
   color: #FFF;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 24px;
 }
 
 .quiz-products__question {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 300;
   line-height: 132%;
   color: #FFF;
   margin-bottom: 40px;
@@ -85,7 +85,7 @@
   -ms-user-select: none;
   user-select: none;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 132%;
   color: #FFF;
 
@@ -108,7 +108,7 @@
 
 .checkmark {
   position: absolute;
-  top: 0;
+  top: -3px;
   left: 0;
   min-width: 18px;
   width: 18px;
@@ -119,8 +119,8 @@
 
 
 .custom-checkbox input:checked ~ .checkmark {
-  background: #24ff00;
-  border-color: #24ff00;
+  background: #7470ff;
+  border-color: #7470ff;
 }
 
 .checkmark:after {

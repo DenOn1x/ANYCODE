@@ -117,6 +117,7 @@ const socialLinks = [
     order: 0;
     @media screen and (min-width: 767.98px) {
       order: 1;
+      height: 100%;
     }
 
 

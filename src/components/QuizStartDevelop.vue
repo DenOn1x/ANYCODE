@@ -29,18 +29,18 @@ const selectedOption = ref('');
 
 <style scoped>
 .quiz__counter {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 300;
   line-height: 132%;
   color: #FFF;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 24px;
 }
 
 .quiz-start-dev__question {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 300;
   line-height: 132%;
   color: #FFF;
   margin-bottom: 40px;
@@ -78,7 +78,7 @@ const selectedOption = ref('');
 
 .quiz-start-dev__text {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 132%;
   color: #FFF;
   cursor: pointer;
@@ -91,7 +91,7 @@ const selectedOption = ref('');
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
+  top: -2px;
   min-width: 18px;
   width: 18px;
   height: 18px;
@@ -100,7 +100,7 @@ const selectedOption = ref('');
 }
 
 .custom-radio-button input:checked ~ .quiz-start-dev__text:before {
-  border-color: #24ff00;
+  border-color: #7470ff;
 }
 
 .custom-radio-button .quiz-start-dev__text:after {
@@ -110,10 +110,10 @@ const selectedOption = ref('');
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #24ff00;
+  background: #7470ff;
   position: absolute;
   left: 6px;
-  top: 6px;
+  top: 4px;
 }
 
 .custom-radio-button input:checked ~ .quiz-start-dev__text:after {

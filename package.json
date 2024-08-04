@@ -20,6 +20,7 @@
     "vite-plugin-svgr": "^4.2.0",
     "vite-svg-loader": "^5.1.0",
     "vue": "^3.4.21",
+    "vue-awesome-swiper": "^5.0.1",
     "vue-follow-tooltip": "^1.0.0",
     "vue-i18n": "^9.13.1",
     "vue-router": "^4.3.3",

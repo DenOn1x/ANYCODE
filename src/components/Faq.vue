@@ -14,7 +14,7 @@ import Accordion from "@/components/Accordion.vue";
   </section>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .faq {
   margin-top: 60px;
   @media screen and (min-width: 1199.98px) {

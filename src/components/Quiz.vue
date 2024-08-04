@@ -1,7 +1,8 @@
 <script setup>
-import {ref, onMounted, watch} from 'vue';
+import {ref, onMounted} from 'vue';
 import {Splide, SplideSlide} from '@splidejs/vue-splide';
 import '@splidejs/vue-splide/css';
+
 import QuizStart from "@/components/QuizStart.vue";
 import QuizProducts from "@/components/QuizProducts.vue";
 import QuizBudget from "@/components/QuizBudget.vue";
@@ -15,15 +16,15 @@ const splideOptions = {
   gap: 0,
   drag: false,
   perMove: 1,
-  arrows: true,
+  arrows: false,
   pagination: false,
-  mediaQuery: 'min',
-  breakpoints: {}
+  autoHeight: true,
+  updateOnMove: true,
 };
 
 const splideRef = ref(null);
 const currentSlide = ref(0);
-const totalSlides = ref(5);
+const totalSlides = ref(6);
 const progressBarWidth = ref('0%');
 
 const updateProgressBar = () => {
@@ -34,9 +35,20 @@ const updateProgressBar = () => {
   }
 };
 
+const goNext = () => {
+  if (splideRef.value.splide) {
+    splideRef.value.splide.go('>');
+  }
+};
+
+const goPrev = () => {
+  if (splideRef.value.splide) {
+    splideRef.value.splide.go('<');
+  }
+};
+
 onMounted(() => {
   const splideInstance = splideRef.value?.splide;
-
   if (splideInstance) {
     splideInstance.on('mounted', () => {
       totalSlides.value = splideInstance.Components.Slides.getLength();
@@ -49,49 +61,61 @@ onMounted(() => {
     });
   }
 });
-
-watch(splideRef, (newVal) => {
-  if (newVal?.splide) {
-    totalSlides.value = newVal.splide.Components.Slides.getLength();
-    updateProgressBar();
-  }
-});
 </script>
 
 <template>
+
   <section class="quiz">
     <div class="container">
       <div class="quiz__top">
-        <h2>Пройдите тест за 1 минуту и получите бесплатную консультацию по вашему проекту</h2>
+        <h2>Узнайте стоимость проекта за минуту</h2>
         <div class="quiz__desc">Подберём лучшие технологии под ваш продукт и задачи</div>
       </div>
       <div class="quiz__wrapper">
-        <form action="#" method="POST" class="quiz__cards">
+        <div class="quiz__form">
           <div class="quiz__title">Ответьте на вопросы и получите расчёт стоимости проекта</div>
-          <Splide ref="splideRef" :options="splideOptions" data-slider="quiz" aria-label="">
-            <SplideSlide>
-              <QuizStart/>
-            </SplideSlide>
-            <SplideSlide>
-              <QuizProducts/>
-            </SplideSlide>
-            <SplideSlide>
-              <QuizBudget/>
-            </SplideSlide>
-            <SplideSlide>
-              <QuizStartDevelop/>
-            </SplideSlide>
-            <SplideSlide>
-              <QuizCompany/>
-            </SplideSlide>
-            <SplideSlide>
-              <QuizFields/>
-            </SplideSlide>
-          </Splide>
-          <div class="quiz-progress">
-            <div class="quiz-progress-bar" :style="{ width: progressBarWidth }"></div>
-          </div>
-        </form>
+          <form action="#" method="POST" class="quiz__cards">
+            <Splide ref="splideRef" :options="splideOptions" data-slider="quiz" aria-label="">
+              <SplideSlide>
+                <QuizStart/>
+              </SplideSlide>
+              <SplideSlide>
+                <QuizProducts/>
+              </SplideSlide>
+              <SplideSlide>
+                <QuizBudget/>
+              </SplideSlide>
+              <SplideSlide>
+                <QuizStartDevelop/>
+              </SplideSlide>
+              <SplideSlide>
+                <QuizCompany/>
+              </SplideSlide>
+              <SplideSlide>
+                <QuizFields/>
+              </SplideSlide>
+            </Splide>
+            <div class="quiz-progress">
+              <div class="quiz-progress-bar" :style="{ width: progressBarWidth }"></div>
+            </div>
+            <div class="quiz__custom-arrows">
+              <button
+                  v-if="currentSlide > 0"
+                  type="button"
+                  class="quiz__custom-prev"
+                  @click="goPrev"
+              >Назад
+              </button>
+              <button
+                  v-if="currentSlide < totalSlides - 1"
+                  type="button"
+                  class="quiz__custom-next"
+                  @click="goNext"
+              >Вперед
+              </button>
+            </div>
+          </form>
+        </div>
         <div class="quiz__info">
           <div class="quiz__view">
             <div class="quiz__plane plane--main">
@@ -103,23 +127,20 @@ watch(splideRef, (newVal) => {
             </div>
             <div class="anycode-text">ANYCODE</div>
           </div>
-
         </div>
       </div>
     </div>
   </section>
+
 </template>
 
+
 <style lang="scss" scoped>
+
 .quiz {
   margin-top: 60px;
-  position: relative;
-  overflow: hidden;
-  @media screen and (min-width: 991.98px) {
-    margin-bottom: 0;
-  }
   @media screen and (min-width: 1199.98px) {
-    margin-top: 80px;
+    margin-top: 100px;
   }
 
 
@@ -174,7 +195,7 @@ watch(splideRef, (newVal) => {
         transform-style: preserve-3d;
         border-radius: 100%;
         box-sizing: border-box;
-        box-shadow: 0 0 20px rgba(#000, 1), inset 0 0 20px rgba(#24ff00, 1);
+        box-shadow: 0 0 20px rgba(#000, 1), inset 0 0 20px rgba(#FFF, 1);
         @media screen and (min-width: 1439.98px) {
           width: 400px;
           height: 400px;
@@ -202,7 +223,7 @@ watch(splideRef, (newVal) => {
     transform: translate(-50%, -50%);
     color: #FFF;
     font-size: 44px;
-    font-weight: 700;
+    font-weight: 400;
   }
 
   @keyframes rotate {
@@ -214,40 +235,42 @@ watch(splideRef, (newVal) => {
     }
   }
 
-
   &__top {
     display: grid;
     gap: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 
     h2 {
       font-size: 24px;
-      font-weight: 700;
+      font-weight: 400;
       line-height: 148%;
       color: #FFF;
+
+      br {
+        display: none;
+      }
 
       @media screen and (min-width: 767.98px) {
         font-size: 32px;
       }
       @media screen and (min-width: 991.98px) {
-        font-size: 44px;
+        font-size: 38px;
         line-height: 132%;
       }
       @media screen and (min-width: 1199.98px) {
-        font-size: 52px;
-      }
-      @media screen and (min-width: 1639.98px) {
-        font-size: 58px;
+        font-size: 44px;
+        br {
+          display: block;
+        }
       }
     }
   }
 
   &__desc {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 300;
     line-height: 148%;
-    color: #ffffff5c;
-
+    color: #FFF;
     @media screen and (min-width: 767.98px) {
       font-size: 16px;
     }
@@ -272,64 +295,76 @@ watch(splideRef, (newVal) => {
     }
   }
 
+  &__form {
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: rgba(255, 255, 255, 0.55) 0 0 30px;
+    @media screen and (min-width: 991.98px) {
+      border-radius: 40px;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 148%;
+    color: #FFF;
+    padding: 4px 0 24px 0;
+    @media screen and (min-width: 991.98px) {
+      font-size: 24px;
+    }
+  }
+
   form {
     position: relative;
-    padding: 24px;
-    border-radius: 10px;
-    background: linear-gradient(-45deg, #24ff00 0%, rgba(255, 255, 255, 0.01) 25%);
-    @media screen and (min-width: 1199.98px) {
-      padding: 48px;
-      width: 60%;
-    }
+  }
 
-    .quiz__title {
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 148%;
-      color: #FFF;
-      @media screen and (min-width: 991.98px) {
-        font-size: 24px;
-      }
-    }
+  .quiz__body {
+    padding: 24px 0;
   }
 
   .quiz-progress {
     position: absolute;
-    top: calc(10% + 40px);
+    top: 0;
     left: 0;
     width: 100%;
     height: 2px;
-    background: #ffffff5c;
-    @media screen and (min-width: 767.98px) {
-      top: calc(10% + 20px);
-    }
-    @media screen and (min-width: 991.98px) {
-      top: calc(15% + 20px);
-    }
-    @media screen and (min-width: 1439.98px) {
-      top: calc(10% + 60px);
-    }
+    background: rgba(255, 255, 255, 0.7);
+
 
     .quiz-progress-bar {
       height: 100%;
-      background: #24ff00;
+      background: #7470ff;
       transition: width 0.3s;
     }
   }
 }
 
+.quiz__custom-arrows {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+
+  .quiz__custom-prev, .quiz__custom-next {
+    border: none;
+    background-color: #7470ff;
+    color: #FFF;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-family: 'Atyp';
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+  .quiz__custom-next {
+    margin-left: auto;
+  }
+}
+
 ::v-deep .splide {
-  padding: 60px 0 80px;
-  @media screen and (min-width: 1439.98px) {
-    padding: 80px 0;
-  }
+  &__slide {
 
-  &__pagination {
-  }
-
-  &__pagination__page {
-    &.is-active {
-    }
   }
 
   &__arrow {
@@ -340,7 +375,7 @@ watch(splideRef, (newVal) => {
     height: initial;
     transform: initial;
     padding: 15px 20px;
-    background: #24ff00;
+    background: #7470ff;
     opacity: 1;
 
     &:disabled {

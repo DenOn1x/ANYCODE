@@ -28,64 +28,54 @@ import Button from "@/UI/Button.vue";
             <input type="text" name="your-phone" id="NUMBER" placeholder="">
             <span class="quiz-end__error"></span>
           </div>
-          <button>Отправить</button>
+          <Button label="Отправить"
+                  color="fill"/>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped>
-.quiz__counter {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 132%;
-  color: #FFF;
-  position: absolute;
-  right: 0;
-  top: 0;
+<style scoped lang="scss">
+.quiz-end {
+  &__question {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 132%;
+    color: #FFF;
+    margin-bottom: 40px;
+  }
+
+  &__fields {
+    display: grid;
+    gap: 30px;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 148%;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 16px;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+      background: none;
+      outline: none;
+      font-family: 'Atyp';
+      font-size: 14px;
+      font-weight: 400;
+      color: #FFF;
+    }
+  }
 }
 
-.quiz-end__question {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 132%;
-  color: #FFF;
-  margin-bottom: 40px;
-}
-
-.quiz-end__fields {
-  display: grid;
-  gap: 30px;
-}
-
-.quiz-end__field {
-  display: flex;
-  flex-direction: column;
-
-}
-
-.quiz-end__field label {
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 148%;
-  color: #ffffff5c;
-}
-
-.quiz-end__field input {
-  width: 100%;
-  max-width: 480px;
-  padding: 12px 16px;
-//border-radius: 10px; outline: none;
-  background: none;
-  border: none;
-  border-bottom: .5px solid #ffffff5c;
-  transition: .1s ease;
-  font-family: 'Inter';
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 14px;
-  color: #FFF;
-}
 
 </style>

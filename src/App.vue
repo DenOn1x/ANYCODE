@@ -12,8 +12,6 @@ import CustomCursor from "@/UI/Cursor.vue";
     </main>
     <layout-footer/>
   </CustomCursor>
-
-
 </template>
 
 <style lang="scss">

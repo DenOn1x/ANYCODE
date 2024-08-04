@@ -109,19 +109,19 @@ const filteredOptions = computed(() => {
   z-index: 11;
 
   .option {
-    color: #FFF;
+    color: #070707;
     font-size: 14px;
     font-weight: 400;
     line-height: 124%;
     cursor: pointer;
     padding: 10px;
-    border: .5px solid #ffffff5c;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.7);
     border-top: none;
     border-bottom: none;
     border-radius: 10px;
     margin-top: 5px;
     @media screen and (min-width: 767.98px) {
-      font-size: 16px;
       padding: calc(15px);
     }
     @media screen and (min-width: 991.98px) {

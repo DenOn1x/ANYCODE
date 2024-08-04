@@ -87,7 +87,8 @@ const contactInfo = [
               </router-link>
             </div>
             <div class="footer__about">
-              Разработка инновационных цифровых решений, обеспечивающих высокое качество и эффективные результаты для вашего бизнеса.
+              Разработка инновационных цифровых решений, обеспечивающих высокое качество и эффективные результаты для
+              вашего бизнеса.
             </div>
             <ul class="footer__socials">
               <li v-for="link in socialLinks" :key="link.src">
@@ -152,7 +153,7 @@ const contactInfo = [
   }
 
   &__bg {
-    border-top: .5px solid #ffffff5c;
+    background: #c7ced1;
     padding: 20px 0;
     @media screen and (min-width: 767.98px) {
       padding: 40px 0;
@@ -204,7 +205,7 @@ const contactInfo = [
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left center;
-    transition: .3s ease;
+    filter: grayscale(0) brightness(0);
 
     @media screen and (min-width: 767.98px) {
       min-width: 248px;
@@ -215,9 +216,9 @@ const contactInfo = [
 
   &__about {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 300;
     line-height: 148%;
-    color: #ffffff5c;
+    color: #070707;
     @media screen and (min-width: 1199.98px) {
       font-size: 16px;
     }
@@ -227,13 +228,13 @@ const contactInfo = [
     display: flex;
     align-items: center;
     width: fit-content;
-    border: 1px solid #ffffff5c;
+    border: 1px solid #070707;
     border-radius: 10px;
     padding: 10px;
     gap: 10px;
 
     @media screen and (min-width: 1199.98px) {
-      gap: 15px;
+      gap: 20px;
     }
 
     li {
@@ -246,8 +247,8 @@ const contactInfo = [
           background-size: contain;
           background-repeat: no-repeat;
           background-position: center;
-          transition: 0.3s ease;
           cursor: pointer;
+          filter: grayscale(0) brightness(0);
         }
       }
     }
@@ -272,9 +273,10 @@ const contactInfo = [
 
       .title {
         font-size: 16px;
-        font-weight: 700;
+        font-weight: 400;
         line-height: 148%;
-        color: #FFF;
+        color: #070707;
+        text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
         @media screen and (min-width: 1199.98px) {
           font-size: 20px;
         }
@@ -288,7 +290,7 @@ const contactInfo = [
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        transition: 0.3s ease;
+        filter: grayscale(0) brightness(0);
         cursor: pointer;
       }
 
@@ -323,12 +325,15 @@ const contactInfo = [
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            transition: 0.3s ease;
+            filter: grayscale(0) brightness(0);
           }
 
           a {
             span {
               font-size: 14px;
+              font-weight: 300;
+              line-height: 148%;
+              color: #070707;
               @media screen and (min-width: 1199.98px) {
                 font-size: 16px;
               }
@@ -364,14 +369,14 @@ const contactInfo = [
           background-size: contain;
           background-repeat: no-repeat;
           background-position: center;
-          transition: 0.3s ease;
+          filter: grayscale(0) brightness(0);
         }
 
         a {
           font-size: 14px;
-          font-weight: 400;
-          line-height: 124%;
-          color: #FFF;
+          font-weight: 300;
+          line-height: 148%;
+          color: #070707;
           text-decoration: none;
           @media screen and (min-width: 1199.98px) {
             font-size: 16px;
@@ -386,9 +391,9 @@ const contactInfo = [
 
     a {
       font-size: 14px;
-      font-weight: 400;
-      line-height: 124%;
-      color: #FFF;
+      font-weight: 300;
+      line-height: 148%;
+      color: #070707;
       text-decoration: none;
       position: relative;
       @media screen and (min-width: 991.98px) {
@@ -400,9 +405,10 @@ const contactInfo = [
   .footer-col-addition {
     .title {
       font-size: 16px;
-      font-weight: 700;
+      font-weight: 400;
       line-height: 148%;
-      color: #FFF;
+      color: #070707;
+      text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
       @media screen and (min-width: 1199.98px) {
         font-size: 20px;
       }
@@ -419,16 +425,16 @@ const contactInfo = [
     &__item {
       a {
         font-size: 14px;
-        font-weight: 400;
-        line-height: 124%;
-        color: #FFF;
+        font-weight: 300;
+        line-height: 148%;
+        color: #070707;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
         gap: 10px;
         padding: 5px;
         border-radius: 10px;
-        border: .5px solid #ffffff5c;
+        border: 1px solid #070707;
         @media screen and (min-width: 1199.98px) {
           font-size: 16px;
         }
@@ -443,7 +449,7 @@ const contactInfo = [
           background-size: contain;
           background-repeat: no-repeat;
           background-position: center;
-          transition: 0.3s ease;
+          filter: grayscale(0) brightness(0);
         }
 
       }

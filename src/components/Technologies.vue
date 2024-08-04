@@ -12,6 +12,10 @@ import icTechnologies09 from "@/assets/images/svg/technologies/ic_technologies-p
 import icTechnologies10 from "@/assets/images/svg/technologies/ic_technologies-pn.svg?url";
 import icTechnologies11 from "@/assets/images/svg/technologies/ic_technologies-rt.svg?url";
 import icTechnologies12 from "@/assets/images/svg/technologies/ic_technologies-v.svg?url";
+import icTechnologies13 from "@/assets/images/svg/technologies/ic_technologies-nn.svg?url";
+import icTechnologies14 from "@/assets/images/svg/technologies/ic_technologies-nx.svg?url";
+import icTechnologies15 from "@/assets/images/svg/technologies/ic_technologies-st.svg?url";
+import icTechnologies16 from "@/assets/images/svg/technologies/ic_technologies-kt.svg?url";
 
 const imgArray = [
   icTechnologies04,
@@ -26,6 +30,10 @@ const imgArray = [
   icTechnologies10,
   icTechnologies11,
   icTechnologies12,
+  icTechnologies13,
+  icTechnologies14,
+  icTechnologies15,
+  icTechnologies16,
 ]
 </script>
 

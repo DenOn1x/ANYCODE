@@ -8,16 +8,21 @@ import Technologies from "@/components/Technologies.vue";
 import Statistics from "@/components/Statistics.vue";
 import Faq from "@/components/Faq.vue";
 import Manager from "@/components/Manager.vue";
+
 </script>
+
 <template>
-  <Lead/>
-  <Services/>
-  <Manager/>
-  <OtherProducts/>
-  <Technologies/>
-  <Statistics/>
-  <Team/>
-  <Faq/>
-  <Quiz/>
+  <Lead />
+  <Services />
+  <OtherProducts />
+  <Manager />
+  <Technologies />
+  <Statistics />
+  <Team />
+  <Faq />
+  <Quiz />
 </template>
-<style scoped></style>
+
+<style scoped>
+
+</style>

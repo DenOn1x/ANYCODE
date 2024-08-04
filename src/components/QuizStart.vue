@@ -43,18 +43,18 @@ const selectOption = (option) => {
 <style scoped>
 
 .quiz__counter {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 300;
   line-height: 132%;
   color: #FFF;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 24px;
 }
 
 .quiz-start__question {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 300;
   line-height: 132%;
   color: #FFF;
   margin-bottom: 40px;
@@ -76,7 +76,7 @@ const selectOption = (option) => {
 .quiz-start__text {
   display: block;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 300;
   line-height: 132%;
   color: #FFF;
   margin-top: 10px;
@@ -101,9 +101,7 @@ const selectOption = (option) => {
     object-fit: contain;
     border-radius: 10px;
     @media screen and (min-width: 991.98px) {
-      &:hover {
-        opacity: .1;
-      }
+
     }
   }
 
@@ -147,7 +145,7 @@ const selectOption = (option) => {
 }
 
 .custom-radio-button input[type="radio"]:checked + .custom-radio-button__img:before {
-  background-color: #24ff00;
+  background-color: #7470ff;
 }
 
 .custom-radio-button input[type="radio"]:checked + .custom-radio-button__img:after {

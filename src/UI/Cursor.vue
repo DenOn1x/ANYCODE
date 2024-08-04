@@ -62,7 +62,7 @@ onUnmounted(() => {
     pointer-events: none;
     transition: transform .5s ease-out;
     transform: translate3d(-50%, -50%, 0);
-    @media screen and (min-width: 991.98px) {
+    @media screen and (min-width: 1199.98px) {
       display: block;
     }
   }
