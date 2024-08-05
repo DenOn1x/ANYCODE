@@ -8,11 +8,11 @@ const selectedOption = ref('');
   <div class="quiz__body">
     <div class="quiz__counter">3/5</div>
     <div class="quiz-budget">
-      <div class="quiz-budget__question">Какой бюджет выделен на проект?</div>
+      <div class="quiz-budget__question">{{$t('quiz_question_third')}}</div>
       <div class="quiz-budget__content">
         <label class="custom-radio-button">
           <input type="radio" name="quiz-budget" value="1" v-model="selectedOption">
-          <span class="quiz-budget__text">До 1 000 $</span>
+          <span class="quiz-budget__text">{{$t('upon')}} 1 000 $</span>
         </label>
         <label class="custom-radio-button">
           <input type="radio" name="quiz-budget" value="2" v-model="selectedOption">
@@ -28,7 +28,7 @@ const selectedOption = ref('');
         </label>
         <label class="custom-radio-button">
           <input type="radio" name="quiz-budget" value="5" v-model="selectedOption">
-          <span class="quiz-budget__text">Более 100 000 $</span>
+          <span class="quiz-budget__text">{{$t('over')}} 100 000 $</span>
         </label>
       </div>
     </div>

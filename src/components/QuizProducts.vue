@@ -6,42 +6,42 @@
   <div class="quiz__body">
     <div class="quiz__counter">2/5</div>
     <div class="quiz-products">
-      <div class="quiz-products__question">Выберите нужные продукты:</div>
+      <div class="quiz-products__question">{{$t('quiz_question_second')}}</div>
       <div class="quiz-products__content">
         <label class="custom-checkbox">
           <input type="checkbox" value="1"/>
           <span class="checkmark"></span>
-          Интернет-магазин
+          {{$t('online_store')}}
         </label>
         <label class="custom-checkbox">
           <input type="checkbox" value="2"/>
           <span class="checkmark"></span>
-          CRM или ERP-система
+          {{$t('crm_or_erp')}}
         </label>
         <label class="custom-checkbox">
           <input type="checkbox" value="3"/>
           <span class="checkmark"></span>
-          Веб-приложение
+          {{$t('web_application')}}
         </label>
         <label class="custom-checkbox">
           <input type="checkbox" value="4"/>
           <span class="checkmark"></span>
-          Личный кабинет
+          {{$t('cabinet')}}
         </label>
         <label class="custom-checkbox">
           <input type="checkbox" value="4"/>
           <span class="checkmark"></span>
-          Мобильное приложение
+          {{$t('mobile_app_title')}}
         </label>
         <label class="custom-checkbox">
           <input type="checkbox" value="4"/>
           <span class="checkmark"></span>
-          Дизайн
+          {{$t('design')}}
         </label>
         <label class="custom-checkbox">
           <input type="checkbox" value="5"/>
           <span class="checkmark"></span>
-          Не знаю, нужна консультация
+          {{$t('not_found_answer')}}
         </label>
       </div>
     </div>

@@ -19,7 +19,7 @@ defineProps({
         {{ text }}
       </div>
     </div>
-    <Button label="Подробнее"
+    <Button :label="$t('learn_more')"
             color="fill"/>
   </div>
 </template>

@@ -8,27 +8,26 @@ import Button from "@/UI/Button.vue";
     <div class="quiz__counter"></div>
     <div class="quiz-end">
       <div class="quiz-end__question">
-        Осталось заполнить форму, и мы перезвоним вам в течение 15 минут в рабочее время,
-        чтобы проконсультировать и отправить расчёт стоимости
+        {{$t('quiz_end_title')}}
       </div>
       <div class="quiz-end__content">
         <div class="quiz-end__fields">
           <div class="quiz-end__field">
-            <label for="NAME">Имя</label>
+            <label for="NAME">{{$t('name')}}</label>
             <input type="text" name="your-name" id="NAME" placeholder="">
             <span class="quiz-end__error"></span>
           </div>
           <div class="quiz-end__field">
-            <label for="MAIL">Почта</label>
+            <label for="MAIL">{{$t('email')}}</label>
             <input type="text" name="your-mail" id="MAIL" placeholder="">
             <span class="quiz-end__error"></span>
           </div>
           <div class="quiz-end__field">
-            <label for="NUMBER">Телефон</label>
+            <label for="NUMBER">{{$t('phone')}}</label>
             <input type="text" name="your-phone" id="NUMBER" placeholder="">
             <span class="quiz-end__error"></span>
           </div>
-          <Button label="Отправить"
+          <Button :label="$t('submit')"
                   color="fill"/>
         </div>
       </div>

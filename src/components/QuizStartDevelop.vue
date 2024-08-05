@@ -8,19 +8,19 @@ const selectedOption = ref('');
   <div class="quiz__body">
     <div class="quiz__counter">4/5</div>
     <div class="quiz-start-dev">
-      <div class="quiz-start-dev__question">Когда планируете начать разработку?</div>
+      <div class="quiz-start-dev__question">{{$t('quiz_question_fourth')}}</div>
       <div class="quiz-start-dev__content">
         <label class="custom-radio-button">
           <input type="radio" name="quiz-start-dev" value="1" v-model="selectedOption">
-          <span class="quiz-start-dev__text">Чем раньше, тем лучше</span>
+          <span class="quiz-start-dev__text">{{$t('quiz_question_fourth_first')}}</span>
         </label>
         <label class="custom-radio-button">
           <input type="radio" name="quiz-start-dev" value="2" v-model="selectedOption">
-          <span class="quiz-start-dev__text">В течение двух месяцев</span>
+          <span class="quiz-start-dev__text">{{$t('quiz_question_fourth_second')}}</span>
         </label>
         <label class="custom-radio-button">
           <input type="radio" name="quiz-start-dev" value="3" v-model="selectedOption">
-          <span class="quiz-start-dev__text">В течение года</span>
+          <span class="quiz-start-dev__text">{{$t('quiz_question_fourth_third')}}</span>
         </label>
       </div>
     </div>

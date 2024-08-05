@@ -20,19 +20,18 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
           <div class="lead__content content-lead">
             <div class="content-lead__top">
               <h1 class="content-lead__heading">
-                Реализуем вашу <span>идею</span> <br>
-                в современное IT-решение
+                {{$t('lead_title_first')}} <span>{{$t('lead_title_span')}}</span> <br>
+                {{$t('lead_title_br')}}
               </h1>
               <div class="content-lead__description">
-                Создадим <span>продукт с нуля,</span> доработаем действующий и автоматизируем бизнес-процессы в вашей
-                компании
+                {{$t('lead_content_first')}} <span>{{$t('lead_content_span')}}</span> {{$t('lead_content_text')}}
               </div>
             </div>
             <div class="content-lead__bottom">
-              <Button label="Оставить заявку" color="fill"/>
-              <Button label="Рассчитать стоимость" color="stroke"/>
+              <Button :label="$t('request_quote')" color="fill"/>
+              <Button :label="$t('get_quote')" color="stroke"/>
               <div class="content-lead__bottom-clue">
-                Ответьте на 5 вопросов и получите расчет стоимости и рекомендации по разработке
+                {{$t('lead_sub_text')}}
               </div>
             </div>
           </div>
@@ -47,10 +46,10 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
         </div>
         <div class="lead__actions">
           <ul class="lead__additions">
-            <li>Анализ ваших задач</li>
-            <li>Соблюдение сроков</li>
-            <li>Поддержка продуктов</li>
-            <li>Команда профессионалов</li>
+            <li>{{$t('analyze')}}</li>
+            <li>{{$t('deadline')}}</li>
+            <li>{{$t('support')}}</li>
+            <li>{{$t('team')}}</li>
           </ul>
           <ul class="lead__socials">
             <li>

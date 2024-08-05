@@ -45,9 +45,8 @@ onMounted(() => {
   <section class="other-products">
     <div class="container">
       <div class="other-products__top">
-        <h2>Продукт уже есть?</h2>
-        <div class="other-products__desc">Проведем аудит продукта, составим план изменений и организуем разработку
-        </div>
+        <h2>{{$t('other_product_text')}}</h2>
+        <div class="other-products__desc">{{$t('other_product_desc')}}</div>
       </div>
     </div>
     <div class="other-products__wrapper">
@@ -57,46 +56,46 @@ onMounted(() => {
             <SplideSlide>
               <OtherProduct
                   number="01"
-                  title="Электронная коммерция (интернет-магазин)"
-                  subTitle="Разработка / Дизайн"
-                  text="Сделаем редизайн вашего текущего сайта. Превратим процесс оформления заказов в интуитивное и приятное приключение для ваших клиентов. Внедрим умные алгоритмы для подбора товаров, предлагая подходящие варианты. Обновим навигацию и сортировку для более легкого поиска товаров. Оптимизируем скорость загрузки страниц для получения мгновенного доступа к нужной информации."
+                  :title="$t('ecommerce_title')"
+                  :subTitle="$t('ecommerce_sub')"
+                  :text="$t('ecommerce_text')"
               />
             </SplideSlide>
             <SplideSlide>
               <OtherProduct
                   number="02"
-                  title="Мобильное приложение"
-                  subTitle="Разработка"
-                  text="Проведем необходимую оценку удобства интерфейса и пользовательского опыта. Предложим улучшения для упрощения навигации, увеличения скорости работы приложения и добавления новых функций, таких как системы рекомендаций или интеграции с платёжными системами."
+                  :title="$t('mobile_app_title')"
+                  :subTitle="$t('develop')"
+                  :text="$t('mobile_app_text')"
               />
             </SplideSlide>
             <SplideSlide>
               <OtherProduct
                   number="03"
-                  title="CRM-система"
-                  subTitle="Разработка"
-                  text="Анализ текущих процессов и пользовательского опыта. Мы поможем оптимизировать функциональность системы, улучшить пользовательский интерфейс, интегрировать дополнительные модули, такие как автоматизация маркетинга или аналитика продаж."
+                  :title="$t('crm_title')"
+                  :subTitle="$t('develop')"
+                  :text="$t('crm_text')"
               />
             </SplideSlide>
             <SplideSlide>
               <OtherProduct
                   number="04"
-                  title="Интеграция с внешними сервисами"
-                  subTitle="Разработка"
-                  text="Добавим интеграции с популярными внешними сервисами и платформами, такими как платежные системы, социальные сети и аналитические инструменты."
+                  :title="$t('api_title')"
+                  :subTitle="$t('develop')"
+                  :text="$t('api_text')"
               />
             </SplideSlide>
             <SplideSlide>
               <OtherProduct
                   number="05"
-                  title="Обновление дизайна"
-                  subTitle="Дизайн"
-                  text="Освежим визуальный стиль вашего продукта, делая его современным и привлекательным для пользователей."
+                  :title="$t('design_title')"
+                  :subTitle="$t('design')"
+                  :text="$t('design_text')"
               />
             </SplideSlide>
           </Splide>
         </div>
-        <Button label="Оставить заявку"
+        <Button :label="$t('request_quote')"
                 color="fill"/>
       </div>
     </div>
