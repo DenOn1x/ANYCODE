@@ -11,13 +11,12 @@
 </template>
 
 <script setup>
-import {ref, reactive} from 'vue';
 
 const menuItems = [
   {link: '/about', text: 'navigation.about'},
   {link: '/services', text: 'navigation.services'},
   {link: '/products', text: 'navigation.products'},
-  {link: '/vacancies', text: 'navigation.vacancies'},
+  {link: '/careers', text: 'navigation.vacancies'},
   {link: '/contacts', text: 'navigation.contacts'},
 ];
 

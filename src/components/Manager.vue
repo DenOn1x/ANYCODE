@@ -1,5 +1,8 @@
 <script setup>
-import {ref, onMounted} from 'vue';
+import { ref, onMounted } from 'vue';
+
+// Import the video using a relative path
+import videoSrc from '@/assets/images/anycode_example.mp4';
 
 const videoElement = ref(null);
 const playButton = ref(null);
@@ -9,7 +12,6 @@ const videoLoaded = ref(false);
 const loadVideo = () => {
   if (videoLoaded.value) return;
 
-  const videoSrc = videoElement.value.dataset.src;
   if (videoSrc) {
     const sourceElement = videoElement.value.querySelector('source');
     if (sourceElement && sourceElement.src !== videoSrc) {
@@ -57,11 +59,10 @@ onMounted(() => {
       <video
           class="manager__video-component"
           ref="videoElement"
-          data-src="/assets/images/anycode_example.mp4"
           muted
-
+          preload="none"
       >
-        <source src="" type="video/mp4"/>
+        <source src="" type="video/mp4" />
       </video>
       <button class="manager__play-button" ref="playButton" @click="handlePlay">
         <span></span>

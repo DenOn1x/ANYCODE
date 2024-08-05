@@ -1,5 +1,6 @@
 <script setup>
-import {ref, getCurrentInstance, onMounted, onUnmounted, computed} from 'vue';
+import {ref, getCurrentInstance, onMounted, onUnmounted, computed, watch} from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import icChevron from "@/assets/images/svg/ic_chevron.svg?url";
 
 const options = [
@@ -9,6 +10,8 @@ const options = [
 
 const selectedLanguage = ref(options[0].label);
 const isOpen = ref(false);
+const route = useRoute();
+const router = useRouter();
 const instance = getCurrentInstance();
 
 const selectOption = (option) => {
@@ -22,8 +25,13 @@ const toggleDropdown = () => {
 };
 
 const changeLanguage = (locale) => {
-  instance.proxy.$i18n.locale = locale;
-  instance.proxy.$router.push({path: `/${locale}`});
+  const { $i18n, $router, $route } = instance.proxy;
+  const currentFullPath = $route.fullPath;
+  const pathParts = currentFullPath.split('/');
+  const [, , ...rest] = pathParts;
+  const newPath = `/${locale}${rest.length ? '/' + rest.join('/') : ''}`.replace(/\/+$/, '');
+  $i18n.locale = locale;
+  $router.push({ path: newPath });
 };
 
 const handleClickOutside = (event) => {
@@ -31,6 +39,18 @@ const handleClickOutside = (event) => {
     isOpen.value = false;
   }
 };
+
+watch(
+    () => route.path,
+    (newPath) => {
+      const currentLanguage = newPath.split('/')[1];
+      const matchingOption = options.find(option => option.value === currentLanguage);
+      if (matchingOption) {
+        selectedLanguage.value = matchingOption.label;
+      }
+    },
+    { immediate: true }
+);
 
 onMounted(() => {
   document.addEventListener('click', handleClickOutside);
