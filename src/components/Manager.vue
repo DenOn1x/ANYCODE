@@ -57,7 +57,7 @@ onMounted(() => {
       <video
           class="manager__video-component"
           ref="videoElement"
-          data-src="/src/assets/images/anycode_example.mp4"
+          data-src="/assets/images/anycode_example.mp4"
           muted
 
       >
