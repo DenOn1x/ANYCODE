@@ -7,8 +7,6 @@ import personDeveloperF from "@/assets/images/team/person-developer-f.png?url";
 import personDeveloperB from "@/assets/images/team/person-developer-b.png?url";
 import personProj from "@/assets/images/team/person-project.png?url";
 import personMarketingG from "@/assets/images/team/person-mark-g.png?url";
-// import personMarketing from "@/assets/images/team/person-mark.png?url";
-// import personSale from "@/assets/images/team/person-sale.png?url";
 import personDesigner from "@/assets/images/team/person-designer.png?url";
 
 

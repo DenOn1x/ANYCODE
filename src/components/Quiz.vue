@@ -64,7 +64,6 @@ onMounted(() => {
 </script>
 
 <template>
-
   <section class="quiz">
     <div class="container">
       <div class="quiz__top">
@@ -302,6 +301,9 @@ onMounted(() => {
     @media screen and (min-width: 991.98px) {
       border-radius: 40px;
     }
+    @media screen and (min-width: 1199.98px) {
+      flex: 1;
+    }
   }
 
   &__title {
@@ -364,55 +366,45 @@ onMounted(() => {
 
 ::v-deep .splide {
   &__slide {
-
   }
 
-  &__arrow {
-    top: initial;
-    bottom: 0;
-    border-radius: 10px;
-    width: initial;
-    height: initial;
-    transform: initial;
-    padding: 15px 20px;
-    background: #7470ff;
-    opacity: 1;
-
-    &:disabled {
-      opacity: .1;
-    }
-
-    svg {
-      display: none;
-    }
+  .splide__track {
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    transition: height 0.5s ease-in-out;
   }
 
-  &__arrow--prev {
+  .splide__track--fade > .splide__list {
+    display: block;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .splide__track--fade > .splide__list > .splide__slide {
+    opacity: 0;
+    position: absolute;
+    top: 0;
     left: 0;
-
-    &:before {
-      content: 'Назад';
-      font-family: 'Inter';
-      color: #070707;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 124%;
-    }
+    z-index: 0;
   }
 
-  &__arrow--next {
-    right: 0;
-
-    &:before {
-      content: 'Вперед';
-      font-family: 'Inter';
-      color: #070707;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 124%;
-    }
+  .splide__track--fade > .splide__list > .splide__slide.is-active {
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+    transform: translateX(0) !important;
   }
 }
 
+@keyframes fadeHeight {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    height: auto;
+    opacity: 1;
+  }
+}
 
 </style>

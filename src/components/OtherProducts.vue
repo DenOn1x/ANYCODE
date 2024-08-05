@@ -6,13 +6,13 @@ import Button from "@/UI/Button.vue";
 import {onMounted, ref} from "vue";
 
 const splideOptions = {
-  type: 'loop',
+  type: 'slide',
   fixedWidth: '80%',
   gap: 20,
   perMove: 1,
   arrows: false,
   pagination: true,
-  updateOnMove: true,
+  updateOnMove: false,
   mediaQuery: 'min',
   breakpoints: {
     767.98: {
@@ -40,6 +40,8 @@ onMounted(() => {
 </script>
 
 <template>
+  <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">-->
+
   <section class="other-products">
     <div class="container">
       <div class="other-products__top">
