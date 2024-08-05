@@ -6,23 +6,23 @@
   <section class="statistics">
     <div class="statistics__wrapper">
       <div class="container">
-        <h2>Anycode в цифрах</h2>
+        <h2>{{$t('anycode_numbers')}}</h2>
         <div class="statistics__content">
           <div class="statistics__item">
-            <div class="statistics__counter"><span>5</span> лет</div>
-            <div class="statistics__text">средний стаж сотрудников</div>
+            <div class="statistics__counter"><span>5</span> {{$t('years')}}</div>
+            <div class="statistics__text">{{$t('average_employee')}}</div>
           </div>
           <div class="statistics__item">
             <div class="statistics__counter"><span><10</span></div>
-            <div class="statistics__text">поддерживаемых проектов</div>
+            <div class="statistics__text">{{$t('support_project')}}</div>
           </div>
           <div class="statistics__item">
             <div class="statistics__counter"><span><250 000</span> $</div>
-            <div class="statistics__text">выручка за 2023 год</div>
+            <div class="statistics__text">{{$t('revenue')}}</div>
           </div>
           <div class="statistics__item">
-            <div class="statistics__counter"><span>32</span> проекта</div>
-            <div class="statistics__text">выполнено за 1 год</div>
+            <div class="statistics__counter"><span>32</span> {{$t('projects')}}</div>
+            <div class="statistics__text">{{$t('completed')}}</div>
           </div>
         </div>
       </div>

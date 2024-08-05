@@ -31,21 +31,21 @@ const toggleList = (listName) => {
 
 const footerItems = [
   {
-    title: "Меню",
+    title: "navigation.menu",
     content: "menu",
     component: Navbar,
     isList: false,
   },
   {
-    title: "Услуги",
+    title: "navigation.services",
     content: "services",
     items: [
-      "Разработка ПО",
-      "Продуктовая разработка",
-      "Веб-разработка",
-      "Разработка и расширение Crm/Erp систем.",
-      "Мобильная разработка",
-      "UX/UI дизайн",
+      "services_technology.services_develop",
+      "services_technology.services_product",
+      "services_technology.services_web",
+      "services_technology.services_crm",
+      "services_technology.services_mobile",
+      "services_technology.services_design",
     ],
     isList: true,
   },
@@ -64,8 +64,8 @@ const contactInfo = [
     href: "tel:+11111111111",
   },
   {
-    value: "test@gmail.com",
-    href: "mailto:test@gmail.com",
+    value: "anycode.it@gmail.com",
+    href: "mailto:anycode.it@gmail.com",
   },
   {
     value: "anycodesupport@gmail.com",
@@ -87,8 +87,7 @@ const contactInfo = [
               </router-link>
             </div>
             <div class="footer__about">
-              Разработка инновационных цифровых решений, обеспечивающих высокое качество и эффективные результаты для
-              вашего бизнеса.
+              {{$t('footer_about')}}
             </div>
             <ul class="footer__socials">
               <li v-for="link in socialLinks" :key="link.src">
@@ -101,7 +100,7 @@ const contactInfo = [
           <div class="footer__content">
             <div v-for="item in footerItems" :key="item.title" class="footer__col">
               <div class="title-box">
-                <div class="title">{{ item.title }}</div>
+                <div class="title">{{ $t(item.title) }}</div>
                 <img
                     v-if="isMobile"
                     :src="icChevron"
@@ -116,14 +115,14 @@ const contactInfo = [
                   <component :is="item.component" v-if="!item.isList"/>
                   <ul v-if="item.isList">
                     <li v-for="service in item.items" :key="service">
-                      <a href="#">{{ service }}</a>
+                      <a href="#">{{ $t(service) }}</a>
                     </li>
                   </ul>
                 </div>
               </transition>
             </div>
             <div class="footer__col footer-col-addition">
-              <div class="title">Контакты</div>
+              <div class="title">{{$t('navigation.contacts')}}</div>
               <div class="footer-col-addition__content">
                 <div
                     v-for="info in contactInfo"
@@ -138,7 +137,7 @@ const contactInfo = [
           </div>
         </div>
         <div class="footer__bottom">
-          <a href="#">Политика конфиденциальности</a>
+          <a href="#">{{$t('privacy_policy')}}</a>
         </div>
       </div>
     </div>

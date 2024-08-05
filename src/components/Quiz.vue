@@ -67,12 +67,12 @@ onMounted(() => {
   <section class="quiz">
     <div class="container">
       <div class="quiz__top">
-        <h2>Узнайте стоимость проекта за минуту</h2>
-        <div class="quiz__desc">Подберём лучшие технологии под ваш продукт и задачи</div>
+        <h2>{{$t('quiz_top')}}</h2>
+        <div class="quiz__desc">{{$t('quiz_desc')}}</div>
       </div>
       <div class="quiz__wrapper">
         <div class="quiz__form">
-          <div class="quiz__title">Ответьте на вопросы и получите расчёт стоимости проекта</div>
+          <div class="quiz__title">{{$t('quiz_title')}}</div>
           <form action="#" method="POST" class="quiz__cards">
             <Splide ref="splideRef" :options="splideOptions" data-slider="quiz" aria-label="">
               <SplideSlide>
@@ -103,14 +103,14 @@ onMounted(() => {
                   type="button"
                   class="quiz__custom-prev"
                   @click="goPrev"
-              >Назад
+              >{{$t('back')}}
               </button>
               <button
                   v-if="currentSlide < totalSlides - 1"
                   type="button"
                   class="quiz__custom-next"
                   @click="goNext"
-              >Вперед
+              >{{$t('next')}}
               </button>
             </div>
           </form>

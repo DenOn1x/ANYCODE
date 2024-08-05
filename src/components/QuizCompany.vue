@@ -10,52 +10,52 @@ const selectedOption = ref('');
   <div class="quiz__body">
     <div class="quiz__counter">5/5</div>
     <div class="quiz-company">
-      <div class="quiz-company__question">И последний вопрос — какую компанию вы представляете?</div>
+      <div class="quiz-company__question">{{$t('quiz_question_fifth')}}</div>
       <div class="quiz-company__content">
         <label class="custom-radio-button">
           <input type="radio" name="quiz-company" value="1" v-model="selectedOption">
-          <span class="quiz-company__text">Недвижимость</span>
+          <span class="quiz-company__text">{{$t('state')}}</span>
         </label>
         <label class="custom-radio-button">
           <input type="radio" name="quiz-company" value="2" v-model="selectedOption">
-          <span class="quiz-company__text">Банк и финансы</span>
+          <span class="quiz-company__text">{{$t('bank')}}</span>
         </label>
         <label class="custom-radio-button">
           <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">Туризм</span>
+          <span class="quiz-company__text">{{$t('tourism')}}</span>
         </label>
 
         <label class="custom-radio-button">
           <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">Ритейл</span>
+          <span class="quiz-company__text">{{$t('retail')}}</span>
         </label>
         <label class="custom-radio-button">
           <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">Медицина</span>
+          <span class="quiz-company__text">{{$t('medicine')}}</span>
         </label>
         <label class="custom-radio-button">
           <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">Образование</span>
+          <span class="quiz-company__text">{{$t('education')}}</span>
         </label>
         <label class="custom-radio-button">
           <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">Стартап</span>
+          <span class="quiz-company__text">{{$t('startup')}}</span>
         </label>
         <label class="custom-radio-button">
           <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">Медиа и развлечения</span>
+          <span class="quiz-company__text">{{$t('media')}}</span>
         </label>
         <label class="custom-radio-button">
           <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">Гостинично-ресторанный бизнес</span>
+          <span class="quiz-company__text">{{$t('hospitality')}}</span>
         </label>
         <label class="custom-radio-button">
           <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">Я частное лицо</span>
+          <span class="quiz-company__text">{{$t('private')}}</span>
         </label>
         <label class="custom-radio-button">
           <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">Другое</span>
+          <span class="quiz-company__text">{{$t('other')}}</span>
         </label>
       </div>
     </div>

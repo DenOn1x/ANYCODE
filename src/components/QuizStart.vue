@@ -18,21 +18,21 @@ const selectOption = (option) => {
   <div class="quiz__body">
     <div class="quiz__counter">1/5</div>
     <div class="quiz-start">
-      <div class="quiz-start__question">У вас уже есть продукт?</div>
+      <div class="quiz-start__question">{{$t('quiz_question_first')}}</div>
       <div class="quiz-start__content">
         <label class="custom-radio-button">
           <input type="radio" name="quiz-product" value="1" v-model="selectedOption">
           <span class="custom-radio-button__img">
             <img :src="ic_checkProjectDev" alt="ic_checkProjectDev"/>
           </span>
-          <span class="quiz-start__text">Нет, нужна разработка с нуля</span>
+          <span class="quiz-start__text">{{$t('quiz_answer_first')}}</span>
         </label>
         <label class="custom-radio-button">
           <input type="radio" name="quiz-product" value="2" v-model="selectedOption">
           <span class="custom-radio-button__img">
             <img :src="ic_checkProject" alt="ic_checkProject"/>
           </span>
-          <span class="quiz-start__text">Да, нужна доработка</span>
+          <span class="quiz-start__text">{{$t('quiz_answer_first_variant')}}</span>
         </label>
       </div>
     </div>

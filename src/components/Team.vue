@@ -12,39 +12,39 @@ import personDesigner from "@/assets/images/team/person-designer.png?url";
 
 const teamMembers = [
   {
-    title: "Павел",
+    title: "team_block.pavel",
     role: "Frontend developer",
-    desc: "Мастер фронтенд-разработки с богатым опытом в создании пользовательских интерфейсов, Павел отличается гибкостью и умением адаптироваться. Его целеустремленность и инициативность ведут к успешным результатам.",
+    desc: "team_block.pavel_role",
     imgSrc: personDevelop,
   },
   {
-    title: "Антон",
+    title: "team_block.anton",
     role: "Backend developer",
-    desc: "Специалист с более чем 10-летним стажем и глубокими познаниями в архитектуре серверных систем. Его опыт и экспертиза обеспечивают разработку инновационных решений, повышающих производительность и безопасность проектов.",
+    desc: "team_block.anton_role",
     imgSrc: personDeveloperF,
   },
   {
-    title: "Максим",
+    title: "team_block.maxim",
     role: "Frontend developer",
-    desc: "Эксперт в области фронтенд-разработки. Его глубокое внимание к пользовательскому опыту и умение эффективно решать сложные задачи способствуют успешной реализации проектов, которые превосходят ожидания клиентов.",
+    desc: "team_block.maxim_role",
     imgSrc: personDeveloperB,
   },
   {
-    title: "Александ",
+    title: "team_block.alex",
     role: "Backend developer",
-    desc: "Эксперт в области разработки серверных решений с акцентом на масштабируемость и производительность. Его аналитический подход и навыки позволяют успешно решать сложные задачи и обеспечивать надежность систем.",
+    desc: "team_block.alex_role",
     imgSrc: personProj,
   },
   {
-    title: "Екатерина",
+    title: "team_block.kate",
     role: "UI/UX designer",
-    desc: "Опытный дизайнер Екатерина отличается своим вниманием к деталям и креативностью. Она создает визуальные решения, которые привлекают и удерживают внимание, всегда учитывая индивидуальные потребности каждого клиента.",
+    desc: "team_block.kate_role",
     imgSrc: personMarketingG,
   },
   {
-    title: "Александра",
+    title: "team_block.alexandra",
     role: "IOS developer",
-    desc: "Специалист по разработке iOS-приложений, известная своим вниманием к пользовательскому опыту и инновационным подходом. Она создаёт приложения, которые не только функциональны, но и приятны в использовании.",
+    desc: "team_block.alexandra_role",
     imgSrc: personDesigner,
   },
 ];
@@ -56,8 +56,8 @@ const teamMembers = [
   <section class="our-team">
     <div class="container">
       <div class="our-team__top">
-        <h2>В чем сила?</h2>
-        <div class="desc">Наша команда - это сердце и душа вашего проекта.</div>
+        <h2>{{$t('team_top_text')}}</h2>
+        <div class="desc">{{$t('team_top_desc')}}</div>
       </div>
     </div>
     <div class="our-team__wrapper">
@@ -65,10 +65,10 @@ const teamMembers = [
         <div class="our-team__body">
           <TeamItem
               v-for="member in teamMembers"
-              :key="member.title"
-              :title="member.title"
+              :key="$t(member.title)"
+              :title="$t(member.title)"
               :role="member.role"
-              :desc="member.desc"
+              :desc="$t(member.desc)"
               :imgSrc="member.imgSrc"
           />
 

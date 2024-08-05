@@ -83,7 +83,7 @@ watch(is_expanded, (newValue) => {
                     </a>
                   </li>
                 </ul>
-                <Button label="Оставить заявку"
+                <Button :label="$t('request_quote')"
                         color="stroke"/>
               </div>
             </div>
@@ -91,8 +91,9 @@ watch(is_expanded, (newValue) => {
         </div>
         <div class="header__actions">
           <MultilangSelect/>
-          <Button label="Заказать звонок"
-                  color="stroke"/>
+          <Button
+              :label="$t('request_call')"
+              color="stroke"/>
           <a href="tel:" class="header__phone phone--md"></a>
         </div>
       </div>
