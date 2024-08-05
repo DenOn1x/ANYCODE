@@ -6,7 +6,7 @@ import Button from "@/UI/Button.vue";
 import {onMounted, ref} from "vue";
 
 const splideOptions = {
-  type: 'slide',
+  type: 'loop',
   fixedWidth: '80%',
   gap: 20,
   perMove: 1,
