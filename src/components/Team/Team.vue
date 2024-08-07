@@ -1,5 +1,5 @@
 <script setup>
-import TeamItem from "@/components/TeamItem.vue";
+import TeamItem from "@/components/Team/TeamItem.vue";
 import Button from "@/UI/Button.vue";
 
 import personDevelop from "@/assets/images/team/person-develop.png?url";
@@ -56,8 +56,8 @@ const teamMembers = [
   <section class="our-team">
     <div class="container">
       <div class="our-team__top">
-        <h2>{{$t('team_top_text')}}</h2>
-        <div class="desc">{{$t('team_top_desc')}}</div>
+        <h2>{{ $t('team_top_text') }}</h2>
+        <div class="desc">{{ $t('team_top_desc') }}</div>
       </div>
     </div>
     <div class="our-team__wrapper">
@@ -73,6 +73,8 @@ const teamMembers = [
           />
 
         </div>
+        <Button :label="$t('request_quote')"
+                color="fill"/>
       </div>
     </div>
   </section>
@@ -147,8 +149,17 @@ const teamMembers = [
     @media screen and (min-width: 991.98px) {
       grid-template-columns: repeat(2, 1fr);
     }
-    @media screen and (min-width: 1199.98px) {
+    @media screen and (min-width: 1439.98px) {
       grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .btn-fill {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto 0;
+    @media screen and (min-width: 991.98px) {
+      margin: 60px auto 0;
     }
   }
 }

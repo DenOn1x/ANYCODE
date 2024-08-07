@@ -1,6 +1,6 @@
 <script setup>
 
-import ServicesCard from "@/components/ServicesCard.vue";
+import ServicesCard from "@/components/Services/ServicesCard.vue";
 </script>
 
 <template>
