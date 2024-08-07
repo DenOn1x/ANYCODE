@@ -34,16 +34,6 @@ const socialLinks = [
         <div class="content-team__role">{{ role }}</div>
         <div class="content-team__desc">{{ desc }}</div>
       </div>
-      <div class="content-team__bottom">
-        <div class="content-team__call-txt">{{$t('contact_us')}}</div>
-        <ul class="content-team__socials">
-          <li v-for="link in socialLinks" :key="link.src">
-            <a :href="link.href">
-              <img :src="link.src" alt=""/>
-            </a>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 </template>
@@ -123,6 +113,7 @@ const socialLinks = [
 
     &__top {
       display: grid;
+      gap: 12px;
     }
 
     &__title {
@@ -130,11 +121,6 @@ const socialLinks = [
       font-weight: 700;
       line-height: 132%;
       color: #FFF;
-      @media screen and (min-width: 1439.98px) {
-        position: absolute;
-        left: 24px;
-        top: 24px;
-      }
     }
 
     &__role {
@@ -142,12 +128,7 @@ const socialLinks = [
       font-weight: 400;
       line-height: 132%;
       color: #7470ff;
-      margin-top: 5px;
-      @media screen and (min-width: 1439.98px) {
-        position: absolute;
-        left: 24px;
-        top: 48px;
-      }
+      margin-top: -10px;
     }
 
     &__desc {

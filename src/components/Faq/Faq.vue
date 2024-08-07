@@ -1,6 +1,6 @@
 <script setup>
 
-import Accordion from "@/components/Accordion.vue";
+import Accordion from "@/components/Faq/Accordion.vue";
 
 
 </script>

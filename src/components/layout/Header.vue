@@ -10,8 +10,11 @@ import Button from "@/UI/Button.vue";
 import MultilangSelect from "@/UI/MultilangSelect.vue";
 
 import Navbar from "@/components/Navbar.vue";
+import Modal from "@/components/Modals/Modal.vue";
+import ModalCall from "@/components/Modals/ModalCall.vue";
 
 const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
+const showModalCall = ref(false);
 
 const toggleMenu = () => {
   is_expanded.value = !is_expanded.value
@@ -93,7 +96,9 @@ watch(is_expanded, (newValue) => {
           <MultilangSelect/>
           <Button
               :label="$t('request_call')"
-              color="stroke"/>
+              color="stroke"
+              @click="showModalCall = true"
+          />
           <a href="tel:" class="header__phone phone--md"></a>
         </div>
       </div>
@@ -103,6 +108,10 @@ watch(is_expanded, (newValue) => {
       :class="`overlay ${is_expanded ? 'is-expanded' : ''}`"
       @click="closeMenu"
   ></div>
+
+  <Modal v-model="showModalCall" modalClass="modal-quote">
+    <ModalCall/>
+  </Modal>
 </template>
 
 

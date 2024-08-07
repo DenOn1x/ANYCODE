@@ -1,5 +1,5 @@
 <script setup>
-import {onMounted} from 'vue';
+import {ref} from 'vue';
 import Button from "@/UI/Button.vue";
 import anycodeImg from "@/assets/images/tt1.png";
 import IconChevronHelp from "@/assets/images/svg/ic_chevron_help.svg?url";
@@ -7,7 +7,13 @@ import ic_fb from '@/assets/images/svg/ic_fb.svg?url'
 import ic_tg from '@/assets/images/svg/ic_tg.svg?url'
 import ic_inst from '@/assets/images/svg/ic_inst.svg?url'
 import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
+import Modal from '@/components/Modals/Modal.vue';
+import QuizForm from "@/components/Quiz/QuizForm.vue";
+import ModalQuote from "@/components/Modals/ModalQuote.vue";
 
+
+const showModalQuiz = ref(false);
+const showModalForm = ref(false);
 
 </script>
 
@@ -20,18 +26,18 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
           <div class="lead__content content-lead">
             <div class="content-lead__top">
               <h1 class="content-lead__heading">
-                {{$t('lead_title_first')}} <span>{{$t('lead_title_span')}}</span> <br>
-                {{$t('lead_title_br')}}
+                {{ $t('lead_title_first') }} <span>{{ $t('lead_title_span') }}</span> <br>
+                {{ $t('lead_title_br') }}
               </h1>
               <div class="content-lead__description">
-                {{$t('lead_content_first')}} <span>{{$t('lead_content_span')}}</span> {{$t('lead_content_text')}}
+                {{ $t('lead_content_first') }} <span>{{ $t('lead_content_span') }}</span> {{ $t('lead_content_text') }}
               </div>
             </div>
             <div class="content-lead__bottom">
-              <Button :label="$t('request_quote')" color="fill"/>
-              <Button :label="$t('get_quote')" color="stroke"/>
+              <Button :label="$t('request_quote')" color="fill" @click="showModalForm = true"/>
+              <Button :label="$t('get_quote')" color="stroke" @click="showModalQuiz = true"/>
               <div class="content-lead__bottom-clue">
-                {{$t('lead_sub_text')}}
+                {{ $t('lead_sub_text') }}
               </div>
             </div>
           </div>
@@ -46,10 +52,10 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
         </div>
         <div class="lead__actions">
           <ul class="lead__additions">
-            <li>{{$t('analyze')}}</li>
-            <li>{{$t('deadline')}}</li>
-            <li>{{$t('support')}}</li>
-            <li>{{$t('team')}}</li>
+            <li>{{ $t('analyze') }}</li>
+            <li>{{ $t('deadline') }}</li>
+            <li>{{ $t('support') }}</li>
+            <li>{{ $t('team') }}</li>
           </ul>
           <ul class="lead__socials">
             <li>
@@ -78,10 +84,26 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
     </div>
   </section>
 
+  <Modal v-model="showModalQuiz" modalClass="modal-quiz">
+    <QuizForm/>
+  </Modal>
+
+  <Modal v-model="showModalForm" modalClass="modal-quote">
+    <ModalQuote/>
+  </Modal>
 
 </template>
 
 <style lang="scss" scoped>
+.modal-content {
+  .quiz__form {
+    box-shadow: none;
+    border-radius: 0;
+    @media screen and (min-width: 991.98px) {
+      padding: 48px 24px;
+    }
+  }
+}
 
 .lead {
   position: relative;
@@ -91,7 +113,7 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
   background: #c7ced1;
   max-width: 90%;
   margin: 10px auto 0;
-  @media screen and (min-width: 991.98px){
+  @media screen and (min-width: 991.98px) {
     border-radius: 40px;
   }
 
@@ -140,7 +162,7 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
     }
 
     &__heading {
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 400;
       line-height: 148%;
       color: #070707;
@@ -169,7 +191,7 @@ import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
     }
 
     &__description {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 400;
       line-height: 142%;
       color: #070707;

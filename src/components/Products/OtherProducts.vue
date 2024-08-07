@@ -1,5 +1,5 @@
 <script setup>
-import OtherProduct from "@/components/OtherProduct.vue";
+import OtherProduct from "@/components/Products/OtherProduct.vue";
 import {Splide, SplideSlide} from "@splidejs/vue-splide";
 import '@splidejs/vue-splide/css';
 import Button from "@/UI/Button.vue";

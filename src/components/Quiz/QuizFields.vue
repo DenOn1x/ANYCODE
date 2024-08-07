@@ -63,7 +63,7 @@ import Button from "@/UI/Button.vue";
 
     input {
       width: 100%;
-      padding: 12px 16px;
+      padding: 12px 0;
       border: none;
       border-bottom: 1px solid rgba(255, 255, 255, 0.7);
       background: none;

@@ -1,12 +1,12 @@
 <script setup>
 import Lead from "@/components/Lead.vue";
-import Services from "@/components/Services.vue";
-import OtherProducts from "@/components/OtherProducts.vue";
-import Team from "@/components/Team.vue";
-import Quiz from "@/components/Quiz.vue";
+import Services from "@/components/Services/Services.vue";
+import OtherProducts from "@/components/Products/OtherProducts.vue";
+import Team from "@/components/Team/Team.vue";
+import Quiz from "@/components/Quiz/Quiz.vue";
 import Technologies from "@/components/Technologies.vue";
 import Statistics from "@/components/Statistics.vue";
-import Faq from "@/components/Faq.vue";
+import Faq from "@/components/Faq/Faq.vue";
 import Manager from "@/components/Manager.vue";
 
 </script>
