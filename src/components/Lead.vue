@@ -162,7 +162,7 @@ const showModalForm = ref(false);
     }
 
     &__heading {
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 400;
       line-height: 148%;
       color: #070707;
@@ -191,7 +191,7 @@ const showModalForm = ref(false);
     }
 
     &__description {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 400;
       line-height: 142%;
       color: #070707;

@@ -13,11 +13,11 @@
             <div class="statistics__text">{{$t('average_employee')}}</div>
           </div>
           <div class="statistics__item">
-            <div class="statistics__counter"><span><10</span></div>
+            <div class="statistics__counter"><span>>10</span></div>
             <div class="statistics__text">{{$t('support_project')}}</div>
           </div>
           <div class="statistics__item">
-            <div class="statistics__counter"><span><250 000</span> $</div>
+            <div class="statistics__counter"><span>>250 000</span> $</div>
             <div class="statistics__text">{{$t('revenue')}}</div>
           </div>
           <div class="statistics__item">
