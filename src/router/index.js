@@ -7,6 +7,17 @@ import Contacts from "@/views/Contacts.vue";
 import Products from "@/views/Products.vue";
 import Services from "@/views/Services.vue";
 import Careers from "@/views/Careers.vue";
+import SoftwareDevelopment from "@/views/services/SoftwareDevelopment.vue";
+import ProductDevelopment from "@/views/services/ProductDevelopment.vue";
+import WebDevelopment from "@/views/services/WebDevelopment.vue";
+import CrmErpDevelopment from "@/views/services/CrmErpDevelopment.vue";
+import MobileAppDevelopment from "@/views/services/MobileAppDevelopment.vue";
+import UxUiDesign from "@/views/services/UxUiDesign.vue";
+import NotFound from "@/views/NotFound.vue";
+import AndroidDeveloper from "@/views/careers/AndroidDeveloper.vue";
+import SalesManager from "@/views/careers/SalesManager.vue";
+import BaCrm from "@/views/careers/BaCrm.vue";
+import PythonDeveloper from "@/views/careers/PythonDeveloper.vue";
 
 const routes = [
     {
@@ -41,7 +52,39 @@ const routes = [
         path: "/:lang(en|ru)?/services",
         name: "services",
         component: Services,
-        meta: {}
+        meta: {},
+        children: [
+            {
+                path: "software-development",
+                name: "software-development",
+                component: SoftwareDevelopment
+            },
+            {
+                path: "product-development",
+                name: "product-development",
+                component: ProductDevelopment
+            },
+            {
+                path: "web-development",
+                name: "web-development",
+                component: WebDevelopment
+            },
+            {
+                path: "crm-erp-development",
+                name: "crm-erp-development",
+                component: CrmErpDevelopment
+            },
+            {
+                path: "mobile-app-development",
+                name: "mobile-app-development",
+                component: MobileAppDevelopment
+            },
+            {
+                path: "ux-ui-design",
+                name: "ux-ui-design",
+                component: UxUiDesign
+            }
+        ]
     },
     {
         path: "/:lang(en|ru)?/products",
@@ -53,9 +96,30 @@ const routes = [
         path: "/:lang(en|ru)?/careers",
         name: "careers",
         component: Careers,
-        meta: {}
+        meta: {},
+        children: [
+            {
+                path: "android-developer",
+                name: "android-developer",
+                component: AndroidDeveloper
+            },
+            {
+                path: "sales-manager",
+                name: "sales-manager",
+                component: SalesManager
+            },
+            {
+                path: "ba-crm",
+                name: "ba-crm",
+                component: BaCrm
+            },
+            {
+                path: "python-developer",
+                name: "python-developer",
+                component: PythonDeveloper
+            },
+        ]
     },
-    // Redirects for paths without language prefix
     {
         path: "/about",
         redirect: (to) => `/${i18n.global.locale}/about`
@@ -75,6 +139,11 @@ const routes = [
     {
         path: "/careers",
         redirect: (to) => `/${i18n.global.locale}/careers`
+    },
+    {
+        path: "/:pathMatch(.*)*",
+        name: "NotFound",
+        component: NotFound,
     }
 ];
 
@@ -83,7 +152,6 @@ const router = createRouter({
     routes
 });
 
-// Global navigation guard for handling language
 router.beforeEach((to, from, next) => {
     if (!to.params.lang) {
         return next(`/${i18n.global.locale}${to.path}`);
