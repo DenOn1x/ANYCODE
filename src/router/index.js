@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import {createRouter, createWebHistory} from "vue-router";
 import i18n from "@/i18n/i18n.js";
 
 import Index from "@/views/Index.vue";
@@ -27,6 +27,7 @@ const routes = [
     {
         path: "/:lang(en|ru)?",
         component: Index,
+        meta: {},
         beforeEnter: (to, from, next) => {
             const lang = to.params.lang || i18n.global.locale;
             if (!["en", "ru"].includes(lang)) return next("/en");
@@ -117,7 +118,7 @@ const routes = [
                 path: "python-developer",
                 name: "python-developer",
                 component: PythonDeveloper
-            },
+            }
         ]
     },
     {
@@ -143,7 +144,7 @@ const routes = [
     {
         path: "/:pathMatch(.*)*",
         name: "NotFound",
-        component: NotFound,
+        component: NotFound
     }
 ];
 

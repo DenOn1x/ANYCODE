@@ -7,7 +7,7 @@ import FormCareer from "@/components/FormCareer.vue";
 </script>
 
 <template>
-  <section class="careers-request">
+  <section class="careers-request" id="career-job">
     <div class="container">
       <div class="careers-request__top">
         <h2>Хотите работать с нами?</h2>

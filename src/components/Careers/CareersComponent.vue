@@ -1,6 +1,39 @@
 <script setup>
+import {defineProps} from 'vue';
+import {useRouter} from 'vue-router';
+import anycodeCareers from '@/assets/images/anycode-careers.png';
 
-import anycodeCareers from "@/assets/images/anycode-careers.png";
+const props = defineProps({
+  jobs: {
+    type: Array,
+    default: () => [
+      {
+        title: 'Android инженер',
+        location: 'Офис, Удаленная работа',
+        type: 'Middle, Полный рабочий день',
+        link: '/careers/android-developer',
+      },
+      {
+        title: 'Бэкенд инженер Python CRM',
+        location: 'Офис, Удаленная работа',
+        type: 'Junior, Middle, Полный рабочий день',
+        link: '/careers/ba-crm',
+      },
+      {
+        title: 'Бэкенд инженер Python',
+        location: 'Офис, Удаленная работа',
+        type: 'Junior, Middle, Полный рабочий день',
+        link: '/careers/python-developer',
+      },
+      {
+        title: 'Sales manager',
+        location: 'Офис, Удаленная работа',
+        type: 'Middle, Полный рабочий день',
+        link: '/careers/sales-manager',
+      }
+    ],
+  }
+});
 </script>
 
 <template>
@@ -8,7 +41,8 @@ import anycodeCareers from "@/assets/images/anycode-careers.png";
     <div class="container">
       <div class="careers__top">
         <h1>Вакансии компании ANYCODE</h1>
-        <div class="careers__sub-title">Мы приглашаем вас присоединиться к нам и стать частью этого увлекательного
+        <div class="careers__sub-title">
+          Мы приглашаем вас присоединиться к нам и стать частью этого увлекательного
           путешествия, где инновации и творчество находятся в центре всего, что мы делаем. Познакомьтесь с нашими
           вакансиями и возможностью внести свой вклад в создание будущего с нами.
         </div>
@@ -21,51 +55,28 @@ import anycodeCareers from "@/assets/images/anycode-careers.png";
         </div>
 
         <div class="careers__cards">
-
-          <div class="careers__card">
+          <div v-for="(job, index) in props.jobs" :key="index" class="careers__card">
             <div class="careers__card-top">
-              <div class="careers__card-top-title">Бэкенд инженер NodeJS</div>
-              <div class="careers__card-top-loc">Офис, Удаленная работа</div>
+              <div class="careers__card-top-title">{{ job.title }}</div>
+              <div class="careers__card-top-loc">{{ job.location }}</div>
             </div>
             <div class="careers__card-bottom">
-              <div class="careers__card-bottom-who">Middle, Полный рабочий день</div>
-              <a href="#" class="careers__card-bottom-link">Подробнее</a>
+              <div class="careers__card-bottom-who">{{ job.type }}</div>
+              <router-link :to="job.link" class="careers__card-bottom-link">Подробнее</router-link>
             </div>
           </div>
-
-          <div class="careers__card">
-            <div class="careers__card-top">
-              <div class="careers__card-top-title">Бэкенд инженер Python</div>
-              <div class="careers__card-top-loc">Офис, Удаленная работа</div>
-            </div>
-            <div class="careers__card-bottom">
-              <div class="careers__card-bottom-who">Junior, Middle, Полный рабочий день</div>
-              <a href="#" class="careers__card-bottom-link">Подробнее</a>
-            </div>
-          </div>
-
-          <div class="careers__card">
-            <div class="careers__card-top">
-              <div class="careers__card-top-title">SMM Специалист</div>
-              <div class="careers__card-top-loc">Офис, Удаленная работа</div>
-            </div>
-            <div class="careers__card-bottom">
-              <div class="careers__card-bottom-who">Middle, Полный рабочий день</div>
-              <a href="#" class="careers__card-bottom-link">Подробнее</a>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
   </section>
 </template>
 
+
 <style scoped lang="scss">
 .careers {
-  margin-top: 60px;
+  padding-top: 20px;
   @media screen and (min-width: 767.98px) {
-    margin-top: 40px;
+    padding-top: 40px;
   }
 
   &__top {
@@ -89,7 +100,7 @@ import anycodeCareers from "@/assets/images/anycode-careers.png";
         line-height: 132%;
       }
       @media screen and (min-width: 1199.98px) {
-        font-size: 48px;
+        font-size: 44px;
       }
     }
   }
@@ -103,7 +114,6 @@ import anycodeCareers from "@/assets/images/anycode-careers.png";
       font-size: 16px;
     }
     @media screen and (min-width: 991.98px) {
-      font-size: 18px;
       max-width: 520px;
     }
     @media screen and (min-width: 1199.98px) {

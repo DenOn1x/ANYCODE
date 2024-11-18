@@ -7,7 +7,7 @@ import Button from "@/UI/Button.vue";
   <div class="modal-body">
     <div class="modal-top">
       <h2>Оставить заявку</h2>
-      <div class="modal-top__sub-title">Даник лох</div>
+      <div class="modal-top__sub-title">Наши специалисты свяжутся с вами в ближайшее время</div>
     </div>
     <form action="#" method="POST">
       <div class="modal__fields">

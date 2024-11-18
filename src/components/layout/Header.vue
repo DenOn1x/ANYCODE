@@ -1,10 +1,12 @@
 <script setup>
-import {ref, watch} from 'vue'
-import logoURL from '@/assets/images/svg/anycode.svg?url'
-import ic_fb from '@/assets/images/svg/ic_fb.svg?url'
-import ic_tg from '@/assets/images/svg/ic_tg.svg?url'
-import ic_inst from '@/assets/images/svg/ic_inst.svg?url'
-import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
+import {ref, watch} from 'vue';
+import {useRouter} from 'vue-router';
+
+import logoURL from '@/assets/images/svg/anycode.svg?url';
+import ic_fb from '@/assets/images/svg/ic_fb.svg?url';
+import ic_tg from '@/assets/images/svg/ic_tg.svg?url';
+import ic_inst from '@/assets/images/svg/ic_inst.svg?url';
+import ic_wp from '@/assets/images/svg/ic_wp.svg?url';
 
 import Button from "@/UI/Button.vue";
 import MultilangSelect from "@/UI/MultilangSelect.vue";
@@ -13,17 +15,15 @@ import Navbar from "@/components/Navbar.vue";
 import Modal from "@/components/Modals/Modal.vue";
 import ModalCall from "@/components/Modals/ModalCall.vue";
 
-const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
+const is_expanded = ref(false);
 const showModalCall = ref(false);
 
 const toggleMenu = () => {
-  is_expanded.value = !is_expanded.value
-  localStorage.setItem("is_expanded", is_expanded.value)
-}
+  is_expanded.value = !is_expanded.value;
+};
 
 const closeMenu = () => {
   is_expanded.value = false;
-  localStorage.setItem("is_expanded", is_expanded.value.toString());
 };
 
 watch(is_expanded, (newValue) => {
@@ -34,7 +34,10 @@ watch(is_expanded, (newValue) => {
   }
 });
 
-
+const router = useRouter();
+router.afterEach(() => {
+  closeMenu();
+});
 </script>
 
 <template>
@@ -58,7 +61,7 @@ watch(is_expanded, (newValue) => {
         <div :class="`header__menu ${is_expanded ? 'is-expanded' : ''}`">
           <div class="container">
             <div class="header__menu-wrapper">
-              <Navbar/>
+              <Navbar @link-clicked="closeMenuAndScroll"/>
               <div class="header__menu-bottom">
                 <div class="header__menu-bottom-call">
                   <a href="tel:">+111 11-111-11-11</a>
@@ -66,22 +69,22 @@ watch(is_expanded, (newValue) => {
                 </div>
                 <ul class="header__socials">
                   <li>
-                    <a href="#">
+                    <a href="#" @click="closeMenuAndScroll">
                       <img :src="ic_fb" alt=""/>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="#" @click="closeMenuAndScroll">
                       <img :src="ic_tg" alt=""/>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="#" @click="closeMenuAndScroll">
                       <img :src="ic_inst" alt=""/>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="#" @click="closeMenuAndScroll">
                       <img :src="ic_wp" alt=""/>
                     </a>
                   </li>
@@ -115,12 +118,9 @@ watch(is_expanded, (newValue) => {
 </template>
 
 
-<style scoped>
+<style scoped lang="scss">
 @import "@/styles/common.scss";
 
-body.no-scroll {
-  overflow: hidden;
-}
 
 .overlay {
   display: none;
@@ -253,6 +253,14 @@ body.no-scroll {
     .container {
       display: contents;
     }
+    .has-child {
+      &:hover {
+        .dropdown {
+          display: block;
+        }
+      }
+    }
+
   }
 
   &.is-expanded {
@@ -262,7 +270,7 @@ body.no-scroll {
     top: 68px;
     z-index: 10;
     width: 100%;
-    height: auto;
+    height: calc(100vh - 68px);
     background: #070707;
     flex-direction: column;
     justify-content: flex-start;

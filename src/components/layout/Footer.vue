@@ -87,7 +87,7 @@ const contactInfo = [
               </router-link>
             </div>
             <div class="footer__about">
-              {{$t('footer_about')}}
+              {{ $t('footer_about') }}
             </div>
             <ul class="footer__socials">
               <li v-for="link in socialLinks" :key="link.src">
@@ -122,7 +122,7 @@ const contactInfo = [
               </transition>
             </div>
             <div class="footer__col footer-col-addition">
-              <div class="title">{{$t('navigation.contacts')}}</div>
+              <div class="title">{{ $t('navigation.contacts') }}</div>
               <div class="footer-col-addition__content">
                 <div
                     v-for="info in contactInfo"
@@ -137,7 +137,7 @@ const contactInfo = [
           </div>
         </div>
         <div class="footer__bottom">
-          <a href="#">{{$t('privacy_policy')}}</a>
+          <a href="#">{{ $t('privacy_policy') }}</a>
         </div>
       </div>
     </div>
@@ -313,6 +313,10 @@ const contactInfo = [
           display: inline-flex;
           align-items: center;
           gap: 10px;
+
+          &.has-child {
+            display: none;
+          }
 
           &:before {
             content: '';
