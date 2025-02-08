@@ -71,10 +71,11 @@ const toggleAccordion = (itemId) => {
   flex-direction: column;
 
   .accordion__item {
-    border-top: 1px solid rgba(255, 255, 255, 0.7);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
-    margin: -1px 0;
-    cursor: pointer;
+  //border-top: 1px solid rgba(255, 255, 255, 0.7); //margin: -1px 0; cursor: pointer;
+
+    &:not(:last-child) {
+      border-bottom: .5px solid rgba(255, 255, 255, 0.7);
+    }
 
     @media screen and (min-width: 991.98px) {
       display: grid;
@@ -83,11 +84,7 @@ const toggleAccordion = (itemId) => {
       align-items: flex-start;
       justify-content: space-between;
       position: relative;
-      padding: 40px 0;
-    }
-
-    &:nth-of-type(odd) {
-      margin: -1px 0;
+      padding: 20px 0;
     }
 
     &.INIT {
@@ -123,12 +120,12 @@ const toggleAccordion = (itemId) => {
 
     .name {
       font-size: 16px;
-      font-weight: 400;
-      line-height: 132%;
+      font-weight: 300;
+      line-height: 142%;
       color: #FFF;
 
       @media screen and (min-width: 991.98px) {
-        font-size: 20px;
+        font-size: 18px;
       }
     }
 

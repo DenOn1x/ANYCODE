@@ -6,6 +6,8 @@ import aboutImg from "@/assets/images/about-i.jpg";
 import Rating from "@/assets/images/svg/ic_rating.svg?url";
 import Button from "@/UI/Button.vue";
 
+import anycodeImg from "@/assets/images/tt1.png";
+
 </script>
 
 <template>
@@ -13,7 +15,7 @@ import Button from "@/UI/Button.vue";
     <div class="container">
       <div class="about-main__wrapper">
         <div class="about-main__content">
-          <h1>Anycode — лидер в сфере <br> разработки ПО</h1>
+          <h1><span>AnyCode</span> — <br> <span>лидер</span> в сфере разработки ПО</h1>
           <div class="about-main__content-text">
             <p>Anycode — это более 5 лет опыта в IT-разработке, тестировании и консалтинге. Мы сотрудничаем с ведущими
               клиентами из США и Европы, работаем с обширным стеком технологий и реализуем проекты самых разных
@@ -52,7 +54,16 @@ import Button from "@/UI/Button.vue";
           </div>
         </div>
       </div>
+
+
     </div>
+
+    <div class="about-main__bg">
+      <picture>
+        <img :src="anycodeImg" alt="anycodeMain"/>
+      </picture>
+    </div>
+
   </section>
 
 
@@ -230,27 +241,91 @@ import Button from "@/UI/Button.vue";
   @media screen and (min-width: 767.98px) {
     padding-top: 80px;
   }
-  //position: relative;
+  position: relative;
+
   //padding: 40px 0;
   //@media screen and (min-width: 991.98px) {
   //  padding: 80px 0;
   //}
 
+  &__bg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    @media screen and (min-width: 767.98px) {
+      max-width: 440px;
+    }
+    @media screen and (min-width: 991.98px) {
+      max-width: 480px;
+    }
+    @media screen and (min-width: 1199.98px) {
+      max-width: 580px;
+    }
+    @media screen and (min-width: 1639.98px) {
+      max-width: 620px;
+    }
+
+    picture {
+      @media screen and (min-width: 767.98px) {
+        position: relative;
+        display: block;
+        padding-bottom: 100%;
+        height: 0;
+        overflow: hidden;
+      }
+      @media screen and (min-width: 991.98px) {
+        padding-bottom: 110%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        object-fit: contain;
+        @media screen and (min-width: 767.98px) {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+
+
   h1 {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 400;
-    line-height: 148%;
+    line-height: 124%;
     color: #FFF;
+    text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+    0px -5px 35px rgba(255, 255, 255, 0.3);
     @media screen and (min-width: 767.98px) {
       font-size: 32px;
     }
     @media screen and (min-width: 991.98px) {
       font-size: 38px;
-      line-height: 132%;
       margin-bottom: 48px;
     }
     @media screen and (min-width: 1199.98px) {
       font-size: 44px;
+    }
+
+    span {
+      //color: #7DFF7A;
+      &:first-child {
+        background-image: none;
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: initial;
+        font-size: 68px;
+      }
+
+      background-image: linear-gradient(120deg, #101b10 5%, #7470ff 30%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 
@@ -269,14 +344,31 @@ import Button from "@/UI/Button.vue";
 
     button {
       //min-width: 220px;
+      margin-top: 24px;
+
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 150%;
+        height: 300%;
+        background: rgba(116, 112, 255, 0.5);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        filter: blur(20px);
+        z-index: -1;
+      }
     }
 
     p {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 300;
       line-height: 168%;
-      color: #FFF;
-      max-width: 1000px;
+      color: rgba(255, 255, 255, 0.7);
+
     }
   }
 
