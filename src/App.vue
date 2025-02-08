@@ -1,83 +1,42 @@
 <template>
+  <!-- Прелоадер только при первой загрузке -->
+  <div v-if="showPreloader" class="preloader">
+    <div class="spinner"></div>
+  </div>
+
   <CustomCursor>
-    <layout-header/>
-    <main class="page">
-      <transition
-          :name="transitionKey"
-          mode="out-in"
-          @before-enter="beforeEnter"
-          @enter="enter"
-          @leave="leave"
-          @after-enter="afterEnter"
-          @after-leave="afterLeave"
-      >
-        <div :key="$route.fullPath" class="transition-wrapper">
-          <router-view/>
-        </div>
-      </transition>
-    </main>
-    <layout-footer/>
+    <transition
+        name="fade"
+        mode="out-in"
+        appear
+    >
+      <div v-if="!loading" :key="$route.fullPath" class="transition-wrapper">
+        <layout-header />
+        <main class="page">
+          <router-view />
+        </main>
+        <layout-footer />
+      </div>
+    </transition>
   </CustomCursor>
 </template>
 
 <script setup>
-import {ref, onMounted, watch, nextTick} from 'vue';
-import {useRoute} from 'vue-router';
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 import LayoutHeader from '@/components/layout/Header.vue';
 import LayoutFooter from '@/components/layout/Footer.vue';
-import CustomCursor from "@/UI/Cursor.vue";
-import {slideUpIn, slideUpOut} from '@/gsapAnimations';
+import CustomCursor from '@/UI/Cursor.vue';
 
-const route = useRoute();
-const transitionKey = ref('initial');
+const loading = ref(true);
+const showPreloader = ref(true);
 
-// Обновляем transitionKey на основе данных маршрута
 onMounted(() => {
-  watch(
-      () => route.meta.transitionName,
-      (newTransition) => {
-        transitionKey.value = newTransition || 'slide-up';
-      }
-  );
+  setTimeout(() => {
+    loading.value = false;
+    showPreloader.value = false;
+  }, 1000); // Имитация загрузки
 });
-
-// Сбрасываем стили перед анимацией входа
-function beforeEnter(el) {
-  el.style.opacity = ''; // Убираем любые стили, чтобы они не сохранялись
-  el.style.transform = '';
-  el.classList.remove('transition-enter-active');
-  el.classList.remove('transition-leave-active');
-}
-
-// Запуск анимации входа
-function enter(el, done) {
-  nextTick(() => {
-    el.classList.add('transition-enter-active');
-    slideUpIn(el, done);
-  });
-}
-
-// Запуск анимации выхода
-function leave(el, done) {
-  nextTick(() => {
-    el.classList.add('transition-leave-active');
-    slideUpOut(el, done);
-  });
-}
-
-// Убираем стили после завершения анимации входа
-function afterEnter(el) {
-  el.classList.remove('transition-enter-active');
-  el.style.opacity = ''; // Сбросить стили
-  el.style.transform = ''; // Сбросить стили
-}
-
-// Убираем стили после завершения анимации выхода
-function afterLeave(el) {
-  el.classList.remove('transition-leave-active');
-  el.style.opacity = ''; // Сбросить стили
-  el.style.transform = ''; // Сбросить стили
-}
 </script>
 
 <style lang="scss">
@@ -86,22 +45,52 @@ function afterLeave(el) {
 
 .page {
   margin-top: 80px;
-
   @media screen and (min-width: 767.98px) {
     margin-top: 0;
   }
 }
 
 .transition-wrapper {
-  /* Дефолтные стили, либо пусто */
+  width: 100%;
+  height: 100%;
 }
 
-.slide-up-enter-active, .slide-up-leave-active {
-  transition: opacity 1s ease, transform 1s ease;
+/* Прелоадер */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
 }
 
-.slide-up-enter, .slide-up-leave-to {
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #000;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Анимация */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-enter-from, .fade-leave-to {
   opacity: 0;
-  transform: translateY(100%);
+  transform: translateY(50px);
 }
 </style>

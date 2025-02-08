@@ -8,8 +8,12 @@ import Accordion from "@/components/Faq/Accordion.vue";
 <template>
   <section class="faq">
     <div class="container">
-      <h2>{{$t('faq_title')}}</h2>
-      <Accordion/>
+      <div class="faq__wrapper">
+
+
+        <h2>{{ $t('faq_title') }}</h2>
+        <Accordion/>
+      </div>
     </div>
   </section>
 </template>

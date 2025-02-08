@@ -13,7 +13,7 @@ const accordionItems = ref([
   {
     id: 2,
     name: 'faq.second_name',
-    content: 'faq.first_content',
+    content: 'faq.second_content',
   },
   {
     id: 3,

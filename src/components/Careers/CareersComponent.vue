@@ -40,7 +40,7 @@ const props = defineProps({
   <section class="careers">
     <div class="container">
       <div class="careers__top">
-        <h1>Вакансии компании ANYCODE</h1>
+        <h1>Вакансии компании AnyCode</h1>
         <div class="careers__sub-title">
           Мы приглашаем вас присоединиться к нам и стать частью этого увлекательного
           путешествия, где инновации и творчество находятся в центре всего, что мы делаем. Познакомьтесь с нашими
@@ -76,12 +76,10 @@ const props = defineProps({
 .careers {
   padding-top: 20px;
   @media screen and (min-width: 767.98px) {
-    padding-top: 40px;
+    padding-top: 80px;
   }
 
   &__top {
-    display: grid;
-    gap: 5px;
     margin-bottom: 40px;
     @media screen and (min-width: 991.98px) {
       margin-bottom: 80px;
@@ -98,6 +96,7 @@ const props = defineProps({
       @media screen and (min-width: 991.98px) {
         font-size: 38px;
         line-height: 132%;
+        margin-bottom: 24px;
       }
       @media screen and (min-width: 1199.98px) {
         font-size: 44px;

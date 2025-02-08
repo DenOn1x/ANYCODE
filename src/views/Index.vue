@@ -18,8 +18,8 @@ import Manager from "@/components/Manager.vue";
   <Manager />
   <Technologies />
   <Statistics />
-  <Team />
-  <Faq />
+<!--  <Team />-->
+<!--  <Faq />-->
   <Quiz />
 </template>
 

@@ -90,7 +90,6 @@ const filteredOptions = computed(() => {
   display: inline-block;
   padding: 10px 0;
   width: 62px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 10px;
 
   @media screen and (min-width: 767.98px) {
@@ -136,7 +135,7 @@ const filteredOptions = computed(() => {
     cursor: pointer;
     padding: 10px;
     border: 1px solid rgba(255, 255, 255, 0.7);
-    background: rgba(255, 255, 255, 0.7);
+    //background: rgba(255, 255, 255, 0.7);
     border-top: none;
     border-bottom: none;
     border-radius: 10px;
