@@ -13,6 +13,7 @@ import icExpertAFS from "@/assets/images/svg/expert/ic_fitness.svg?url";
 import icExpertART from "@/assets/images/svg/expert/ic_restaurant.svg?url";
 
 
+
 const serviceInfo = ref({
   title: "Мобильная разработка",
   description:
