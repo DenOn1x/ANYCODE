@@ -26,7 +26,7 @@ const showModalForm = ref(false);
           <div class="services-tmp__content content-services-tmp">
             <div class="content-services-tmp__top">
               <h1 class="content-services-tmp__heading">
-                Услуги компании <span>ANYCODE</span>
+                Услуги компании <span>AnyCode</span>
               </h1>
               <div class="content-services-tmp__description">
                 {{ $t('lead_content_first') }} <span>{{ $t('lead_content_span') }}</span> {{

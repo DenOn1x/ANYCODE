@@ -46,6 +46,11 @@ defineProps({
 
 .card-other-product {
   height: 100%;
+  @media screen and (min-width: 991.98px) {
+    &:not(:first-child) {
+      border-top: 1px solid rgba(255, 255, 255, 0.7);
+    }
+  }
 
   &__content {
     border: 1px solid rgba(255, 255, 255, 0.7);
@@ -53,11 +58,13 @@ defineProps({
     padding: 24px;
     position: relative;
     height: 100%;
+    min-height: 240px;
 
     @media screen and (min-width: 991.98px) {
       display: flex;
       flex-direction: row;
       align-items: center;
+      min-height: initial;
       gap: 40px;
       padding: 60px 0;
       border: none;
@@ -66,7 +73,6 @@ defineProps({
       background: none;
       border-radius: 0;
       border: 0;
-
 
       &:hover {
         .card-other-product__view {
@@ -143,7 +149,7 @@ defineProps({
   }
 
   &__text {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 300;
     line-height: 148%;
     color: rgba(255, 255, 255, 0.7);
@@ -153,6 +159,9 @@ defineProps({
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    @media screen and (min-width: 991.98px) {
+      font-size: 13px;
+    }
 
 
     @media screen and (min-width: 991.98px) {

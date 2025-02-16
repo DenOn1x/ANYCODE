@@ -142,7 +142,7 @@ const showModalForm = ref(false);
 
   .content-lead {
     display: grid;
-    gap: 20px;
+    gap: 40px;
     @media screen and (min-width: 767.98px) {
       gap: 80px;
     }
@@ -168,8 +168,16 @@ const showModalForm = ref(false);
       color: #070707;
       text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
       0px -5px 35px rgba(255, 255, 255, 0.3);
+
+      br {
+        display: none;
+      }
+
       @media screen and (min-width: 767.98px) {
         font-size: 32px;
+        br {
+          display: block;
+        }
       }
       @media screen and (min-width: 991.98px) {
         font-size: 46px;

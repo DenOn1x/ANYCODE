@@ -73,7 +73,7 @@ import Button from "@/UI/Button.vue";
 
 .modal__fields {
   display: grid;
-  gap: 30px;
+  gap: 24px;
 }
 
 .modal__field {

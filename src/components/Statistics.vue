@@ -6,23 +6,23 @@
   <section class="statistics">
     <div class="statistics__wrapper">
       <div class="container">
-        <h2>{{$t('anycode_numbers')}}</h2>
+        <h2>{{ $t('anycode_numbers') }}</h2>
         <div class="statistics__content">
           <div class="statistics__item">
-            <div class="statistics__counter"><span>5</span> {{$t('years')}}</div>
-            <div class="statistics__text">{{$t('average_employee')}}</div>
+            <div class="statistics__counter"><span>5</span> {{ $t('years') }}</div>
+            <div class="statistics__text">{{ $t('average_employee') }}</div>
           </div>
           <div class="statistics__item">
             <div class="statistics__counter"><span>>10</span></div>
-            <div class="statistics__text">{{$t('support_project')}}</div>
+            <div class="statistics__text">{{ $t('support_project') }}</div>
           </div>
           <div class="statistics__item">
             <div class="statistics__counter"><span>>250 000</span> $</div>
-            <div class="statistics__text">{{$t('revenue')}}</div>
+            <div class="statistics__text">{{ $t('revenue') }}</div>
           </div>
           <div class="statistics__item">
-            <div class="statistics__counter"><span>32</span> {{$t('projects')}}</div>
-            <div class="statistics__text">{{$t('completed')}}</div>
+            <div class="statistics__counter"><span>32</span> {{ $t('projects') }}</div>
+            <div class="statistics__text">{{ $t('completed') }}</div>
           </div>
         </div>
       </div>
@@ -69,11 +69,14 @@
 
   .statistics__content {
     display: grid;
-    align-items: center;
     justify-content: center;
-    gap: 40px;
-    @media screen and (min-width: 767.98px) {
+    gap: 24px;
+    @media screen and (min-width: 479.98px) {
       grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+    @media screen and (min-width: 767.98px) {
+      gap: 40px;
     }
     @media screen and (min-width: 991.98px) {
       display: flex;
@@ -108,6 +111,7 @@
     font-size: 16px;
     font-weight: 300;
     line-height: 148%;
+    text-align: center;
     color: #070707;
     position: relative;
     padding-top: 10px;

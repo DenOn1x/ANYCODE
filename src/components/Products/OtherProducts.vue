@@ -1,102 +1,129 @@
 <script setup>
 import OtherProduct from "@/components/Products/OtherProduct.vue";
-import {Splide, SplideSlide} from "@splidejs/vue-splide";
-import '@splidejs/vue-splide/css';
+import {Swiper, SwiperSlide} from "swiper/vue";
+import "swiper/css";
+import "swiper/css/pagination";
+import {Pagination} from "swiper/modules";
 import Button from "@/UI/Button.vue";
-import {onMounted, ref} from "vue";
+import {onMounted, ref, watch, onUnmounted} from "vue";
 
-const splideOptions = {
-  type: 'loop',
-  fixedWidth: '80%',
-  gap: 20,
-  perMove: 1,
-  arrows: false,
-  pagination: true,
-  updateOnMove: false,
-  mediaQuery: 'min',
-  breakpoints: {
-    767.98: {
-      fixedWidth: '40%',
-    },
-    991.98: {
-      destroy: true,
-    }
-  }
+const swiperRef = ref(null);
+const isSwiperActive = ref(window.innerWidth < 992);
+
+const swiperOptions = {
+  loop: true,
+  spaceBetween: 20,
+  slidesPerView: "auto",
+  autoHeight: false,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  modules: [Pagination],
 };
 
-const splideRef = ref(null);
+const handleResize = () => {
+  isSwiperActive.value = window.innerWidth < 992;
+};
 
 onMounted(() => {
-  const splideInstance = splideRef.value?.splide;
+  window.addEventListener("resize", handleResize);
+  handleResize();
+});
 
-  if (splideInstance) {
-    splideInstance.on('mounted', () => {
-    });
-
-    splideInstance.on('move', () => {
-    });
-  }
+onUnmounted(() => {
+  window.removeEventListener("resize", handleResize);
 });
 </script>
 
 <template>
-  <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">-->
-
   <section class="other-products">
     <div class="container">
       <div class="other-products__top">
-        <h2>{{$t('other_product_text')}}</h2>
-        <div class="other-products__desc">{{$t('other_product_desc')}}</div>
+        <h2>{{ $t("other_product_text") }}</h2>
+        <div class="other-products__desc">{{ $t("other_product_desc") }}</div>
       </div>
     </div>
     <div class="other-products__wrapper">
       <div class="container">
         <div class="other-products__cards">
-          <Splide :options="splideOptions" aria-label="">
-            <SplideSlide>
+          <Swiper v-if="isSwiperActive" ref="swiperRef" v-bind="swiperOptions">
+            <SwiperSlide>
               <OtherProduct
-                  number="01"
+                  :number="1"
                   :title="$t('ecommerce_title')"
                   :subTitle="$t('ecommerce_sub')"
                   :text="$t('ecommerce_text')"
               />
-            </SplideSlide>
-            <SplideSlide>
+            </SwiperSlide>
+            <SwiperSlide>
               <OtherProduct
-                  number="02"
+                  :number="2"
                   :title="$t('mobile_app_title')"
                   :subTitle="$t('develop')"
                   :text="$t('mobile_app_text')"
               />
-            </SplideSlide>
-            <SplideSlide>
+            </SwiperSlide>
+            <SwiperSlide>
               <OtherProduct
-                  number="03"
+                  :number="3"
                   :title="$t('crm_title')"
                   :subTitle="$t('develop')"
                   :text="$t('crm_text')"
               />
-            </SplideSlide>
-            <SplideSlide>
+            </SwiperSlide>
+            <SwiperSlide>
               <OtherProduct
-                  number="04"
+                  :number="4"
                   :title="$t('api_title')"
                   :subTitle="$t('develop')"
                   :text="$t('api_text')"
               />
-            </SplideSlide>
-            <SplideSlide>
+            </SwiperSlide>
+            <SwiperSlide>
               <OtherProduct
-                  number="05"
+                  :number="5"
                   :title="$t('design_title')"
                   :subTitle="$t('design')"
                   :text="$t('design_text')"
               />
-            </SplideSlide>
-          </Splide>
+            </SwiperSlide>
+            <div class="swiper-pagination"></div>
+          </Swiper>
+          <div v-else class="other-products__grid">
+            <OtherProduct
+                :number="1"
+                :title="$t('ecommerce_title')"
+                :subTitle="$t('ecommerce_sub')"
+                :text="$t('ecommerce_text')"
+            />
+            <OtherProduct
+                :number="2"
+                :title="$t('mobile_app_title')"
+                :subTitle="$t('develop')"
+                :text="$t('mobile_app_text')"
+            />
+            <OtherProduct
+                :number="3"
+                :title="$t('crm_title')"
+                :subTitle="$t('develop')"
+                :text="$t('crm_text')"
+            />
+            <OtherProduct
+                :number="4"
+                :title="$t('api_title')"
+                :subTitle="$t('develop')"
+                :text="$t('api_text')"
+            />
+            <OtherProduct
+                :number="5"
+                :title="$t('design_title')"
+                :subTitle="$t('design')"
+                :text="$t('design_text')"
+            />
+          </div>
         </div>
-        <Button :label="$t('request_quote')"
-                color="fill"/>
+        <Button :label="$t('request_quote')" color="fill"/>
       </div>
     </div>
   </section>
@@ -145,7 +172,6 @@ onMounted(() => {
     }
   }
 
-
   &__desc {
     font-size: 14px;
     font-weight: 300;
@@ -160,60 +186,37 @@ onMounted(() => {
   }
 
   .btn-fill {
-    margin-top: 60px;
+    margin-top: 40px;
     width: 100%;
     @media screen and (min-width: 767.98px) {
       display: flex;
-      margin: 80px auto 0;
+      margin: 40px auto 0;
       width: initial;
     }
     @media screen and (min-width: 991.98px) {
-      margin: 0 auto 0;
+      margin: 48px auto 0;
     }
   }
 }
 
-
-::v-deep .splide {
-  &__track {
-    padding-bottom: 60px;
-  }
-
-  &__slide {
-    @media screen and (min-width: 991.98px) {
-      border-top: 1px solid rgba(255, 255, 255, 0.7);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
-      margin: -1px 0;
-      &:first-child {
-        border-top: none;
-      }
-      &:last-child {
-        border-bottom: none;
-      }
-    }
-  }
-
-  &__pagination {
-    bottom: -40px;
-  }
-
-  &__pagination__page {
-    background: none;
-    border: 1px solid #7470ff;
-    opacity: 1;
-    min-width: 16px;
-    width: 16px;
-    height: 16px;
-    margin: 0 5px;
-
-
-    &.is-active {
-      transform: initial;
-      border: 1px solid #7470ff;
-      background: #7470ff;
-      border-radius: 50%;
-    }
-  }
+:deep(.swiper-pagination) {
+  position: static;
+  margin-top: 20px;
 }
 
+:deep(.swiper-pagination-bullet) {
+  background: none;
+  border: 1px solid #7470ff;
+  opacity: 1;
+  min-width: 16px;
+  width: 16px;
+  height: 16px;
+  margin: 0 5px;
+  border-radius: 50%;
+
+  &.swiper-pagination-bullet-active {
+    background: #7470ff;
+  }
+
+}
 </style>

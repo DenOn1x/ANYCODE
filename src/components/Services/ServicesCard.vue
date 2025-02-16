@@ -39,10 +39,7 @@ defineProps({
       content: '';
       width: .5px;
       height: 100%;
-      //background: #7DFF7A;
       background: #7470ff;
-      //-webkit-background-clip: text;
-      //-webkit-text-fill-color: transparent;
       position: absolute;
       left: 0;
       top: 0;
@@ -85,12 +82,15 @@ defineProps({
   }
 
   &__text {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 300;
     line-height: 148%;
     color: rgba(255, 255, 255, 0.7);
     position: relative;
     padding-left: 25px;
+    @media screen and (min-width: 991.98px) {
+      font-size: 13px;
+    }
 
     &:before {
       content: '';
