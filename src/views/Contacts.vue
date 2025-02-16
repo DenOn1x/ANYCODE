@@ -26,9 +26,9 @@ import FormCall from "@/components/FormCall.vue";
         <div class="contacts__cards">
           <div class="contacts__cards-wrapper">
             <div class="contacts__card">
-              <a href="tel:" class="contacts__card-link">
+              <a href="tel:+375298481820" class="contacts__card-link">
                 <img :src="ic_wp" alt="ic_wp"/>
-                +375 11 111-11-11
+                +375 (29) 848-18-20
               </a>
               <p>Свяжитесь с нами по телефону — обсудим ваш проект и ответим на все вопросы.</p>
               <Button :label="$t('request_quote')" color="fill" @click="showModalForm = true"/>
@@ -36,17 +36,17 @@ import FormCall from "@/components/FormCall.vue";
             <div class="contacts__card">
               <p><b>Наш офис</b></p>
               <a href="#" class="contacts__card-link">
-                Грузия пример адреса дом примерный
+                8, Shartava, Batumi 6000, Грузия
               </a>
             </div>
           </div>
           <div class="contacts__cards-wrapper">
             <div class="contacts__card">
-              <a href="mailto:" class="contacts__card-link">
-                anycode.software.comФИЗИЧЕСКИЙ
+              <a href="mailto:anycode.it@gmail.com" class="contacts__card-link">
+                anycode.it@gmail.com
               </a>
-              <a href="mailto:" class="contacts__card-link">
-                anycode.software.comПОДДЕРЖКА
+              <a href="mailto:anycode.support@gmail.com" class="contacts__card-link">
+                anycode.support@gmail.com
               </a>
               <p>Пишите нам — ответим в ближайшее время.</p>
             </div>
@@ -54,11 +54,11 @@ import FormCall from "@/components/FormCall.vue";
               <p><b>Мы в социальных сетях</b></p>
               <a href="#" class="contacts__card-link">
                 <img :src="ic_tg" alt="ic_tg"/>
-                tg
+                anycode.tg
               </a>
               <a href="#" class="contacts__card-link">
                 <img :src="ic_fb" alt="ic_fb"/>
-                fb
+                anycode.fb
               </a>
               <p>Следите за новостями компании, нашими проектами и событиями.</p>
             </div>

@@ -65,15 +65,14 @@ const whyUs = ref([
 
 
 const tools = ref([
+  "Odoo",
+  "Python",
   "Node.js",
-  "NestJS",
-  "Laravel",
-  "Django",
   "MongoDB",
+  "PostgreSQL",
   "Redis",
   "RabbitMQ",
   "Docker",
-  "Kubernetes",
   "GraphQL",
   "REST API"
 ]);

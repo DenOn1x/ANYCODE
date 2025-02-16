@@ -56,7 +56,7 @@ const whyUs = ref([
 ]);
 
 
-const tools = ref(["Figma", "Jira", "Confluence", "Miro", "Postman", "Docker", "Kubernetes"]);
+const tools = ref(["Figma", "Jira", "Confluence", "Miro", "Docker", "Kubernetes", "Python", "JavaScript", "Node.js"]);
 
 
 const experts = ref([

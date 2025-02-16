@@ -80,7 +80,6 @@ const tools = ref([
   "React Native",
   "Jetpack Compose",
   "SwiftUI",
-  "Firebase",
   "GraphQL",
   "Realm",
 ]);

@@ -3,24 +3,34 @@ import CareersVCNS from "@/components/Careers/CareersVCNS.vue";
 import CareersForm from "@/components/Careers/CareersForm.vue";
 
 const baDeveloperJob = {
-  title: 'Бэкенд инженер Python CRM',
-  responsibilities: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dolores ducimus exercitationem hic in repudiandae sapiente? Adipisci asperiores eum id!',
-  requirements: [
+      title: 'Odoo разработчик',
+      responsibilities: 'Разработка CRM системы на платформе Odoo. Развертывание и доработка модулей в соответствии с функциональными спецификациями.',
+      requirements: [
+        'Уверенное знание Python.',
+        'Опыт работы с Odoo от 1 года.',
+        'Знание архитектуры фреймворка Odoo.',
+        'Уверенный пользователь Linux.',
+        'Знание концепции MVC, шаблонов проектирования.'
 
-  ],
-  conditions: [
-    'Стабильная заработная плата, оформление в соответствии с ТК.',
-    'График работы 5/2.',
-    'Уникальные проекты, амбициозные задачи.',
-    'Лояльность и отсутствие бюрократии.',
-    'Возможность карьерного, профессионального и финансового роста.',
-    'Увлекательные корпоративные мероприятия.'
-  ],
-  location: 'Минск / Удаленная работа',
-  level: 'Middle',
-  employmentType: 'Полная',
-  workSchedule: 'Рабочий день 5/2'
-};
+      ],
+      conditions: [
+        'Стабильная заработная плата, оформление в соответствии с ТК.',
+        'График работы 5/2.',
+        'Уникальные проекты, амбициозные задачи.',
+        'Лояльность и отсутствие бюрократии.',
+        'Возможность карьерного, профессионального и финансового роста.',
+        'Увлекательные корпоративные мероприятия.'
+      ],
+      location:
+          'Минск / Удаленная работа',
+      level:
+          'Middle',
+      employmentType:
+          'Полная',
+      workSchedule:
+          'Рабочий день 5/2'
+    }
+;
 </script>
 
 <template>

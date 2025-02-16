@@ -4,9 +4,12 @@ import CareersForm from "@/components/Careers/CareersForm.vue";
 
 const salesDeveloperJob = {
   title: 'Sales manager',
-  responsibilities: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dolores ducimus exercitationem hic in repudiandae sapiente? Adipisci asperiores eum id!',
+  responsibilities: 'Развивать и удерживать текущих клиентов, превращая их в лояльных партнеров. Быть на связи с клиентом: от консультаций до помощи в решении сложных вопросов. Выполнять план продаж, открывая для клиентов новые возможности. Вести CRM (Odoo) и отчётность.',
   requirements: [
-
+    'Опыт не менее 1 года на должности менеджера по работе с клиентами в сфере B2B или по работе с клиентами, в идеале в индустрии SaaS , IT.',
+    'Письменный и разговорный английский: B1 и выше.',
+    'Глубокие аналитические способности, коммуникативные и презентационные навыки.',
+    'Знание CRM системы.'
   ],
   conditions: [
     'Стабильная заработная плата, оформление в соответствии с ТК.',

@@ -17,11 +17,11 @@
             <div class="statistics__text">{{ $t('support_project') }}</div>
           </div>
           <div class="statistics__item">
-            <div class="statistics__counter"><span>>250 000</span> $</div>
+            <div class="statistics__counter"><span>>100</span></div>
             <div class="statistics__text">{{ $t('revenue') }}</div>
           </div>
           <div class="statistics__item">
-            <div class="statistics__counter"><span>32</span> {{ $t('projects') }}</div>
+            <div class="statistics__counter"><span>22</span> {{ $t('projects') }}</div>
             <div class="statistics__text">{{ $t('completed') }}</div>
           </div>
         </div>

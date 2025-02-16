@@ -14,7 +14,7 @@ const props = defineProps({
         link: '/careers/android-developer',
       },
       {
-        title: 'Бэкенд инженер Python CRM',
+        title: 'Odoo разработчик',
         location: 'Офис, Удаленная работа',
         type: 'Junior, Middle, Полный рабочий день',
         link: '/careers/ba-crm',

@@ -59,7 +59,7 @@ const whyUs = ref([
 ]);
 
 
-const tools = ref(["Python", "Java", "C#", "JavaScript", "Node.js", "Docker", "Kubernetes", "PostgreSQL", "MongoDB"]);
+const tools = ref(["Python", "JavaScript", "Node.js", "Docker", "Kubernetes", "PostgreSQL", "MongoDB","REST API"]);
 
 
 const experts = ref([

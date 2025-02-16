@@ -19,7 +19,7 @@ import personImgD from "@/assets/images/person-f-002.jpg";
         <div class="about-main__content">
           <h1><span>AnyCode</span> — <br> <span>лидер</span> в сфере разработки ПО</h1>
           <div class="about-main__content-text">
-            <p>Anycode — это более 5 лет опыта в IT-разработке, тестировании и консалтинге. Мы сотрудничаем с ведущими
+            <p>Anycode — это более 3х лет опыта в IT-разработке, тестировании и консалтинге. Мы сотрудничаем с ведущими
               клиентами из США и Европы, работаем с обширным стеком технологий и реализуем проекты самых разных
               направлений.</p>
           </div>
@@ -34,7 +34,7 @@ import personImgD from "@/assets/images/person-f-002.jpg";
             </div>
             <div class="about-main__founders-item-info">
               <div class="about-main__founders-item-info-titles">Онискевич Денис</div>
-              <p><b>( Соучередитель )</b></p>
+              <p><b>(Соучередитель)</b></p>
               <p>Креативный директор, руководитель фронтенд-разработки</p>
             </div>
           </div>
@@ -46,7 +46,7 @@ import personImgD from "@/assets/images/person-f-002.jpg";
             </div>
             <div class="about-main__founders-item-info">
               <div class="about-main__founders-item-info-titles">Попов Даниил</div>
-              <p><b>( Соучередитель )</b></p>
+              <p><b>(Соучередитель)</b></p>
               <p>Технический директор, руководитель бекенд-разработки</p>
             </div>
           </div>
@@ -75,7 +75,7 @@ import personImgD from "@/assets/images/person-f-002.jpg";
       <div class="about-conference__wrapper">
         <div class="about-conference__content">
           <p>
-            Мы стремимся быть в центре технологических изменений и новых идей.
+            Наша цель быть в центре технологических изменений и новых идей.
             Посещая международные конференции, мы обмениваемся опытом с ведущими
             экспертами отрасли, следим за трендами и внедряем передовые решения
             в нашу работу.
@@ -83,10 +83,9 @@ import personImgD from "@/assets/images/person-f-002.jpg";
         </div>
         <div class="about-conference__content">
           <p>
-            Участие в отраслевых мероприятиях позволяет нам не только получать
-            актуальные знания, но и находить единомышленников. Мы обмениваемся
-            идеями, обсуждаем ключевые вызовы индустрии и создаем коллаборации,
-            которые приводят к инновационным решениям.
+            Участие в профессиональных мероприятиях дает нам возможность не только получать свежие знания, но и находить
+            единомышленников. Мы делимся идеями, обсуждаем основные проблемы отрасли и формируем сотрудничество, которое
+            ведет к новым инновационным решениям.
           </p>
         </div>
         <div class="about-conference__content">
@@ -117,11 +116,11 @@ import personImgD from "@/assets/images/person-f-002.jpg";
           <div class="about__block">
             <div class="about__stats">
               <div class="about__stat">
-                <span class="about__stat-value">20+</span>
+                <span class="about__stat-value">100+</span>
                 <span class="about__stat-text">успешных проектов в различных индустриях</span>
               </div>
               <div class="about__stat">
-                <span class="about__stat-value">2.5+</span>
+                <span class="about__stat-value">1.5+</span>
                 <span class="about__stat-text">года, в среднем, длится наше сотрудничество с клиентами</span>
               </div>
             </div>
@@ -129,11 +128,11 @@ import personImgD from "@/assets/images/person-f-002.jpg";
           <div class="about__block">
             <div class="about__stats">
               <div class="about__stat">
-                <span class="about__stat-value">20+</span>
+                <span class="about__stat-value">15+</span>
                 <span class="about__stat-text">технологий в портфолио</span>
               </div>
               <div class="about__stat">
-                <span class="about__stat-value">100+</span>
+                <span class="about__stat-value">60+</span>
                 <span class="about__stat-text">сотрудников по всему миру</span>
               </div>
             </div>
@@ -145,7 +144,7 @@ import personImgD from "@/assets/images/person-f-002.jpg";
                 <span class="about__stat-text">сотрудников уровня Middle/Senior</span>
               </div>
               <div class="about__stat">
-                <span class="about__stat-value">30+</span>
+                <span class="about__stat-value">10+</span>
                 <span class="about__stat-text">сфер, в которых мы реализуем проекты</span>
               </div>
             </div>
@@ -386,7 +385,7 @@ import personImgD from "@/assets/images/person-f-002.jpg";
         picture {
           position: relative;
           display: block;
-          padding-bottom: 125%;
+          padding-bottom: 150%;
           height: 0;
           overflow: hidden;
 

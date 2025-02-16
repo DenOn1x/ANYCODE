@@ -74,20 +74,15 @@ onMounted(async () => {
             <template v-if="index === 0">
               <div class="slider-slide__content">
                 <div class="slide-details">
-                  <h3>Преимущества</h3>
-                  <ul>
-                    <li v-for="(benefit, i) in slide.benefits" :key="i">{{ benefit }}</li>
-                  </ul>
                   <h3>Особенности</h3>
                   <ul>
                     <li v-for="(feature, i) in slide.features" :key="i">{{ feature }}</li>
                   </ul>
                   <div class="slide-details__dev">
                     <h3>Используемые технологии</h3>
-                    <p>{{ slide.tools }}</p>
-
-                    <h3>Сроки выполнения</h3>
-                    <p>{{ slide.timeline }}</p>
+                    <ul>
+                      <li v-for="(tool, i) in slide.tools" :key="i">{{ tool }}</li>
+                    </ul>
                   </div>
 
                 </div>
@@ -132,7 +127,7 @@ onMounted(async () => {
       padding: 10px;
       box-shadow: rgba(255, 255, 255, 0.55) 0 0 20px;
 
-      @media screen and (min-width: 1199.98px) {
+      @media screen and (min-width: 1639.98px) {
         &:has(.slider-slide__content) {
           padding: 0;
           box-shadow: none;
@@ -210,7 +205,7 @@ onMounted(async () => {
       flex: 0 0 320px;
       padding: 24px;
       box-shadow: rgba(255, 255, 255, 0.55) 0 0 20px;
-      @media screen and (min-width: 1199.98px) {
+      @media screen and (min-width: 1639.98px) {
         display: block;
       }
 
@@ -280,6 +275,27 @@ onMounted(async () => {
         &__dev {
           h3 {
             margin: 12px 0 6px;
+          }
+
+          ul {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 4px 8px;
+
+            li {
+              margin: 0;
+              padding: 0;
+
+              &:not(:last-child) {
+                margin: 0;
+              }
+
+              &:before, &:after {
+                display: none;
+              }
+            }
           }
         }
       }
