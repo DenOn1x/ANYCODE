@@ -156,7 +156,7 @@ router.afterEach(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 12px 0;
   gap: 20px;
   @media screen and (min-width: 767.98px) {
     justify-content: flex-start;
@@ -267,10 +267,10 @@ router.afterEach(() => {
     display: block;
     position: fixed;
     left: 0;
-    top: 68px;
+    top: 62px;
     z-index: 10;
     width: 100%;
-    height: calc(100vh - 68px);
+    height: calc(100vh - 62px);
     background: #070707;
     flex-direction: column;
     justify-content: flex-start;

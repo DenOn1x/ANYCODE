@@ -58,21 +58,6 @@ const socialLinks = [
   {href: "#", src: ic_wp},
 ];
 
-const contactInfo = [
-  {
-    value: "+111 11-111-11-11",
-    href: "tel:+11111111111",
-  },
-  {
-    value: "anycode.it@gmail.com",
-    href: "mailto:anycode.it@gmail.com",
-  },
-  {
-    value: "anycodesupport@gmail.com",
-    href: "mailto:anycodesupport@gmail.com",
-  },
-];
-
 </script>
 
 <template>
@@ -120,19 +105,6 @@ const contactInfo = [
                   </ul>
                 </div>
               </transition>
-            </div>
-            <div class="footer__col footer-col-addition">
-              <div class="title">{{ $t('navigation.contacts') }}</div>
-              <div class="footer-col-addition__content">
-                <div
-                    v-for="info in contactInfo"
-                    :key="info.value"
-                    class="footer-col-addition__item"
-                >
-                  <a :href="info.href">{{ info.value }}</a>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>
@@ -192,7 +164,7 @@ const contactInfo = [
       display: flex;
       align-items: flex-start;
       justify-content: flex-end;
-      gap: 40px;
+      gap: 80px;
     }
   }
 
@@ -305,7 +277,7 @@ const contactInfo = [
           display: grid;
         }
         @media screen and (min-width: 1199.98px) {
-          gap: 20px;
+          gap: 12px;
         }
 
         li {
@@ -313,6 +285,7 @@ const contactInfo = [
           display: inline-flex;
           align-items: center;
           gap: 10px;
+          padding: 0;
 
           &.has-child {
             display: none;
@@ -352,7 +325,7 @@ const contactInfo = [
       display: grid;
       gap: 10px;
       @media screen and (min-width: 1199.98px) {
-        gap: 20px;
+        gap: 12px;
       }
 
       li {
