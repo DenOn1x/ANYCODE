@@ -1,4 +1,5 @@
 <script setup>
+const selectedOptions = defineModel({default: []});
 
 </script>
 
@@ -6,42 +7,42 @@
   <div class="quiz__body">
     <div class="quiz__counter">2/5</div>
     <div class="quiz-products">
-      <div class="quiz-products__question">{{$t('quiz_question_second')}}</div>
+      <div class="quiz-products__question">{{ $t('quiz_question_second') }}</div>
       <div class="quiz-products__content">
         <label class="custom-checkbox">
-          <input type="checkbox" value="1"/>
+          <input type="checkbox" value="online_store" v-model="selectedOptions"/>
           <span class="checkmark"></span>
-          {{$t('online_store')}}
+          {{ $t('online_store') }}
         </label>
         <label class="custom-checkbox">
-          <input type="checkbox" value="2"/>
+          <input type="checkbox" value="crm_or_erp_system" v-model="selectedOptions"/>
           <span class="checkmark"></span>
-          {{$t('crm_or_erp')}}
+          {{ $t('crm_or_erp') }}
         </label>
         <label class="custom-checkbox">
-          <input type="checkbox" value="3"/>
+          <input type="checkbox" value="web_application" v-model="selectedOptions"/>
           <span class="checkmark"></span>
-          {{$t('web_application')}}
+          {{ $t('web_application') }}
         </label>
         <label class="custom-checkbox">
-          <input type="checkbox" value="4"/>
+          <input type="checkbox" value="personal_account" v-model="selectedOptions"/>
           <span class="checkmark"></span>
-          {{$t('cabinet')}}
+          {{ $t('cabinet') }}
         </label>
         <label class="custom-checkbox">
-          <input type="checkbox" value="4"/>
+          <input type="checkbox" value="mobile_app" v-model="selectedOptions"/>
           <span class="checkmark"></span>
-          {{$t('mobile_app_title')}}
+          {{ $t('mobile_app_title') }}
         </label>
         <label class="custom-checkbox">
-          <input type="checkbox" value="4"/>
+          <input type="checkbox" value="design" v-model="selectedOptions"/>
           <span class="checkmark"></span>
-          {{$t('design')}}
+          {{ $t('design') }}
         </label>
         <label class="custom-checkbox">
-          <input type="checkbox" value="5"/>
+          <input type="checkbox" value="need_consultation" v-model="selectedOptions"/>
           <span class="checkmark"></span>
-          {{$t('not_found_answer')}}
+          {{ $t('not_found_answer') }}
         </label>
       </div>
     </div>
@@ -95,6 +96,11 @@
 
   @media screen and (min-width: 991.98px) {
     font-size: 14px;
+    &:hover {
+      .checkmark {
+        border-color: #7470ff;
+      }
+    }
   }
 }
 
@@ -115,6 +121,7 @@
   height: 18px;
   border-radius: 4px;
   border: 1px solid #FFF;
+  transition: .1s ease;
 }
 
 

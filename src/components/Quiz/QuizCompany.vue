@@ -1,61 +1,57 @@
 <script setup>
-import {ref} from "vue";
-
-
-const selectedOption = ref('');
-
+const selectedOption = defineModel();
 </script>
 
 <template>
   <div class="quiz__body">
     <div class="quiz__counter">5/5</div>
     <div class="quiz-company">
-      <div class="quiz-company__question">{{$t('quiz_question_fifth')}}</div>
+      <div class="quiz-company__question">{{ $t('quiz_question_fifth') }}</div>
       <div class="quiz-company__content">
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-company" value="1" v-model="selectedOption">
-          <span class="quiz-company__text">{{$t('state')}}</span>
+          <input type="radio" name="quiz-company" value="real_estate" v-model="selectedOption">
+          <span class="quiz-company__text">{{ $t('state') }}</span>
         </label>
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-company" value="2" v-model="selectedOption">
-          <span class="quiz-company__text">{{$t('bank')}}</span>
+          <input type="radio" name="quiz-company" value="banking_and_finance" v-model="selectedOption">
+          <span class="quiz-company__text">{{ $t('bank') }}</span>
         </label>
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">{{$t('tourism')}}</span>
+          <input type="radio" name="quiz-company" value="tourism" v-model="selectedOption">
+          <span class="quiz-company__text">{{ $t('tourism') }}</span>
         </label>
 
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">{{$t('retail')}}</span>
+          <input type="radio" name="quiz-company" value="retail" v-model="selectedOption">
+          <span class="quiz-company__text">{{ $t('retail') }}</span>
         </label>
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">{{$t('medicine')}}</span>
+          <input type="radio" name="quiz-company" value="medicine" v-model="selectedOption">
+          <span class="quiz-company__text">{{ $t('medicine') }}</span>
         </label>
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">{{$t('education')}}</span>
+          <input type="radio" name="quiz-company" value="education" v-model="selectedOption">
+          <span class="quiz-company__text">{{ $t('education') }}</span>
         </label>
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">{{$t('startup')}}</span>
+          <input type="radio" name="quiz-company" value="startup" v-model="selectedOption">
+          <span class="quiz-company__text">{{ $t('startup') }}</span>
         </label>
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">{{$t('media')}}</span>
+          <input type="radio" name="quiz-company" value="media" v-model="selectedOption">
+          <span class="quiz-company__text">{{ $t('media') }}</span>
         </label>
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">{{$t('hospitality')}}</span>
+          <input type="radio" name="quiz-company" value="hospitality" v-model="selectedOption">
+          <span class="quiz-company__text">{{ $t('hospitality') }}</span>
         </label>
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">{{$t('private')}}</span>
+          <input type="radio" name="quiz-company" value="private" v-model="selectedOption">
+          <span class="quiz-company__text">{{ $t('private') }}</span>
         </label>
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-company" value="3" v-model="selectedOption">
-          <span class="quiz-company__text">{{$t('other')}}</span>
+          <input type="radio" name="quiz-company" value="other" v-model="selectedOption">
+          <span class="quiz-company__text">{{ $t('other') }}</span>
         </label>
       </div>
     </div>
@@ -104,6 +100,14 @@ const selectedOption = ref('');
   &:not(:last-child) {
     margin-bottom: 20px;
   }
+
+  @media screen and (min-width: 991.98px) {
+    &:hover {
+      .quiz-company__text:before {
+        border-color: #7470ff;
+      }
+    }
+  }
 }
 
 .custom-radio-button input {
@@ -135,6 +139,7 @@ const selectedOption = ref('');
   height: 18px;
   border-radius: 50%;
   border: 1px solid #FFF;
+  transition: .1s ease;
 }
 
 .custom-radio-button input:checked ~ .quiz-company__text:before {

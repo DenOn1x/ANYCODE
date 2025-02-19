@@ -19,8 +19,11 @@ defineProps({
         {{ text }}
       </div>
     </div>
-    <Button :label="$t('learn_more')"
-            color="fill"/>
+    <a href="#" class="card-services__link">
+      <Button :label="$t('learn_more')"
+              color="fill"/>
+    </a>
+
   </div>
 </template>
 
@@ -112,6 +115,15 @@ defineProps({
       position: absolute;
       left: -3px;
       top: 2px;
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+
+    .btn {
+      width: 100%;
     }
   }
 }

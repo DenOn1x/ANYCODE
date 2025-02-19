@@ -417,9 +417,14 @@ const showModalForm = ref(false);
           background-size: contain;
           background-repeat: no-repeat;
           background-position: center;
-          transition: 0.3s ease;
           filter: grayscale(0) brightness(0);
           cursor: pointer;
+          transition: .1s ease;
+          @media screen and (min-width: 991.98px) {
+            &:hover {
+              filter: brightness(.5);
+            }
+          }
         }
       }
     }

@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import {ref, watch, onMounted, onUnmounted} from 'vue';
+import { ref, watch, onMounted, onUnmounted } from 'vue';
 
 const props = defineProps({
   modelValue: Boolean,
@@ -27,10 +27,12 @@ const close = () => {
   if (isAnimating.value) return;
   isAnimating.value = true;
   visible.value = false;
+
   setTimeout(() => {
     isVisible.value = false;
     isAnimating.value = false;
     emit('update:modelValue', false);
+    checkNoScroll(); // Проверяем, нужно ли убирать no-scroll
   }, 300);
 };
 
@@ -40,11 +42,20 @@ const handleBackdropClick = () => {
   }
 };
 
+// Функция проверки перед удалением 'no-scroll'
+const checkNoScroll = () => {
+  const mobileMenuOpen = document.documentElement.classList.contains('mobile-menu-open');
+  if (!visible.value && !mobileMenuOpen) {
+    document.documentElement.classList.remove('no-scroll');
+  }
+};
+
 watch(() => props.modelValue, (newValue) => {
   if (newValue) {
     visible.value = true;
     isVisible.value = true;
     isAnimating.value = true;
+    document.documentElement.classList.add('no-scroll'); // Отключаем прокрутку
     setTimeout(() => {
       isAnimating.value = false;
     }, 300);
@@ -65,10 +76,11 @@ onMounted(() => {
 
 onUnmounted(() => {
   document.removeEventListener('keydown', onEsc);
+  checkNoScroll(); // Убираем класс при размонтировании компонента, если меню закрыто
 });
-
-
 </script>
+
+
 
 <style scoped>
 .modal-backdrop {

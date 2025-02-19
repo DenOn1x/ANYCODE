@@ -1,34 +1,32 @@
 <script setup>
-import {ref} from "vue";
-
-const selectedOption = ref('');
+const selectedOption = defineModel();
 </script>
 
 <template>
   <div class="quiz__body">
     <div class="quiz__counter">3/5</div>
     <div class="quiz-budget">
-      <div class="quiz-budget__question">{{$t('quiz_question_third')}}</div>
+      <div class="quiz-budget__question">{{ $t('quiz_question_third') }}</div>
       <div class="quiz-budget__content">
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-budget" value="1" v-model="selectedOption">
-          <span class="quiz-budget__text">{{$t('upon')}} 1 500 $</span>
+          <input type="radio" name="quiz-budget" value="1500" v-model="selectedOption">
+          <span class="quiz-budget__text">{{ $t('upon') }} 1 500 $</span>
         </label>
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-budget" value="2" v-model="selectedOption">
+          <input type="radio" name="quiz-budget" value="1500_5000" v-model="selectedOption">
           <span class="quiz-budget__text">1 500–5 000 $</span>
         </label>
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-budget" value="3" v-model="selectedOption">
+          <input type="radio" name="quiz-budget" value="5000_10000" v-model="selectedOption">
           <span class="quiz-budget__text">5 000–10 000 $</span>
         </label>
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-budget" value="4" v-model="selectedOption">
+          <input type="radio" name="quiz-budget" value="10000_50000" v-model="selectedOption">
           <span class="quiz-budget__text">10 000–50 000 $</span>
         </label>
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-budget" value="5" v-model="selectedOption">
-          <span class="quiz-budget__text">{{$t('over')}} 50 000 $</span>
+          <input type="radio" name="quiz-budget" value="_50000" v-model="selectedOption">
+          <span class="quiz-budget__text">{{ $t('over') }} 50 000 $</span>
         </label>
       </div>
     </div>
@@ -74,6 +72,15 @@ const selectedOption = ref('');
   &:not(:last-child) {
     margin-bottom: 20px;
   }
+
+  @media screen and (min-width: 991.98px) {
+    &:hover {
+      .quiz-budget__text:before {
+        border-color: #7470ff;
+      }
+    }
+  }
+
 }
 
 .custom-radio-button input {
@@ -105,6 +112,7 @@ const selectedOption = ref('');
   height: 18px;
   border-radius: 50%;
   border: 1px solid #FFF;
+  transition: .1s ease;
 }
 
 .custom-radio-button input:checked ~ .quiz-budget__text:before {

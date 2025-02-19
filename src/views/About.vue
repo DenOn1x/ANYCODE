@@ -35,7 +35,7 @@ import personImgD from "@/assets/images/person-f-002.jpg";
             <div class="about-main__founders-item-info">
               <div class="about-main__founders-item-info-titles">Онискевич Денис</div>
               <p><b>(Соучередитель)</b></p>
-              <p>Креативный директор, руководитель фронтенд-разработки</p>
+              <p>CPO, руководитель фронтенд-разработки</p>
             </div>
           </div>
           <div class="about-main__founders-item">
@@ -47,7 +47,7 @@ import personImgD from "@/assets/images/person-f-002.jpg";
             <div class="about-main__founders-item-info">
               <div class="about-main__founders-item-info-titles">Попов Даниил</div>
               <p><b>(Соучередитель)</b></p>
-              <p>Технический директор, руководитель бекенд-разработки</p>
+              <p>CTO, руководитель бекенд-разработки</p>
             </div>
           </div>
         </div>

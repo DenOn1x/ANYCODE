@@ -61,7 +61,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="container">
+  <div class="container container--md">
     <div class="swiper-container">
       <swiper
           v-bind="swiperOptions"
@@ -96,10 +96,13 @@ onMounted(async () => {
           </div>
         </swiper-slide>
 
-        <div class="swiper-button-wrapper">
-          <div :class="prevButtonClass" class="swiper-button">Предыдущий</div>
-          <div :class="nextButtonClass" class="swiper-button">Следующий</div>
+        <div class="container">
+          <div class="swiper-button-wrapper">
+            <div :class="prevButtonClass" class="swiper-button">Предыдущий</div>
+            <div :class="nextButtonClass" class="swiper-button">Следующий</div>
+          </div>
         </div>
+
 
       </swiper>
     </div>
@@ -124,15 +127,7 @@ onMounted(async () => {
     }
 
     &-slide {
-      padding: 10px;
-      box-shadow: rgba(255, 255, 255, 0.55) 0 0 20px;
 
-      @media screen and (min-width: 1639.98px) {
-        &:has(.slider-slide__content) {
-          padding: 0;
-          box-shadow: none;
-        }
-      }
 
     }
   }
@@ -159,6 +154,7 @@ onMounted(async () => {
     border-radius: 12px;
     box-shadow: rgba(255, 255, 255, 0.55) 0 0 10px;
     cursor: pointer;
+    transition: .1s ease;
 
     font-size: 14px;
     font-weight: 300;
@@ -168,6 +164,12 @@ onMounted(async () => {
       height: 56px;
       box-shadow: rgba(255, 255, 255, 0.55) 0 0 20px;
     }
+    @media screen and (min-width: 991.98px) {
+      &:hover {
+        box-shadow: rgba(255, 255, 255, 0.55) 0 0 10px;
+      }
+
+    }
   }
 }
 
@@ -175,24 +177,23 @@ onMounted(async () => {
   .slider-slide {
     display: flex;
     gap: 12px;
-    //align-items: center;
+    @media screen and (min-width: 767.98px) {
+      padding: 12px;
+      box-shadow: rgba(255, 255, 255, 0.55) 0 0 20px;
+    }
+    @media screen and (min-width: 1639.98px) {
+      &:has(.slider-slide__content) {
+        padding: 0;
+        box-shadow: none;
+      }
+    }
+
 
     &__img {
       flex: 1;
-      //min-height: 100%;
 
       picture {
-        //position: relative;
-        //display: block;
-        //padding-bottom: 55%;
-        //height: 0;
-        //overflow: hidden;
-
         img {
-          //position: absolute;
-          //top: 0;
-          //left: 0;
-          //z-index: 0;
           width: 100%;
           height: 100%;
           object-fit: cover;

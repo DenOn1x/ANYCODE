@@ -166,14 +166,9 @@ onMounted(() => {
       line-height: 148%;
       color: #FFF;
       @media screen and (min-width: 767.98px) {
-        //font-size: 32px;
       }
       @media screen and (min-width: 991.98px) {
-        //font-size: 38px;
         line-height: 132%;
-      }
-      @media screen and (min-width: 1199.98px) {
-        //font-size: 44px;
       }
     }
   }
@@ -316,6 +311,11 @@ onMounted(() => {
         a {
           display: flex;
           align-items: center;
+          @media screen and (min-width: 991.98px) {
+            &:hover {
+              filter: brightness(0.5);
+            }
+          }
         }
       }
     }
@@ -334,6 +334,12 @@ onMounted(() => {
       font-weight: 400;
       line-height: 124%;
       text-decoration: none;
+      transition: .1s ease;
+      @media screen and (min-width: 991.98px) {
+        &:hover {
+          background: rgba(116, 112, 255, 0.8);
+        }
+      }
     }
 
   }

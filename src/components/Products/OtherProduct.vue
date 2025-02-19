@@ -14,7 +14,7 @@ defineProps({
 
 <template>
   <div class="other-products__card card-other-product">
-    <div class="card-other-product__content">
+    <a href="#" class="card-other-product__content">
       <div class="card-other-product__content-top">
         <div class="card-other-product__num">{{ number }}</div>
         <div class="card-other-product__title">{{ title }}</div>
@@ -38,7 +38,7 @@ defineProps({
           <div class="circle"></div>
         </div>
       </div>
-    </div>
+    </a>
   </div>
 </template>
 
@@ -53,12 +53,12 @@ defineProps({
   }
 
   &__content {
+    text-decoration: none;
     border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     padding: 24px;
     position: relative;
     height: 100%;
-    min-height: 240px;
 
     @media screen and (min-width: 991.98px) {
       display: flex;
@@ -179,11 +179,9 @@ defineProps({
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    bottom: 24px;
-    right: 24px;
+    margin-top: 24px;
     @media screen and (min-width: 991.98px) {
-      position: static;
+      margin: 0;
     }
 
     img {

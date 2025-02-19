@@ -67,7 +67,6 @@ const toggleDropdown = (item) => {
           <span class="text">{{ $t(item.text) }}</span>
         </router-link>
 
-        <!-- Dropdown menu for services -->
         <ul v-if="item.children" class="dropdown" :class="{ 'dropdown-open': item.showDropdown }">
           <li v-for="(child, childIndex) in item.children" :key="childIndex">
             <router-link :to="child.link" class="dropdown-link">{{ $t(child.text) }}</router-link>
@@ -123,39 +122,38 @@ nav ul {
 
       .dropdown {
         display: none;
-        padding: 10px 0 0 10px;
+        padding: 20px 0 0 20px;
         transition: opacity 0.3s ease, transform 0.3s ease;
         @media screen and (min-width: 767.98px) {
           position: absolute;
           left: -100%;
           top: 100%;
           z-index: 11;
-          padding: 0;
-          border-radius: 0 20px 0 20px;
-          //background: #070707;
-          //border: 1px solid rgba(255, 255, 255, 0.55);
-          border-top: none;
-
-          //box-shadow: rgba(255, 255, 255, 0.55) 0 0 30px;
           min-width: 320px;
         }
         @media screen and (min-width: 991.98px) {
           left: 0;
-
+          padding-top: 10px;
         }
 
         li {
           padding: 0;
-          @media screen and (min-width: 767.98px) {
-            a {
-              display: block;
-              padding: 12px;
-              background: #070707;
-              border-radius: 10px;
-              border: 1px solid rgba(255, 255, 255, 0.7);
-            }
 
+          a {
+            @media screen and (min-width: 767.98px) {
+              display: block;
+              padding: 8px 12px;
+              background: rgb(7 7 7 / 80%);
+              box-shadow: rgba(255, 255, 255, 0.55) 0 0 5px;
+              border-radius: 8px;
+            }
+            @media screen and (min-width: 991.98px) {
+              &:hover {
+                filter: brightness(.7);
+              }
+            }
           }
+
         }
 
         .dropdown-link {
@@ -167,12 +165,13 @@ nav ul {
       }
 
       &.dropdown-active .dropdown {
+        padding: 20px;
         display: grid;
-        gap: 15px;
+        gap: 12px;
         opacity: 1;
         transform: translateY(0);
         @media screen and (min-width: 767.98px) {
-          gap: 5px;
+          gap: 6px;
         }
       }
     }
@@ -185,8 +184,29 @@ nav ul {
       text-decoration: none;
       transition: color 0.2s ease-out;
       cursor: pointer;
+
+      position: relative;
       @media screen and (min-width: 767.98px) {
         font-size: 14px;
+      }
+      @media screen and (min-width: 991.98px) {
+        &:before {
+          opacity: 0;
+          content: '';
+          width: 0;
+          height: 1px;
+          background: #FFF;
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          transition: .4s ease;
+        }
+        &:hover {
+          &:before {
+            opacity: 1;
+            width: 100%;
+          }
+        }
       }
     }
   }

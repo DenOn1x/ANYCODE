@@ -3,35 +3,70 @@
 </script>
 
 <template>
-  <div class="not-found">
-    <h1>404 - Page Not Found</h1>
-    <p>
-      The page you are looking for doesn't exist. Please check the URL or go back to the homepage.
-    </p>
-    <router-link :to="`/${$i18n.locale}`">Go to Homepage</router-link>
-  </div>
+  <section class="not-found">
+    <div class="container">
+      <div class="not-found__content">
+        <h1>404</h1>
+        <div class="sub-title">Page not found</div>
+        <p>The page you are trying to access does not exist or has been deleted</p>
+        <p>
+          Go to
+          <router-link :to="`/${$i18n.locale}`">Homepage</router-link>
+        </p>
+      </div>
+    </div>
+  </section>
 </template>
 
 
-
-<style scoped>
+<style scoped lang="scss">
 .not-found {
-  padding: 20px;
-  text-align: center;
+  position: relative;
+  padding-top: 40px;
+  @media screen and (min-width: 1199.98px) {
+    padding-top: 80px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+
+    h1 {
+      font-weight: 700;
+      line-height: 100%;
+      color: #7470ff;
+      text-align: center;
+      font-size: 120px;
+      @media screen and (min-width: 767.98px) {
+        font-size: 224px;
+      }
+    }
+
+    .sub-title {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 124%;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 148%;
+      color: #FFF;
+      text-align: center;
+
+      a {
+        color: #7470ff;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
-h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
 
-p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-a {
-  font-size: 1rem;
-  color: #42b983;
-}
 </style>

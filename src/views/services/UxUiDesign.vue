@@ -69,10 +69,13 @@ const experts = ref([
         <p>{{ serviceInfo.description }}</p>
       </div>
 
-      <div class="content-block">
+      <div class="content-block content-block--advantages">
         <h2>Преимущества</h2>
         <ul class="list">
-          <li v-for="(benefit, index) in benefits" :key="index">{{ benefit }}</li>
+          <li v-for="(benefit, index) in benefits" :key="index">
+            <span class="list-number">{{ String(index + 1).padStart(2, '0') }}</span>
+            {{ benefit }}
+          </li>
         </ul>
       </div>
 
@@ -182,6 +185,54 @@ const experts = ref([
         line-height: 124%;
       }
     }
+
+    &.content-block--advantages {
+      ul {
+        @media screen and (min-width: 767.98px) {
+          column-count: 2;
+        }
+
+        li {
+          display: flex;
+          align-items: center;
+          break-inside: avoid;
+          gap: 24px;
+          padding: 0;
+          font-size: 16px;
+
+          &:not(:last-child) {
+            margin-bottom: 24px;
+          }
+
+          @media screen and (min-width: 1199.98px) {
+            max-width: 60%;
+          }
+
+          span {
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 124%;
+
+            min-width: 64px;
+            width: 64px;
+            height: 64px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            border: 1px solid #FFF;
+          }
+
+          &:before, &:after {
+            display: none;
+          }
+        }
+      }
+
+    }
+
   }
 
   .list {
