@@ -1,4 +1,5 @@
 <script setup>
+import {ref} from "vue";
 
 import ic_fb from "@/assets/images/svg/ic_fb.svg?url";
 import ic_tg from "@/assets/images/svg/ic_tg.svg?url";
@@ -6,6 +7,10 @@ import ic_wp from "@/assets/images/svg/ic_wp.svg?url";
 
 import Button from "@/UI/Button.vue";
 import FormCall from "@/components/FormCall.vue";
+import Modal from '@/components/Modals/Modal.vue';
+import QuizForm from "@/components/Quiz/QuizForm.vue";
+
+const showModalQuiz = ref(false);
 
 
 </script>
@@ -30,8 +35,9 @@ import FormCall from "@/components/FormCall.vue";
                 <img :src="ic_wp" alt="ic_wp"/>
                 +375 (29) 848-18-20
               </a>
-              <p>Свяжитесь с нами по телефону — обсудим ваш проект и ответим на все вопросы.</p>
-              <Button :label="$t('request_quote')" color="fill" @click="showModalForm = true"/>
+              <p>Свяжитесь с нами по телефону — обсудим ваш проект и ответим на все вопросы, или оставьте заявку, и мы
+                подготовим для вас персональное предложение!</p>
+              <Button :label="$t('get_quote')" color="stroke" @click="showModalQuiz = true"/>
             </div>
             <div class="contacts__card">
               <p><b>Наш офис</b></p>
@@ -69,9 +75,22 @@ import FormCall from "@/components/FormCall.vue";
       </div>
     </div>
   </section>
+
+  <Modal v-model="showModalQuiz" modalClass="modal-quiz">
+    <QuizForm/>
+  </Modal>
 </template>
 
 <style scoped lang="scss">
+.modal-content {
+  .quiz__form {
+    box-shadow: none;
+    border-radius: 0;
+    @media screen and (min-width: 991.98px) {
+      padding: 48px 24px;
+    }
+  }
+}
 
 .contacts {
   padding-top: 20px;
@@ -203,6 +222,7 @@ import FormCall from "@/components/FormCall.vue";
 
     &-link {
       display: inline-flex;
+      width: fit-content;
       align-items: center;
       gap: 10px;
 
@@ -212,6 +232,12 @@ import FormCall from "@/components/FormCall.vue";
       color: #FFF;
       text-decoration: none;
       margin: 4px 0;
+      transition: .1s ease;
+      @media screen and (min-width: 991.98px) {
+        &:hover {
+          filter: brightness(.5);
+        }
+      }
 
       img {
 
@@ -233,7 +259,7 @@ import FormCall from "@/components/FormCall.vue";
 
     }
 
-    .btn-fill {
+    .btn-stroke {
       margin-top: 24px;
     }
   }

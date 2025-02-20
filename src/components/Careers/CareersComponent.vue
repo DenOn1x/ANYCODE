@@ -55,7 +55,7 @@ const props = defineProps({
         </div>
 
         <div class="careers__cards">
-          <div v-for="(job, index) in props.jobs" :key="index" class="careers__card">
+          <a href="#" v-for="(job, index) in props.jobs" :key="index" class="careers__card">
             <div class="careers__card-top">
               <div class="careers__card-top-title">{{ job.title }}</div>
               <div class="careers__card-top-loc">{{ job.location }}</div>
@@ -64,7 +64,7 @@ const props = defineProps({
               <div class="careers__card-bottom-who">{{ job.type }}</div>
               <router-link :to="job.link" class="careers__card-bottom-link">Подробнее</router-link>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -176,6 +176,7 @@ const props = defineProps({
     justify-content: space-between;
     gap: 20px;
     transition: .3s ease;
+    text-decoration: none;
     @media screen and (min-width: 991.98px) {
       gap: 40px;
       &:hover {

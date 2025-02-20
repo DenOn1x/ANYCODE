@@ -84,15 +84,14 @@ const socialLinks = [
           </div>
           <div class="footer__content">
             <div v-for="item in footerItems" :key="item.title" class="footer__col">
-              <div class="title-box">
+              <div class="title-box" @click="toggleList(item.content)">
                 <div class="title">{{ $t(item.title) }}</div>
                 <img
                     v-if="isMobile"
                     :src="icChevron"
                     :class="{ 'arrow--open': openList === item.content }"
                     class="arrow"
-                    @click="toggleList(item.content)"
-                    alt=""
+                    alt="arrow"
                 />
               </div>
               <transition name="expand">
@@ -220,6 +219,12 @@ const socialLinks = [
           background-position: center;
           cursor: pointer;
           filter: grayscale(0) brightness(0);
+          transition: .1s ease;
+          @media screen and (min-width: 991.98px) {
+            &:hover {
+              filter: brightness(.5);
+            }
+          }
         }
       }
     }
@@ -314,6 +319,15 @@ const socialLinks = [
                 font-size: 16px;
               }
             }
+
+            transition: .1s ease;
+            @media screen and (min-width: 991.98px) {
+              &:hover {
+                &:before {
+                  background: #070707;
+                }
+              }
+            }
           }
 
         }
@@ -354,6 +368,27 @@ const socialLinks = [
           line-height: 148%;
           color: #070707;
           text-decoration: none;
+          position: relative;
+
+          @media screen and (min-width: 991.98px) {
+            &:before {
+              opacity: 0;
+              content: '';
+              width: 0;
+              height: 1px;
+              background: #070707;
+              position: absolute;
+              left: 0;
+              bottom: -2px;
+              transition: .4s ease;
+            }
+            &:hover {
+              &:before {
+                opacity: 1;
+                width: 100%;
+              }
+            }
+          }
           @media screen and (min-width: 1199.98px) {
             font-size: 16px;
           }
@@ -374,6 +409,24 @@ const socialLinks = [
       position: relative;
       @media screen and (min-width: 991.98px) {
         font-size: 16px;
+        &:before {
+          opacity: 0;
+          content: '';
+          width: 0;
+          height: 1px;
+          background: #070707;
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          transition: .4s ease;
+        }
+        &:hover {
+          &:before {
+            opacity: 1;
+            width: 100%;
+          }
+
+        }
       }
     }
   }

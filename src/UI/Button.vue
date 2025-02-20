@@ -20,14 +20,22 @@ const props = defineProps({
   padding: 15px 20px;
   background: none;
   border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+
   font-family: 'Atyp';
   color: #FFF;
   font-size: 14px;
   font-weight: 400;
   line-height: 124%;
+  transition: .1s ease;
+  @media screen and (min-width: 991.98px) {
+    &:hover {
+      border-color: transparent;
+      box-shadow: rgba(255, 255, 255, 0.55) 0 0 5px;
+    }
+  }
 }
 
 .btn-fill {
@@ -42,6 +50,12 @@ const props = defineProps({
   font-size: 14px;
   font-weight: 400;
   line-height: 124%;
+  transition: .1s ease;
+  @media screen and (min-width: 991.98px) {
+    &:hover {
+      background: rgba(116, 112, 255, 0.8);
+    }
+  }
 }
 
 </style>

@@ -1,6 +1,6 @@
 <script setup>
 import {ref, getCurrentInstance, onMounted, onUnmounted, computed, watch} from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import {useRoute, useRouter} from 'vue-router';
 import icChevron from "@/assets/images/svg/ic_chevron.svg?url";
 
 const options = [
@@ -25,13 +25,13 @@ const toggleDropdown = () => {
 };
 
 const changeLanguage = (locale) => {
-  const { $i18n, $router, $route } = instance.proxy;
+  const {$i18n, $router, $route} = instance.proxy;
   const currentFullPath = $route.fullPath;
   const pathParts = currentFullPath.split('/');
   const [, , ...rest] = pathParts;
   const newPath = `/${locale}${rest.length ? '/' + rest.join('/') : ''}`.replace(/\/+$/, '');
   $i18n.locale = locale;
-  $router.push({ path: newPath });
+  $router.push({path: newPath});
 };
 
 const handleClickOutside = (event) => {
@@ -49,7 +49,7 @@ watch(
         selectedLanguage.value = matchingOption.label;
       }
     },
-    { immediate: true }
+    {immediate: true}
 );
 
 onMounted(() => {
@@ -82,20 +82,13 @@ const filteredOptions = computed(() => {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 @import "@/styles/common.scss";
 
 .custom-select {
   position: relative;
   display: inline-block;
-  padding: 10px 0;
-  width: 62px;
-  border-radius: 10px;
 
-  @media screen and (min-width: 767.98px) {
-    padding: 12px 0;
-    width: 64px;
-  }
 
   &.open {
     .options {
@@ -110,11 +103,30 @@ const filteredOptions = computed(() => {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  padding: 10px 0;
+  min-width: 60px;
+
   color: #FFF;
   font-size: 14px;
   font-weight: 400;
   line-height: 124%;
   cursor: pointer;
+
+  .arrow {
+    display: block;
+    min-width: 10px;
+    width: 10px;
+    height: 8px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.3s ease;
+    cursor: pointer;
+
+    &.arrow-up {
+      transform: rotate(180deg);
+    }
+  }
 
 }
 
@@ -124,49 +136,30 @@ const filteredOptions = computed(() => {
   position: absolute;
   top: 100%;
   left: 0;
-  width: calc(100% + 1px);
   z-index: 11;
 
   .option {
-    color: #070707;
+    color: #FFF;
     font-size: 14px;
     font-weight: 400;
     line-height: 124%;
+
+    width: 100%;
     cursor: pointer;
-    padding: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    //background: rgba(255, 255, 255, 0.7);
-    border-top: none;
-    border-bottom: none;
-    border-radius: 10px;
-    margin-top: 5px;
-    @media screen and (min-width: 767.98px) {
-      padding: calc(15px);
-    }
+    padding: 8px 12px 8px 12px;
+    background: rgb(7 7 7 / 80%);
+    box-shadow: rgba(255, 255, 255, 0.55) 0 0 5px;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: .1s ease;
     @media screen and (min-width: 991.98px) {
       &:hover {
-        opacity: .7;
+        filter: brightness(.7);
       }
     }
   }
 }
 
-
-.arrow {
-  display: block;
-  min-width: 10px;
-  width: 10px;
-  height: 8px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: 0.3s ease;
-  cursor: pointer;
-
-  &.arrow-up {
-    transform: rotate(180deg);
-  }
-}
 
 @keyframes dropdown-animation {
   0% {

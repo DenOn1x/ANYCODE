@@ -6,7 +6,7 @@ import ic_checkProject from "@/assets/images/svg/ic_check.svg?url";
 import ic_checkProjectDev from "@/assets/images/svg/ic_check-dep.svg?url";
 
 
-const selectedOption = ref('');
+const selectedOption = defineModel();
 
 const selectOption = (option) => {
   selectedOption.value = option;
@@ -18,21 +18,21 @@ const selectOption = (option) => {
   <div class="quiz__body">
     <div class="quiz__counter">1/5</div>
     <div class="quiz-start">
-      <div class="quiz-start__question">{{$t('quiz_question_first')}}</div>
+      <div class="quiz-start__question">{{ $t('quiz_question_first') }}</div>
       <div class="quiz-start__content">
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-product" value="1" v-model="selectedOption">
+          <input type="radio" name="quiz-product" value="answer_no" v-model="selectedOption">
           <span class="custom-radio-button__img">
             <img :src="ic_checkProjectDev" alt="ic_checkProjectDev"/>
           </span>
-          <span class="quiz-start__text">{{$t('quiz_answer_first')}}</span>
+          <span class="quiz-start__text">{{ $t('quiz_answer_first') }}</span>
         </label>
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-product" value="2" v-model="selectedOption">
+          <input type="radio" name="quiz-product" value="answer_yes" v-model="selectedOption">
           <span class="custom-radio-button__img">
             <img :src="ic_checkProject" alt="ic_checkProject"/>
           </span>
-          <span class="quiz-start__text">{{$t('quiz_answer_first_variant')}}</span>
+          <span class="quiz-start__text">{{ $t('quiz_answer_first_variant') }}</span>
         </label>
       </div>
     </div>
@@ -90,6 +90,13 @@ const selectOption = (option) => {
   display: block;
   padding-bottom: 100%;
   height: 0;
+  @media screen and (min-width: 991.98px) {
+    &:hover {
+      img {
+        filter: brightness(.7);
+      }
+    }
+  }
 
   img {
     position: absolute;
@@ -100,9 +107,7 @@ const selectOption = (option) => {
     z-index: 1;
     object-fit: contain;
     border-radius: 10px;
-    @media screen and (min-width: 991.98px) {
-
-    }
+    transition: .1s ease;
   }
 
   &:before {

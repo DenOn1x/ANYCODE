@@ -1,5 +1,5 @@
 <script setup>
-import {ref, watch} from 'vue';
+import {ref, watch, onMounted, onUnmounted} from 'vue';
 import {useRouter} from 'vue-router';
 
 import logoURL from '@/assets/images/svg/anycode.svg?url';
@@ -26,17 +26,40 @@ const closeMenu = () => {
   is_expanded.value = false;
 };
 
-watch(is_expanded, (newValue) => {
-  if (newValue) {
-    document.body.classList.add('no-scroll');
-  } else {
-    document.body.classList.remove('no-scroll');
+const removeNoScrollClass = () => {
+  if (!is_expanded.value) {
+    document.documentElement.classList.remove('no-scroll');
   }
+};
+
+
+watch([is_expanded, showModalCall], ([menuOpen, modalOpen]) => {
+  if (modalOpen && menuOpen) {
+    closeMenu();
+  }
+  document.documentElement.classList.toggle('no-scroll', menuOpen || modalOpen);
 });
+
 
 const router = useRouter();
 router.afterEach(() => {
-  closeMenu();
+  if (is_expanded.value) closeMenu();
+  removeNoScrollClass();
+});
+
+const handleResize = () => {
+  if (window.innerWidth > 767.98 && is_expanded.value) {
+    closeMenu();
+    removeNoScrollClass();
+  }
+};
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize);
 });
 </script>
 
@@ -61,36 +84,39 @@ router.afterEach(() => {
         <div :class="`header__menu ${is_expanded ? 'is-expanded' : ''}`">
           <div class="container">
             <div class="header__menu-wrapper">
-              <Navbar @link-clicked="closeMenuAndScroll"/>
+              <Navbar/>
               <div class="header__menu-bottom">
                 <div class="header__menu-bottom-call">
-                  <a href="tel:">+111 11-111-11-11</a>
-                  <a href="mailto:">test@gmail.com</a>
+                  <a href="tel:+375298481820">+375 (29) 848-18-20</a>
+                  <a href="mailto:anycode.it@gmail.com">anycode.it@gmail.com</a>
                 </div>
                 <ul class="header__socials">
                   <li>
-                    <a href="#" @click="closeMenuAndScroll">
-                      <img :src="ic_fb" alt=""/>
+                    <a href="#">
+                      <img :src="ic_fb" alt="facebook"/>
                     </a>
                   </li>
                   <li>
-                    <a href="#" @click="closeMenuAndScroll">
-                      <img :src="ic_tg" alt=""/>
+                    <a href="#">
+                      <img :src="ic_tg" alt="telegram"/>
                     </a>
                   </li>
                   <li>
-                    <a href="#" @click="closeMenuAndScroll">
-                      <img :src="ic_inst" alt=""/>
+                    <a href="#">
+                      <img :src="ic_inst" alt="instagram"/>
                     </a>
                   </li>
                   <li>
-                    <a href="#" @click="closeMenuAndScroll">
-                      <img :src="ic_wp" alt=""/>
+                    <a href="#">
+                      <img :src="ic_wp" alt="whatsapp"/>
                     </a>
                   </li>
                 </ul>
-                <Button :label="$t('request_quote')"
-                        color="stroke"/>
+                <Button
+                    :label="$t('request_quote')"
+                    color="stroke"
+                    @click="showModalCall = true"
+                />
               </div>
             </div>
           </div>
@@ -102,7 +128,7 @@ router.afterEach(() => {
               color="stroke"
               @click="showModalCall = true"
           />
-          <a href="tel:" class="header__phone phone--md"></a>
+          <a href="tel:+375298481820" class="header__phone phone--md"></a>
         </div>
       </div>
     </div>
@@ -156,7 +182,7 @@ router.afterEach(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 0;
+  padding: 10px 0;
   gap: 20px;
   @media screen and (min-width: 767.98px) {
     justify-content: flex-start;
@@ -236,7 +262,7 @@ router.afterEach(() => {
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left center;
-      transition: .3s ease;
+      transition: .1s ease;
       @media screen and (min-width: 767.98px) {
         min-width: 202px;
         width: 202px;
@@ -267,10 +293,10 @@ router.afterEach(() => {
     display: block;
     position: fixed;
     left: 0;
-    top: 62px;
+    top: 60px;
     z-index: 10;
     width: 100%;
-    height: calc(100vh - 62px);
+    height: calc(100vh - 60px);
     background: #070707;
     flex-direction: column;
     justify-content: flex-start;
@@ -311,7 +337,7 @@ router.afterEach(() => {
     font-size: 14px;
     font-weight: 400;
     line-height: 124%;
-    color: #ffffff5c;
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
   }
 }
@@ -367,20 +393,12 @@ router.afterEach(() => {
     display: block;
     min-width: 20px;
     width: 20px;
-    height: 17.36px;
-    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjg5MTUgNC4wNTgwOUMxMS42MzgyIDQuMjAzNzggMTIuMzI0NSA0LjU2ODk4IDEyLjg2MjUgNS4xMDY5NkMxMy40MDA0IDUuNjQ0OTQgMTMuNzY1NiA2LjMzMTIxIDEzLjkxMTMgNy4wNzc5NU0xMC44OTE1IDFDMTIuNDQyOSAxLjE3MjM1IDEzLjg4OTYgMS44NjcxIDE0Ljk5NDEgMi45NzAxOEMxNi4wOTg1IDQuMDczMjYgMTYuNzk1MSA1LjUxOTEgMTYuOTY5NCA3LjA3MDNNMTYuMjA0OSAxMy4xNzEyVjE1LjQ2NDhDMTYuMjA1OCAxNS42Nzc3IDE2LjE2MjEgMTUuODg4NCAxNi4wNzY4IDE2LjA4MzVDMTUuOTkxNSAxNi4yNzg2IDE1Ljg2NjQgMTYuNDUzNyAxNS43MDk1IDE2LjU5NzdDMTUuNTUyNiAxNi43NDE2IDE1LjM2NzQgMTYuODUxMiAxNS4xNjU3IDE2LjkxOTRDMTQuOTY0IDE2Ljk4NzYgMTQuNzUwMyAxNy4wMTMgMTQuNTM4MiAxNi45OTM4QzEyLjE4NTcgMTYuNzM4MiA5LjkyNTg4IDE1LjkzNDMgNy45NDA0MiAxNC42NDY3QzYuMDkzMiAxMy40NzI5IDQuNTI3MDggMTEuOTA2OCAzLjM1MzI5IDEwLjA1OTZDMi4wNjEyMyA4LjA2NTEgMS4yNTcxNSA1Ljc5NDMxIDEuMDA2MjEgMy40MzExOEMwLjk4NzEgMy4yMTk3NiAxLjAxMjIzIDMuMDA2NjkgMS4wNzk5OCAyLjgwNTUxQzEuMTQ3NzQgMi42MDQzNCAxLjI1NjY0IDIuNDE5NDggMS4zOTk3NiAyLjI2MjdDMS41NDI4NyAyLjEwNTkyIDEuNzE3MDYgMS45ODA2NiAxLjkxMTI0IDEuODk0ODlDMi4xMDU0MiAxLjgwOTEyIDIuMzE1MzMgMS43NjQ3MiAyLjUyNzYgMS43NjQ1Mkg0LjgyMTE3QzUuMTkyMiAxLjc2MDg3IDUuNTUxODkgMS44OTIyNiA1LjgzMzIxIDIuMTM0MTlDNi4xMTQ1MyAyLjM3NjEzIDYuMjk4MjggMi43MTIxMSA2LjM1MDIxIDMuMDc5NUM2LjQ0NzAyIDMuODEzNDkgNi42MjY1NSA0LjUzNDE4IDYuODg1MzggNS4yMjc4MUM2Ljk4ODI0IDUuNTAxNDUgNy4wMTA1IDUuNzk4ODQgNi45NDk1MiA2LjA4NDc0QzYuODg4NTUgNi4zNzA2NSA2Ljc0Njg5IDYuNjMzMDggNi41NDEzNCA2Ljg0MDk1TDUuNTcwNCA3LjgxMTg5QzYuNjU4NzQgOS43MjU5IDguMjQzNTEgMTEuMzEwNyAxMC4xNTc1IDEyLjM5OUwxMS4xMjg1IDExLjQyODFDMTEuMzM2MyAxMS4yMjI1IDExLjU5ODggMTEuMDgwOSAxMS44ODQ3IDExLjAxOTlDMTIuMTcwNiAxMC45NTg5IDEyLjQ2OCAxMC45ODEyIDEyLjc0MTYgMTEuMDg0QzEzLjQzNTIgMTEuMzQyOSAxNC4xNTU5IDExLjUyMjQgMTQuODg5OSAxMS42MTkyQzE1LjI2MTMgMTEuNjcxNiAxNS42MDA1IDExLjg1ODcgMTUuODQyOSAxMi4xNDQ4QzE2LjA4NTQgMTIuNDMxIDE2LjIxNDIgMTIuNzk2MiAxNi4yMDQ5IDEzLjE3MTJaIiBzdHJva2U9IiMxRjFGMUYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=) no-repeat;
+    height: 18px;
+    background-repeat: no-repeat;
     background-size: contain;
-    filter: brightness(255);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkuMzgyNjIgMS4wMDAwN0MxMC44MTM4IDEuMTUwOTUgMTIuMTUwNyAxLjc4NjA1IDEzLjE3MjEgMi44MDAzNEMxNC4xOTM2IDMuODE0NjIgMTQuODM4NCA1LjE0NzM0IDE1IDYuNTc4MDlNOS4zODI2MiAzLjgxMDE1QzEwLjA3MzIgMy45NDY0IDEwLjcwNjkgNC4yODcxOSAxMS4yMDE1IDQuNzg4MjhDMTEuNjk2MSA1LjI4OTM4IDEyLjAyODcgNS45Mjc2NCAxMi4xNTYyIDYuNjIwMjRNMTQuOTY0OSAxMS40ODE3VjEzLjU4OTNDMTQuOTY1NyAxMy43ODQ5IDE0LjkyNTYgMTMuOTc4NiAxNC44NDczIDE0LjE1NzhDMTQuNzY4OSAxNC4zMzcxIDE0LjY1NCAxNC40OTggMTQuNTA5OSAxNC42MzAzQzE0LjM2NTggMTQuNzYyNiAxNC4xOTU3IDE0Ljg2MzMgMTQuMDEwNSAxNC45MjU5QzEzLjgyNTIgMTQuOTg4NiAxMy42Mjg5IDE1LjAxMTkgMTMuNDM0MiAxNC45OTQzQzExLjI3MzUgMTQuNzU5NCA5LjE5Nzk1IDE0LjAyMDcgNy4zNzQ0IDEyLjgzNzZDNS42Nzc4NCAxMS43NTg5IDQuMjM5NDQgMTAuMzE5OCAzLjE2MTM3IDguNjIyNDNDMS45NzQ2OCA2Ljc4OTY5IDEuMjM2MTggNC43MDMwNiAxLjAwNTcgMi41MzE1NkMwLjk4ODE1MiAyLjMzNzI5IDEuMDExMjMgMi4xNDE1IDEuMDczNDYgMS45NTY2NEMxLjEzNTY5IDEuNzcxNzggMS4yMzU3MSAxLjYwMTkxIDEuMzY3MTUgMS40NTc4NUMxLjQ5ODYgMS4zMTM3OCAxLjY1ODU4IDEuMTk4NjggMS44MzY5MiAxLjExOTg2QzIuMDE1MjcgMS4wNDEwNSAyLjIwODA2IDEuMDAwMjUgMi40MDMwMiAxLjAwMDA3SDQuNTA5NTRDNC44NTAzMSAwLjk5NjcxMyA1LjE4MDY3IDEuMTE3NDQgNS40MzkwNSAxLjMzOTc2QzUuNjk3NDMgMS41NjIwOCA1Ljg2NjE5IDEuODcwODEgNS45MTM4OSAyLjIwODQxQzYuMDAyOCAyLjg4Mjg3IDYuMTY3NjkgMy41NDUxMSA2LjQwNTQxIDQuMTgyNDlDNi40OTk4OCA0LjQzMzk0IDYuNTIwMzMgNC43MDcyMSA2LjQ2NDMyIDQuOTY5OTNDNi40MDgzMiA1LjIzMjY1IDYuMjc4MjIgNS40NzM4IDYuMDg5NDMgNS42NjQ4MUw1LjE5NzY3IDYuNTU3MDFDNi4xOTcyNSA4LjMxNTgxIDcuNjUyNzggOS43NzIwNiA5LjQxMDcxIDEwLjc3MjFMMTAuMzAyNSA5Ljg3OTk0QzEwLjQ5MzQgOS42OTEwNiAxMC43MzQ0IDkuNTYwODkgMTAuOTk3IDkuNTA0ODZDMTEuMjU5NiA5LjQ0ODgzIDExLjUzMjcgOS40NjkyOSAxMS43ODQgOS41NjM4MUMxMi40MjExIDkuODAxNjQgMTMuMDgzIDkuOTY2NjIgMTMuNzU3MiAxMC4wNTU2QzE0LjA5ODIgMTAuMTAzNyAxNC40MDk4IDEwLjI3NTYgMTQuNjMyNCAxMC41Mzg2QzE0Ljg1NTEgMTAuODAxNSAxNC45NzM0IDExLjEzNzIgMTQuOTY0OSAxMS40ODE3WiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=);
   }
 
-  @media screen and (min-width: 767.98px) {
-    padding: 11px;
-    &:before {
-      min-width: 22px;
-      width: 22px;
-      height: 19.84px;
-    }
-  }
   @media screen and (min-width: 1199.98px) {
     display: none;
   }

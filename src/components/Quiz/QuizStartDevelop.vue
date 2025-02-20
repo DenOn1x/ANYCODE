@@ -1,26 +1,24 @@
 <script setup>
-import {ref} from "vue";
-
-const selectedOption = ref('');
+const selectedOption = defineModel();
 </script>
 
 <template>
   <div class="quiz__body">
     <div class="quiz__counter">4/5</div>
     <div class="quiz-start-dev">
-      <div class="quiz-start-dev__question">{{$t('quiz_question_fourth')}}</div>
+      <div class="quiz-start-dev__question">{{ $t('quiz_question_fourth') }}</div>
       <div class="quiz-start-dev__content">
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-start-dev" value="1" v-model="selectedOption">
-          <span class="quiz-start-dev__text">{{$t('quiz_question_fourth_first')}}</span>
+          <input type="radio" name="quiz-start-dev" value="the_sooner_the_better" v-model="selectedOption">
+          <span class="quiz-start-dev__text">{{ $t('quiz_question_fourth_first') }}</span>
         </label>
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-start-dev" value="2" v-model="selectedOption">
-          <span class="quiz-start-dev__text">{{$t('quiz_question_fourth_second')}}</span>
+          <input type="radio" name="quiz-start-dev" value="within_two_months" v-model="selectedOption">
+          <span class="quiz-start-dev__text">{{ $t('quiz_question_fourth_second') }}</span>
         </label>
         <label class="custom-radio-button">
-          <input type="radio" name="quiz-start-dev" value="3" v-model="selectedOption">
-          <span class="quiz-start-dev__text">{{$t('quiz_question_fourth_third')}}</span>
+          <input type="radio" name="quiz-start-dev" value="within_a_year" v-model="selectedOption">
+          <span class="quiz-start-dev__text">{{ $t('quiz_question_fourth_third') }}</span>
         </label>
       </div>
     </div>
@@ -66,6 +64,15 @@ const selectedOption = ref('');
   &:not(:last-child) {
     margin-bottom: 20px;
   }
+
+  @media screen and (min-width: 991.98px) {
+    &:hover {
+      .quiz-start-dev__text:before {
+        border-color: #7470ff;
+      }
+    }
+  }
+
 }
 
 .custom-radio-button input {
@@ -97,6 +104,7 @@ const selectedOption = ref('');
   height: 18px;
   border-radius: 50%;
   border: 1px solid #FFF;
+  transition: .1s ease;
 }
 
 .custom-radio-button input:checked ~ .quiz-start-dev__text:before {

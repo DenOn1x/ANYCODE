@@ -1,47 +1,70 @@
-<template>
-  <!-- Прелоадер только при первой загрузке -->
-  <div v-if="showPreloader" class="preloader">
-    <div class="spinner"></div>
-  </div>
-
-  <CustomCursor>
-    <transition
-        name="fade"
-        mode="out-in"
-        appear
-    >
-      <div v-if="!loading" :key="$route.fullPath" class="transition-wrapper">
-        <layout-header />
-        <main class="page">
-          <router-view />
-        </main>
-        <layout-footer />
-      </div>
-    </transition>
-  </CustomCursor>
-</template>
-
 <script setup>
-import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
+import {ref, onMounted} from 'vue';
 import LayoutHeader from '@/components/layout/Header.vue';
 import LayoutFooter from '@/components/layout/Footer.vue';
 import CustomCursor from '@/UI/Cursor.vue';
 
 const loading = ref(true);
 const showPreloader = ref(true);
+const isLargeScreen = ref(window.innerWidth > 767.98);
 
 onMounted(() => {
-  setTimeout(() => {
+  if (!isLargeScreen.value) {
     loading.value = false;
     showPreloader.value = false;
-  }, 1000); // Имитация загрузки
+  } else {
+    setTimeout(() => {
+      loading.value = false;
+      showPreloader.value = false;
+    }, 1000);
+  }
 });
 </script>
+
+<template>
+  <div v-if="showPreloader" class="preloader">
+    <div class="preloader-text">
+      ANYC<span class="spinner"></span>DE
+    </div>
+  </div>
+
+  <CustomCursor>
+    <transition
+        v-if="isLargeScreen"
+        name="fade"
+        mode="out-in"
+        appear
+    >
+      <div v-if="!loading" :key="$route.fullPath" class="transition-wrapper">
+        <layout-header/>
+        <main class="page">
+          <router-view/>
+        </main>
+        <layout-footer/>
+      </div>
+    </transition>
+    <div v-else-if="!loading" :key="$route.fullPath" class="transition-wrapper">
+      <layout-header/>
+      <main class="page">
+        <router-view/>
+      </main>
+      <layout-footer/>
+    </div>
+  </CustomCursor>
+</template>
+
 
 <style lang="scss">
 @import "styles/reset";
 @import "styles/global";
+
+html {
+  scrollbar-gutter: stable;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
 
 .page {
   margin-top: 80px;
@@ -55,36 +78,51 @@ onMounted(() => {
   height: 100%;
 }
 
-/* Прелоадер */
 .preloader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: #070707;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  transition: opacity 0.3s ease;
+  transition: opacity .1s ease;
 }
 
 .spinner {
-  width: 50px;
-  height: 50px;
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-top: 4px solid #000;
+  min-width: 30px;
+  width: 30px;
+  height: 30px;
+  border: 8px solid rgba(255, 255, 255, 0.1);
+  border-top: 8px solid #FFF;
   border-radius: 50%;
-  animation: spin 0.7s linear infinite;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+.preloader-text {
+  font-size: 64px;
+  font-weight: 700;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-/* Анимация */
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
@@ -93,4 +131,5 @@ onMounted(() => {
   opacity: 0;
   transform: translateY(50px);
 }
+
 </style>

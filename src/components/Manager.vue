@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import {ref, onMounted} from 'vue';
 
 // Import the video using a relative path
 import videoSrc from '@/assets/images/anycode_example.mp4';
@@ -62,7 +62,7 @@ onMounted(() => {
           muted
           preload="none"
       >
-        <source src="" type="video/mp4" />
+        <source src="" type="video/mp4"/>
       </video>
       <button class="manager__play-button" ref="playButton" @click="handlePlay">
         <span></span>
@@ -72,65 +72,71 @@ onMounted(() => {
 </template>
 
 
-<style scoped>
+<style scoped lang="scss">
 .manager {
   margin-top: 60px;
   @media screen and (min-width: 1199.98px) {
     margin-top: 100px;
   }
 
-
-}
-
-.manager__wrapper {
-  position: relative;
-  border-radius: 20px;
-  max-width: 90%;
-  margin: auto;
-  box-shadow: rgba(255, 255, 255, 0.55) 0 0 30px;
-  @media screen and (min-width: 991.98px) {
-    border-radius: 40px;
+  &__wrapper {
+    position: relative;
+    border-radius: 20px;
+    max-width: 90%;
+    margin: auto;
+    box-shadow: rgba(255, 255, 255, 0.55) 0 0 30px;
+    @media screen and (min-width: 991.98px) {
+      border-radius: 40px;
+    }
   }
-}
 
-.manager__video-component {
-  width: 100%;
-  height: 100%;
-  display: block;
-  border-radius: 20px;
-  @media screen and (min-width: 991.98px) {
-    border-radius: 40px;
-  }
-}
-
-.manager__play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: none;
-  background-color: #7470ff;
-  cursor: pointer;
-  display: flex;
-  min-width: 64px;
-  width: 64px;
-  height: 64px;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-
-  span {
+  &__video-component {
+    width: 100%;
+    height: 100%;
     display: block;
-    min-width: 20px;
-    width: 20px;
-    height: 20px;
-    margin-right: -2px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxNyAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgOC45OTk0MVY1LjQzOTQxQzAgMS4wMTk0MSAzLjEzIC0wLjc5MDU5MyA2Ljk2IDEuNDE5NDFMMTAuMDUgMy4xOTk0MUwxMy4xNCA0Ljk3OTQxQzE2Ljk3IDcuMTg5NDEgMTYuOTcgMTAuODA5NCAxMy4xNCAxMy4wMTk0TDEwLjA1IDE0Ljc5OTRMNi45NiAxNi41Nzk0QzMuMTMgMTguNzg5NCAwIDE2Ljk3OTQgMCAxMi41NTk0VjguOTk5NDFaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K);
+    border-radius: 20px;
+    @media screen and (min-width: 991.98px) {
+      border-radius: 40px;
+    }
   }
+
+  &__play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: none;
+    background-color: #7470ff;
+    cursor: pointer;
+    display: flex;
+    min-width: 64px;
+    width: 64px;
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: .1s ease;
+    @media screen and (min-width: 991.98px) {
+      &:hover{
+        background: rgba(116, 112, 255, 0.8);
+      }
+    }
+
+    span {
+      display: block;
+      min-width: 20px;
+      width: 20px;
+      height: 20px;
+      margin-right: -2px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxNyAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgOC45OTk0MVY1LjQzOTQxQzAgMS4wMTk0MSAzLjEzIC0wLjc5MDU5MyA2Ljk2IDEuNDE5NDFMMTAuMDUgMy4xOTk0MUwxMy4xNCA0Ljk3OTQxQzE2Ljk3IDcuMTg5NDEgMTYuOTcgMTAuODA5NCAxMy4xNCAxMy4wMTk0TDEwLjA1IDE0Ljc5OTRMNi45NiAxNi41Nzk0QzMuMTMgMTguNzg5NCAwIDE2Ljk3OTQgMCAxMi41NTk0VjguOTk5NDFaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K);
+    }
+  }
+
 }
+
 
 </style>

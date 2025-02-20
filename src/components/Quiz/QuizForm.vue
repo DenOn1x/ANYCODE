@@ -29,6 +29,8 @@ const currentSlide = ref(0);
 const totalSlides = ref(6);
 const progressBarWidth = ref('0%');
 
+const selectedOptions = ref({});
+
 const updateProgressBar = () => {
   if (totalSlides.value > 1) {
     progressBarWidth.value = `${(currentSlide.value / (totalSlides.value - 1)) * 100}%`;
@@ -41,6 +43,10 @@ const goNext = () => {
   if (splideRef.value.splide) {
     splideRef.value.splide.go('>');
   }
+};
+
+const isNextDisabled = () => {
+  return !selectedOptions.value[currentSlide.value] || selectedOptions.value[currentSlide.value].length === 0;
 };
 
 const goPrev = () => {
@@ -73,19 +79,19 @@ onMounted(() => {
     <form action="#" method="POST" class="quiz__cards">
       <Splide ref="splideRef" :options="splideOptions" data-slider="quiz" aria-label="">
         <SplideSlide>
-          <QuizStart/>
+          <QuizStart v-model="selectedOptions[0]"/>
         </SplideSlide>
         <SplideSlide>
-          <QuizProducts/>
+          <QuizProducts v-model="selectedOptions[1]"/>
         </SplideSlide>
         <SplideSlide>
-          <QuizBudget/>
+          <QuizBudget v-model="selectedOptions[2]"/>
         </SplideSlide>
         <SplideSlide>
-          <QuizStartDevelop/>
+          <QuizStartDevelop v-model="selectedOptions[3]"/>
         </SplideSlide>
         <SplideSlide>
-          <QuizCompany/>
+          <QuizCompany v-model="selectedOptions[4]"/>
         </SplideSlide>
         <SplideSlide>
           <QuizFields/>
@@ -106,6 +112,7 @@ onMounted(() => {
             v-if="currentSlide < totalSlides - 1"
             type="button"
             class="quiz__custom-next"
+            :disabled="isNextDisabled()"
             @click="goNext"
         >{{ $t('next') }}
         </button>
@@ -177,10 +184,20 @@ onMounted(() => {
     font-size: 14px;
     font-weight: 400;
     cursor: pointer;
+    transition: .1s ease;
+    @media screen and (min-width: 991.98px) {
+      &:hover {
+        background: rgba(116, 112, 255, 0.8);
+      }
+    }
   }
 
   .quiz__custom-next {
     margin-left: auto;
+  }
+
+  .quiz__custom-next[disabled] {
+    background: rgba(255, 255, 255, 0.7);
   }
 }
 

@@ -18,6 +18,7 @@ import AndroidDeveloper from "@/views/careers/AndroidDeveloper.vue";
 import SalesManager from "@/views/careers/SalesManager.vue";
 import BaCrm from "@/views/careers/BaCrm.vue";
 import PythonDeveloper from "@/views/careers/PythonDeveloper.vue";
+import Policy from "../views/Policy.vue";
 
 const routes = [
     {
@@ -122,6 +123,12 @@ const routes = [
         ]
     },
     {
+        path: "/:lang(en|ru)?/policy",
+        name: "policy",
+        component: Policy,
+        meta: {}
+    },
+    {
         path: "/about",
         redirect: (to) => `/${i18n.global.locale}/about`
     },
@@ -142,7 +149,11 @@ const routes = [
         redirect: (to) => `/${i18n.global.locale}/careers`
     },
     {
-        path: "/:pathMatch(.*)*",
+        path: "/policy",
+        redirect: (to) => `/${i18n.global.locale}/policy`
+    },
+    {
+        path: "/:lang(en|ru)?/:pathMatch(.*)*",
         name: "NotFound",
         component: NotFound
     }
