@@ -98,8 +98,8 @@ onMounted(async () => {
 
         <div class="container">
           <div class="swiper-button-wrapper">
-            <div :class="prevButtonClass" class="swiper-button">Предыдущий</div>
-            <div :class="nextButtonClass" class="swiper-button">Следующий</div>
+            <div :class="prevButtonClass" class="swiper-button">{{ $t('prev') }}</div>
+            <div :class="nextButtonClass" class="swiper-button">{{ $t('next_up') }}</div>
           </div>
         </div>
 

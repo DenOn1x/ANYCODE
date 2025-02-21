@@ -136,6 +136,8 @@
   "expectations_text": "Describe your expectations to understand if our goals align",
   "callback_text": "We will call you back to discuss the details",
   "message": "Message",
+  "prev": "Previous",
+  "next_up": "Next",
   "attach_cv": "Attach CV",
   "file_formats": ".doc.docx.pdf.ppt.pptx - no more than 3 MB",
   "consent_text": "By clicking the button, I agree to the processing of my",
