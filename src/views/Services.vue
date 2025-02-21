@@ -1,21 +1,19 @@
 <script setup>
-
 import Services from "@/components/Services/Services.vue";
-import {useRoute} from "vue-router";
-
+import { useRoute } from "vue-router";
 import Button from "@/UI/Button.vue";
 
-import ic_fb from '@/assets/images/svg/ic_fb.svg?url'
-import ic_tg from '@/assets/images/svg/ic_tg.svg?url'
-import ic_inst from '@/assets/images/svg/ic_inst.svg?url'
-import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
+import ic_fb from '@/assets/images/svg/ic_fb.svg?url';
+import ic_tg from '@/assets/images/svg/ic_tg.svg?url';
+import ic_inst from '@/assets/images/svg/ic_inst.svg?url';
+import ic_wp from '@/assets/images/svg/ic_wp.svg?url';
+
 import ModalQuote from "@/components/Modals/ModalQuote.vue";
 import Modal from "@/components/Modals/Modal.vue";
-import {ref} from "vue";
+import { ref } from "vue";
 
 const route = useRoute();
 const showModalForm = ref(false);
-
 </script>
 
 <template>
@@ -26,35 +24,35 @@ const showModalForm = ref(false);
           <div class="services-tmp__content content-services-tmp">
             <div class="content-services-tmp__top">
               <h1 class="content-services-tmp__heading">
-                Услуги компании <span>AnyCode</span>
+                {{ $t("services_page_title") }}
               </h1>
               <div class="content-services-tmp__description">
-                {{ $t('lead_content_first') }} <span>{{ $t('lead_content_span') }}</span> {{
-                  $t('lead_content_text')
-                }}
+                {{ $t("services_intro_first") }}
+                <span>{{ $t("services_intro_span") }}</span>
+                {{ $t("services_intro_text") }}
               </div>
             </div>
             <div class="content-services-tmp__bottom">
-              <Button :label="$t('request_quote')" color="fill" @click="showModalForm = true"/>
+              <Button :label="$t('services_request_quote')" color="fill" @click="showModalForm = true"/>
               <ul class="services-tmp__socials">
                 <li>
                   <a href="#">
-                    <img :src="ic_fb" alt=""/>
+                    <img :src="ic_fb" alt="Facebook"/>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img :src="ic_tg" alt=""/>
+                    <img :src="ic_tg" alt="Telegram"/>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img :src="ic_inst" alt=""/>
+                    <img :src="ic_inst" alt="Instagram"/>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img :src="ic_wp" alt=""/>
+                    <img :src="ic_wp" alt="WhatsApp"/>
                   </a>
                 </li>
               </ul>

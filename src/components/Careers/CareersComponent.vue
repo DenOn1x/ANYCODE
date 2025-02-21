@@ -1,6 +1,6 @@
 <script setup>
-import {defineProps} from 'vue';
-import {useRouter} from 'vue-router';
+import { defineProps } from 'vue';
+import { useRouter } from 'vue-router';
 import anycodeCareers from '@/assets/images/anycode-careers.png';
 
 const props = defineProps({
@@ -17,7 +17,7 @@ const props = defineProps({
         title: 'Odoo разработчик',
         location: 'Офис, Удаленная работа',
         type: 'Junior, Middle, Полный рабочий день',
-        link: '/careers/ba-crm',
+        link: '/careers/crm',
       },
       {
         title: 'Бэкенд инженер Python',
@@ -40,13 +40,12 @@ const props = defineProps({
   <section class="careers">
     <div class="container">
       <div class="careers__top">
-        <h1>Вакансии компании AnyCode</h1>
+        <h1>{{ $t('careers_title') }}</h1>
         <div class="careers__sub-title">
-          Мы приглашаем вас присоединиться к нам и стать частью этого увлекательного
-          путешествия, где инновации и творчество находятся в центре всего, что мы делаем. Познакомьтесь с нашими
-          вакансиями и возможностью внести свой вклад в создание будущего с нами.
+          {{ $t('careers_subtitle') }}
         </div>
       </div>
+
       <div class="careers__body">
         <div class="careers__img">
           <picture>
@@ -57,12 +56,14 @@ const props = defineProps({
         <div class="careers__cards">
           <a href="#" v-for="(job, index) in props.jobs" :key="index" class="careers__card">
             <div class="careers__card-top">
-              <div class="careers__card-top-title">{{ job.title }}</div>
-              <div class="careers__card-top-loc">{{ job.location }}</div>
+              <div class="careers__card-top-title">{{ $t(`careers.${job.title}`) }}</div>
+              <div class="careers__card-top-loc">{{ $t(`careers.${job.location}`) }}</div>
             </div>
             <div class="careers__card-bottom">
-              <div class="careers__card-bottom-who">{{ job.type }}</div>
-              <router-link :to="job.link" class="careers__card-bottom-link">Подробнее</router-link>
+              <div class="careers__card-bottom-who">{{ $t(`careers.${job.type}`) }}</div>
+              <router-link :to="job.link" class="careers__card-bottom-link">
+                {{ $t('learn_more') }}
+              </router-link>
             </div>
           </a>
         </div>

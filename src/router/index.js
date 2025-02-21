@@ -26,12 +26,12 @@ const routes = [
         redirect: to => `/${i18n.global.locale}`
     },
     {
-        path: "/:lang(en|ru)?",
+        path: "/:lang(ru|en)?",
         component: Index,
         meta: {},
         beforeEnter: (to, from, next) => {
             const lang = to.params.lang || i18n.global.locale;
-            if (!["en", "ru"].includes(lang)) return next("/en");
+            if (!["en", "ru"].includes(lang)) return next("/ru");
             if (i18n.global.locale !== lang) {
                 i18n.global.locale = lang;
             }
@@ -39,19 +39,19 @@ const routes = [
         }
     },
     {
-        path: "/:lang(en|ru)?/about",
+        path: "/:lang(ru|en)?/about",
         name: "about",
         component: About,
         meta: {}
     },
     {
-        path: "/:lang(en|ru)?/contacts",
+        path: "/:lang(ru|en)?/contacts",
         name: "contacts",
         component: Contacts,
         meta: {}
     },
     {
-        path: "/:lang(en|ru)?/services",
+        path: "/:lang(ru|en)?/services",
         name: "services",
         component: Services,
         meta: {},
@@ -89,13 +89,13 @@ const routes = [
         ]
     },
     {
-        path: "/:lang(en|ru)?/products",
+        path: "/:lang(ru|en)?/products",
         name: "products",
         component: Products,
         meta: {}
     },
     {
-        path: "/:lang(en|ru)?/careers",
+        path: "/:lang(ru|en)?/careers",
         name: "careers",
         component: Careers,
         meta: {},
@@ -111,8 +111,8 @@ const routes = [
                 component: SalesManager
             },
             {
-                path: "ba-crm",
-                name: "ba-crm",
+                path: "crm",
+                name: "crm",
                 component: BaCrm
             },
             {
@@ -123,7 +123,7 @@ const routes = [
         ]
     },
     {
-        path: "/:lang(en|ru)?/policy",
+        path: "/:lang(ru|en)?/policy",
         name: "policy",
         component: Policy,
         meta: {}
@@ -153,7 +153,7 @@ const routes = [
         redirect: (to) => `/${i18n.global.locale}/policy`
     },
     {
-        path: "/:lang(en|ru)?/:pathMatch(.*)*",
+        path: "/:lang(ru|en)?/:pathMatch(.*)*",
         name: "NotFound",
         component: NotFound
     }

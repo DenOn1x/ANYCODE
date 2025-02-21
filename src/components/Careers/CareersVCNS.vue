@@ -1,9 +1,9 @@
 <script setup>
-import {defineProps, onMounted} from 'vue';
-import ic_fb from '@/assets/images/svg/ic_fb.svg?url'
-import ic_tg from '@/assets/images/svg/ic_tg.svg?url'
-import ic_inst from '@/assets/images/svg/ic_inst.svg?url'
-import ic_wp from '@/assets/images/svg/ic_wp.svg?url'
+import { defineProps, onMounted } from 'vue';
+import ic_fb from '@/assets/images/svg/ic_fb.svg?url';
+import ic_tg from '@/assets/images/svg/ic_tg.svg?url';
+import ic_inst from '@/assets/images/svg/ic_inst.svg?url';
+import ic_wp from '@/assets/images/svg/ic_wp.svg?url';
 
 const props = defineProps({
   title: {
@@ -63,7 +63,6 @@ onMounted(() => {
     });
   });
 });
-
 </script>
 
 <template>
@@ -75,17 +74,17 @@ onMounted(() => {
       <div class="careers-vcns__wrapper">
         <div class="careers-vcns__info info-vcns">
           <div class="info-vcns__crd">
-            <div class="info-vcns__ttl">Чем предстоит заниматься:</div>
+            <div class="info-vcns__ttl">{{ $t('careers_vacancy_responsibilities') }}</div>
             <p>{{ responsibilities }}</p>
           </div>
           <div class="info-vcns__crd">
-            <div class="info-vcns__ttl">Требования:</div>
+            <div class="info-vcns__ttl">{{ $t('careers_vacancy_requirements') }}</div>
             <ul>
               <li v-for="(req, index) in requirements" :key="index">{{ req }}</li>
             </ul>
           </div>
           <div class="info-vcns__crd">
-            <div class="info-vcns__ttl">Условия:</div>
+            <div class="info-vcns__ttl">{{ $t('careers_vacancy_conditions') }}</div>
             <ul>
               <li v-for="(cond, index) in conditions" :key="index">{{ cond }}</li>
             </ul>
@@ -93,52 +92,53 @@ onMounted(() => {
         </div>
         <div class="careers-vcns__add add-vcns">
           <div class="add-vcns__card">
-            <div class="add-vcns__ttl">Основное</div>
+            <div class="add-vcns__ttl">{{ $t('careers_vacancy_main') }}</div>
             <ul class="add-vcns__list">
               <li>
-                <span>Локация</span>
+                <span>{{ $t('careers_vacancy_location') }}</span>
                 <span><b>{{ location }}</b></span>
               </li>
               <li>
-                <span>Уровень</span>
+                <span>{{ $t('careers_vacancy_level') }}</span>
                 <span><b>{{ level }}</b></span>
               </li>
               <li>
-                <span>Тип занятости</span>
+                <span>{{ $t('careers_vacancy_employment') }}</span>
                 <span><b>{{ employmentType }}</b></span>
               </li>
               <li>
-                <span>График работы</span>
+                <span>{{ $t('careers_vacancy_schedule') }}</span>
                 <span><b>{{ workSchedule }}</b></span>
               </li>
             </ul>
           </div>
           <div class="add-vcns__card">
-            <div class="add-vcns__ttl">Связаться с нами</div>
+            <div class="add-vcns__ttl">{{ $t('careers_vacancy_contact') }}</div>
             <ul class="add-vcns__socials">
               <li>
                 <a href="#">
-                  <img :src="ic_fb" alt="ic_fb"/>
+                  <img :src="ic_fb" alt="Facebook" />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img :src="ic_tg" alt="ic_tg"/>
+                  <img :src="ic_tg" alt="Telegram" />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img :src="ic_inst" alt="ic_inst"/>
+                  <img :src="ic_inst" alt="Instagram" />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img :src="ic_wp" alt="ic_wp"/>
+                  <img :src="ic_wp" alt="WhatsApp" />
                 </a>
               </li>
             </ul>
-            <a class="add-vcns__into-job"
-               href="#career-job">Откликнуться</a>
+            <a class="add-vcns__into-job" href="#career-job">
+              {{ $t('careers_vacancy_apply') }}
+            </a>
           </div>
         </div>
       </div>

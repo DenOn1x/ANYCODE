@@ -21,7 +21,7 @@ const handleFileChange = (event) => {
         <span class="careers-request__error"></span>
       </div>
       <div class="careers-request__field">
-        <label for="SURNAME">Фамилия</label>
+        <label for="SURNAME">{{ $t('surname') }}</label>
         <input type="text" name="your-surname" id="SURNAME" placeholder="">
         <span class="careers-request__error"></span>
       </div>
@@ -31,7 +31,7 @@ const handleFileChange = (event) => {
         <span class="careers-request__error"></span>
       </div>
       <div class="careers-request__field">
-        <label for="TEXT">Опишите ваши ожидания, для понимания, совпадают ли наши цели</label>
+        <label for="TEXT">{{ $t('expectations_text') }}</label>
         <textarea name="your-text" id="TEXT"></textarea>
         <span class="careers-request__error"></span>
       </div>
@@ -45,8 +45,8 @@ const handleFileChange = (event) => {
               @change="handleFileChange"
           >
           <div class="careers-request__field-description">
-            <div class="upload"><b>Прикрепить CV</b></div>
-            <span>.doc.docx.pdf.ppt.pptx - не более 3 MB</span>
+            <div class="upload"><b>{{ $t('attach_cv') }}</b></div>
+            <span>{{ $t('file_formats') }}</span>
           </div>
         </div>
         <div v-if="fileName" class="careers-request__file-names">
@@ -60,7 +60,7 @@ const handleFileChange = (event) => {
         <label class="custom-checkbox">
           <input type="checkbox" value="1"/>
           <span class="checkmark"></span>
-          Нажимая на кнопку , я выражаю согласие на обработку моих <a href="#">персональных данных</a>
+          {{ $t('consent_text') }} <a href="#">{{ $t('personal_data') }}</a>
         </label>
       </div>
     </div>

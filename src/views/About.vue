@@ -1,5 +1,4 @@
 <script setup>
-
 import Faq from "@/components/Faq/Faq.vue";
 
 import Rating from "@/assets/images/svg/ic_rating.svg?url";
@@ -9,7 +8,6 @@ import Button from "@/UI/Button.vue";
 import anycodeImg from "@/assets/images/tt1.png";
 import personImg from "@/assets/images/person-f-001.jpg";
 import personImgD from "@/assets/images/person-f-002.jpg";
-
 </script>
 
 <template>
@@ -17,27 +15,13 @@ import personImgD from "@/assets/images/person-f-002.jpg";
     <div class="container">
       <div class="about-main__wrapper">
         <div class="about-main__content">
-          <h1><span>AnyCode</span> — <br> <span>лидер</span> в сфере разработки ПО</h1>
+          <h1>{{ $t("about_main_title") }}</h1>
           <div class="about-main__content-text">
-            <p>Anycode — это более 3х лет опыта в IT-разработке, тестировании и консалтинге. Мы сотрудничаем с ведущими
-              клиентами из США и Европы, работаем с обширным стеком технологий и реализуем проекты самых разных
-              направлений.</p>
+            <p>{{ $t("about_main_description") }}</p>
           </div>
-          <Button :label="$t('request_quote')" color="fill" @click="showModalForm = true"/>
+          <Button :label="$t('request_about_quote')" color="fill" @click="showModalForm = true"/>
         </div>
         <div class="about-main__founders">
-          <div class="about-main__founders-item">
-            <div class="about-main__founders-item-img">
-              <picture>
-                <img :src="personImg" alt="founder"/>
-              </picture>
-            </div>
-            <div class="about-main__founders-item-info">
-              <div class="about-main__founders-item-info-titles">Онискевич Денис</div>
-              <p><b>(Соучередитель)</b></p>
-              <p>CPO, руководитель фронтенд-разработки</p>
-            </div>
-          </div>
           <div class="about-main__founders-item">
             <div class="about-main__founders-item-img">
               <picture>
@@ -45,15 +29,25 @@ import personImgD from "@/assets/images/person-f-002.jpg";
               </picture>
             </div>
             <div class="about-main__founders-item-info">
-              <div class="about-main__founders-item-info-titles">Попов Даниил</div>
-              <p><b>(Соучередитель)</b></p>
-              <p>CTO, руководитель бекенд-разработки</p>
+              <div class="about-main__founders-item-info-titles">{{ $t("founder_2_name") }}</div>
+              <p><b>({{ $t("founder_2_role") }})</b></p>
+              <p>{{ $t("founder_2_position") }}</p>
+            </div>
+          </div>
+          <div class="about-main__founders-item">
+            <div class="about-main__founders-item-img">
+              <picture>
+                <img :src="personImg" alt="founder"/>
+              </picture>
+            </div>
+            <div class="about-main__founders-item-info">
+              <div class="about-main__founders-item-info-titles">{{ $t("founder_1_name") }}</div>
+              <p><b>({{ $t("founder_1_role") }})</b></p>
+              <p>{{ $t("founder_1_position") }}</p>
             </div>
           </div>
         </div>
       </div>
-
-
     </div>
 
     <div class="about-main__bg">
@@ -61,7 +55,6 @@ import personImgD from "@/assets/images/person-f-002.jpg";
         <img :src="anycodeImg" alt="anycodeMain"/>
       </picture>
     </div>
-
   </section>
 
   <section class="about-conference">
@@ -71,30 +64,16 @@ import personImgD from "@/assets/images/person-f-002.jpg";
       </picture>
     </div>
     <div class="container">
-      <h2>Развиваемся, обучаемся, вдохновляемся</h2>
+      <h2>{{ $t("about_conference_title") }}</h2>
       <div class="about-conference__wrapper">
         <div class="about-conference__content">
-          <p>
-            Наша цель быть в центре технологических изменений и новых идей.
-            Посещая международные конференции, мы обмениваемся опытом с ведущими
-            экспертами отрасли, следим за трендами и внедряем передовые решения
-            в нашу работу.
-          </p>
+          <p>{{ $t("about_conference_text_1") }}</p>
         </div>
         <div class="about-conference__content">
-          <p>
-            Участие в профессиональных мероприятиях дает нам возможность не только получать свежие знания, но и находить
-            единомышленников. Мы делимся идеями, обсуждаем основные проблемы отрасли и формируем сотрудничество, которое
-            ведет к новым инновационным решениям.
-          </p>
+          <p>{{ $t("about_conference_text_2") }}</p>
         </div>
         <div class="about-conference__content">
-          <p>
-            Мы уверены, что сильная команда – залог успеха. Именно поэтому
-            мы проводим регулярные тимбилдинги, которые помогают нам не только
-            укреплять связи внутри коллектива, но и развивать креативное мышление,
-            командную работу и стратегическое планирование.
-          </p>
+          <p>{{ $t("about_conference_text_3") }}</p>
         </div>
       </div>
     </div>
@@ -103,13 +82,11 @@ import personImgD from "@/assets/images/person-f-002.jpg";
   <section class="about">
     <div class="container">
       <div class="about__wrapper">
-        <h2>Цифры нашей компании</h2>
+        <h2>{{ $t("about_company_numbers_title") }}</h2>
         <div class="about__text">
-          <p class="about__subtitle">Мы помогаем клиентам решать бизнес-задачи с помощью современных IT-решений</p>
-          <p class="about__subtitle">Мы непрерывно улучшаем нашу техническую экспертизу и расширяем географию
-            проектов</p>
-          <p class="about__subtitle">Мы развиваем внутреннее сообщество экспертов и помогаем расширять свои знания и
-            навыки в различных направлениях</p>
+          <p class="about__subtitle">{{ $t("about_company_numbers_text_1") }}</p>
+          <p class="about__subtitle">{{ $t("about_company_numbers_text_2") }}</p>
+          <p class="about__subtitle">{{ $t("about_company_numbers_text_3") }}</p>
         </div>
 
         <div class="about__blocks">
@@ -117,11 +94,11 @@ import personImgD from "@/assets/images/person-f-002.jpg";
             <div class="about__stats">
               <div class="about__stat">
                 <span class="about__stat-value">100+</span>
-                <span class="about__stat-text">успешных проектов в различных индустриях</span>
+                <span class="about__stat-text">{{ $t("about_stats_projects") }}</span>
               </div>
               <div class="about__stat">
                 <span class="about__stat-value">1.5+</span>
-                <span class="about__stat-text">года, в среднем, длится наше сотрудничество с клиентами</span>
+                <span class="about__stat-text">{{ $t("about_stats_client_duration") }}</span>
               </div>
             </div>
           </div>
@@ -129,27 +106,27 @@ import personImgD from "@/assets/images/person-f-002.jpg";
             <div class="about__stats">
               <div class="about__stat">
                 <span class="about__stat-value">15+</span>
-                <span class="about__stat-text">технологий в портфолио</span>
+                <span class="about__stat-text">{{ $t("about_stats_technologies") }}</span>
               </div>
               <div class="about__stat">
                 <span class="about__stat-value">60+</span>
-                <span class="about__stat-text">сотрудников по всему миру</span>
+                <span class="about__stat-text">{{ $t("about_stats_employees") }}</span>
               </div>
             </div>
           </div>
           <div class="about__block">
             <div class="about__stats">
+
               <div class="about__stat">
                 <span class="about__stat-value">90%</span>
-                <span class="about__stat-text">сотрудников уровня Middle/Senior</span>
+                <span class="about__stat-text">{{ $t("about_stats_middle_senior") }}</span>
               </div>
               <div class="about__stat">
                 <span class="about__stat-value">10+</span>
-                <span class="about__stat-text">сфер, в которых мы реализуем проекты</span>
+                <span class="about__stat-text">{{ $t("about_stats_industries") }}</span>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -159,9 +136,7 @@ import personImgD from "@/assets/images/person-f-002.jpg";
     <div class="container">
       <div class="products-rating__wrapper">
         <div class="products-rating__txt">
-          <p>Мы регулярно завоевываем признание в рейтингах, демонстрируя высокий уровень профессионализма и
-            эффективности в нашей работе.
-          </p>
+          <p>{{ $t("products_rating_title") }}</p>
         </div>
         <div class="products-rating__cards">
           <div class="products-rating__card">
@@ -169,8 +144,7 @@ import personImgD from "@/assets/images/person-f-002.jpg";
               <img :src="Rating" alt="products-rating"/>
             </div>
             <div class="products-rating__info">
-              Прорыв года в области IT-услуг на премии Global Business Tech Awards в
-              Лондоне.
+              {{ $t("products_rating_award_1") }}
             </div>
           </div>
           <div class="products-rating__card">
@@ -178,26 +152,23 @@ import personImgD from "@/assets/images/person-f-002.jpg";
               <img :src="Rating" alt="products-rating"/>
             </div>
             <div class="products-rating__info">
-              Награда за инновации в области искусственного интеллекта на AI Excellence Awards.
+              {{ $t("products_rating_award_2") }}
             </div>
           </div>
           <div class="products-rating__card">
             <div class="products-rating__img">
               <img :src="Rating" alt="products-rating"/>
             </div>
-            <div class="products-rating__info">Премия за лучшую интеграцию IT и бизнеса" — на IT-Business Integration
-              Awards.
+            <div class="products-rating__info">
+              {{ $t("products_rating_award_3") }}
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <Faq/>
-
-
 </template>
 
 <style scoped lang="scss">

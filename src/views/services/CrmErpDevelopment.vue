@@ -1,5 +1,5 @@
 <script setup>
-import {ref} from "vue";
+import { ref } from "vue";
 import Quiz from "@/components/Quiz/Quiz.vue";
 
 import icExpertAM from "@/assets/images/svg/expert/ic_manufacturing.svg?url";
@@ -12,57 +12,43 @@ import icExpertAMA from "@/assets/images/svg/expert/ic_media.svg?url";
 import icExpertAFS from "@/assets/images/svg/expert/ic_fitness.svg?url";
 import icExpertART from "@/assets/images/svg/expert/ic_restaurant.svg?url";
 
-
 const serviceInfo = ref({
-  title: "Разработка и расширение CRM/ERP систем",
-  description:
-      "Мы создаем и масштабируем CRM/ERP системы, которые автоматизируют бизнес-процессы, повышают эффективность работы и улучшают взаимодействие с клиентами.",
+  title: "service_crm_title",
+  description: "service_crm_description",
 });
 
 const benefits = ref([
-  "Автоматизация рутинных процессов и снижение человеческого фактора",
-  "Гибкость и адаптация системы под уникальные бизнес-процессы",
-  "Интеграция с внешними сервисами, API, платежными системами и 1С",
-  "Высокая масштабируемость для работы с увеличенным количеством данных",
-  "Оптимизация рабочих процессов и улучшение командной работы",
-  "Безопасность и контроль доступа с учетом ролевых политик",
-  "Аналитика и отчетность в режиме реального времени",
-  "Повышение производительности бизнеса за счет единого рабочего пространства",
-  "Модульность системы — возможность добавлять и изменять функционал по мере роста",
-  "Снижение затрат на управление и обслуживание бизнес-процессов",
-  "Повышение уровня клиентского сервиса благодаря автоматизированному управлению",
-  "Облачные и локальные решения в зависимости от ваших потребностей",
-  "Обеспечение стабильной работы даже при высокой нагрузке",
-  "Поддержка мобильных устройств и удобный доступ из любой точки мира",
-  "Интуитивно понятный интерфейс для сотрудников без технических навыков",
+  "service_crm_benefit_1",
+  "service_crm_benefit_2",
+  "service_crm_benefit_3",
+  "service_crm_benefit_4",
+  "service_crm_benefit_5",
+  "service_crm_benefit_6",
+  "service_crm_benefit_7",
+  "service_crm_benefit_8",
+  "service_crm_benefit_9",
+  "service_crm_benefit_10",
+  "service_crm_benefit_11",
+  "service_crm_benefit_12",
+  "service_crm_benefit_13",
+  "service_crm_benefit_14",
+  "service_crm_benefit_15",
 ]);
-
 
 const steps = ref([
-  {
-    step: "Анализ и проектирование",
-    description: "Определяем бизнес-требования, разрабатываем архитектуру и техническое задание."
-  },
-  {step: "Прототипирование", description: "Создаем схему интерфейсов и пользовательских сценариев для согласования."},
-  {step: "Разработка", description: "Программируем функционал, подключаем API и настраиваем интеграции."},
-  {step: "Тестирование", description: "Проводим нагрузочные и функциональные тесты для выявления ошибок."},
-  {
-    step: "Внедрение и поддержка",
-    description: "Запускаем систему, обучаем персонал и предоставляем техническую поддержку."
-  },
+  { step: "service_crm_step_1", description: "service_crm_step_1_desc" },
+  { step: "service_crm_step_2", description: "service_crm_step_2_desc" },
+  { step: "service_crm_step_3", description: "service_crm_step_3_desc" },
+  { step: "service_crm_step_4", description: "service_crm_step_4_desc" },
+  { step: "service_crm_step_5", description: "service_crm_step_5_desc" },
 ]);
-
 
 const whyUs = ref([
-  {title: "Опыт", description: "Разрабатываем CRM/ERP системы для бизнеса разных масштабов уже более 5 лет."},
-  {title: "Глубокая кастомизация", description: "Создаем решения, полностью адаптированные под ваш бизнес-процесс."},
-  {
-    title: "Интеграции",
-    description: "Подключаем систему к 1С, API, платежным сервисам, маркетплейсам и другим платформам."
-  },
-  {title: "Надежность", description: "Обеспечиваем стабильную работу системы и защищаем данные от потерь."},
+  { title: "service_crm_why_1", description: "service_crm_why_1_desc" },
+  { title: "service_crm_why_2", description: "service_crm_why_2_desc" },
+  { title: "service_crm_why_3", description: "service_crm_why_3_desc" },
+  { title: "service_crm_why_4", description: "service_crm_why_4_desc" },
 ]);
-
 
 const tools = ref([
   "Odoo",
@@ -74,20 +60,19 @@ const tools = ref([
   "RabbitMQ",
   "Docker",
   "GraphQL",
-  "REST API"
+  "REST API",
 ]);
 
-
 const experts = ref([
-  {img: icExpertAM, name: "Промышленность"},
-  {img: icExpertAH, name: "Здравоохранение"},
-  {img: icExpertAT, name: "Информационные технологии"},
-  {img: icExpertAF, name: "Финансы"},
-  {img: icExpertAR, name: "Торговля"},
-  {img: icExpertAA, name: "Сельское хозяйство"},
-  {img: icExpertAMA, name: "Медиа"},
-  {img: icExpertAFS, name: "Фитнес-индустрия"},
-  {img: icExpertART, name: "Ресторанный бизнес "},
+  { img: icExpertAM, name: "service_crm_expert_1" },
+  { img: icExpertAH, name: "service_crm_expert_2" },
+  { img: icExpertAT, name: "service_crm_expert_3" },
+  { img: icExpertAF, name: "service_crm_expert_4" },
+  { img: icExpertAR, name: "service_crm_expert_5" },
+  { img: icExpertAA, name: "service_crm_expert_6" },
+  { img: icExpertAMA, name: "service_crm_expert_7" },
+  { img: icExpertAFS, name: "service_crm_expert_8" },
+  { img: icExpertART, name: "service_crm_expert_9" },
 ]);
 </script>
 
@@ -96,60 +81,60 @@ const experts = ref([
     <div class="container">
 
       <div class="service-section__heading">
-        <h1>{{ serviceInfo.title }}</h1>
-        <p>{{ serviceInfo.description }}</p>
+        <h1>{{ $t(serviceInfo.title) }}</h1>
+        <p>{{ $t(serviceInfo.description) }}</p>
       </div>
 
       <div class="content-block content-block--advantages">
-        <h2>Преимущества</h2>
+        <h2>{{ $t("service_crm_advantages") }}</h2>
         <ul class="list">
           <li v-for="(benefit, index) in benefits" :key="index">
             <span class="list-number">{{ String(index + 1).padStart(2, '0') }}</span>
-            {{ benefit }}
+            {{ $t(benefit) }}
           </li>
         </ul>
       </div>
 
       <div class="content-block">
-        <h2>Основные этапы работы</h2>
+        <h2>{{ $t("service_crm_steps") }}</h2>
         <ul class="list">
           <li v-for="(step, index) in steps" :key="index">
-            <strong>{{ step.step }}:</strong> {{ step.description }}
+            <strong>{{ $t(step.step) }}:</strong> {{ $t(step.description) }}
           </li>
         </ul>
       </div>
 
       <div class="content-block">
-        <h2>Почему выбирают нас</h2>
-        <ul class=" list--grid">
+        <h2>{{ $t("service_crm_why") }}</h2>
+        <ul class="list--grid">
           <li v-for="(item, index) in whyUs" :key="index">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.description }}</p>
+            <h3>{{ $t(item.title) }}</h3>
+            <p>{{ $t(item.description) }}</p>
           </li>
         </ul>
       </div>
 
       <div class="content-block">
-        <h2>Технологии и инструменты</h2>
-        <ul class=" list--tools">
+        <h2>{{ $t("service_crm_tools") }}</h2>
+        <ul class="list--tools">
           <li v-for="(tool, index) in tools" :key="index">{{ tool }}</li>
         </ul>
       </div>
 
       <div class="content-block">
-        <h2>Отраслевая экспертиза</h2>
+        <h2>{{ $t("service_crm_expertise") }}</h2>
         <div class="expert-block">
           <div class="expert-block__item" v-for="(expert, index) in experts" :key="index">
             <picture>
-              <img :src="expert.img" :alt="expert.name"/>
+              <img :src="expert.img" :alt="$t(expert.name)" />
             </picture>
-            <div class="name">{{ expert.name }}</div>
+            <div class="name">{{ $t(expert.name) }}</div>
           </div>
         </div>
       </div>
     </div>
 
-    <Quiz/>
+    <Quiz />
   </section>
 </template>
 

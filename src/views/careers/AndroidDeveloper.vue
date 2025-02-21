@@ -3,49 +3,45 @@ import CareersVCNS from "@/components/Careers/CareersVCNS.vue";
 import CareersForm from "@/components/Careers/CareersForm.vue";
 
 const androidDeveloperJob = {
-  title: 'Android инженер',
-  responsibilities: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dolores ducimus exercitationem hic in repudiandae sapiente? Adipisci asperiores eum id!',
+  title: "careers_android_title",
+  responsibilities: "careers_android_responsibilities",
   requirements: [
-    'Опыт разработки под Android от 2-х лет.',
-    'Знание Kotlin и принципов ООП, структур данных и классических алгоритмов.',
-    'Понимание REST API и принципов чистой архитектуры.',
-    'Опыт работы с GIT и умение работать в команде.',
-    'Знание архитектурных паттернов MVP, MVVM и Clean Architecture.',
-    'Опыт работы с UI (XML, Jetpack Compose).',
-    'Опыт работы с сетью (REST API, Retrofit, OkHttp) и данными (Room).',
-    'Знание многопоточности (Coroutines, Flow).',
-    'Интеграция с внешними сервисами (Firebase).',
-    'Опыт работы с тестированием и CI/CD процессами (GitLab CI).'
+    "careers_android_req_1",
+    "careers_android_req_2",
+    "careers_android_req_3",
+    "careers_android_req_4",
+    "careers_android_req_5",
+    "careers_android_req_6",
+    "careers_android_req_7",
+    "careers_android_req_8",
+    "careers_android_req_9",
+    "careers_android_req_10"
   ],
   conditions: [
-    'Стабильная заработная плата, оформление в соответствии с ТК.',
-    'График работы 5/2.',
-    'Уникальные проекты, амбициозные задачи.',
-    'Лояльность и отсутствие бюрократии.',
-    'Возможность карьерного, профессионального и финансового роста.',
-    'Увлекательные корпоративные мероприятия.'
+    "careers_android_cond_1",
+    "careers_android_cond_2",
+    "careers_android_cond_3",
+    "careers_android_cond_4",
+    "careers_android_cond_5",
+    "careers_android_cond_6"
   ],
-  location: 'Минск / Удаленная работа',
-  level: 'Middle',
-  employmentType: 'Полная',
-  workSchedule: 'Рабочий день 5/2'
+  location: "careers_android_location",
+  level: "careers_android_level",
+  employmentType: "careers_android_employment",
+  workSchedule: "careers_android_schedule"
 };
 </script>
 
 <template>
   <CareersVCNS
-      :title="androidDeveloperJob.title"
-      :responsibilities="androidDeveloperJob.responsibilities"
-      :requirements="androidDeveloperJob.requirements"
-      :conditions="androidDeveloperJob.conditions"
-      :location="androidDeveloperJob.location"
-      :level="androidDeveloperJob.level"
-      :employmentType="androidDeveloperJob.employmentType"
-      :workSchedule="androidDeveloperJob.workSchedule"
+      :title="$t(androidDeveloperJob.title)"
+      :responsibilities="$t(androidDeveloperJob.responsibilities)"
+      :requirements="androidDeveloperJob.requirements.map(key => $t(key))"
+      :conditions="androidDeveloperJob.conditions.map(key => $t(key))"
+      :location="$t(androidDeveloperJob.location)"
+      :level="$t(androidDeveloperJob.level)"
+      :employmentType="$t(androidDeveloperJob.employmentType)"
+      :workSchedule="$t(androidDeveloperJob.workSchedule)"
   />
-  <CareersForm/>
+  <CareersForm />
 </template>
-
-<style scoped lang="scss">
-
-</style>

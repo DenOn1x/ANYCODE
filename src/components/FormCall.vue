@@ -27,7 +27,7 @@ import Button from "@/UI/Button.vue";
         <label class="custom-checkbox">
           <input type="checkbox" value="1"/>
           <span class="checkmark"></span>
-          Нажимая на кнопку , я выражаю согласие на обработку моих <a href="#">персональных данных</a>
+          {{ $t('consent_text') }} <a href="#">{{ $t('personal_data') }}</a>
         </label>
       </div>
     </div>

@@ -12,119 +12,112 @@ import icExpertAMA from "@/assets/images/svg/expert/ic_media.svg?url";
 import icExpertAFS from "@/assets/images/svg/expert/ic_fitness.svg?url";
 import icExpertART from "@/assets/images/svg/expert/ic_restaurant.svg?url";
 
-
 const serviceInfo = ref({
-  title: "Продуктовая разработка",
-  description:
-      "Создаем цифровые продукты от идеи до запуска, фокусируясь на потребностях пользователей, бизнес-целях и современных технологиях.",
+  title: "service_product_title",
+  description: "service_product_description",
 });
 
-
 const benefits = ref([
-  "Разработка под ключ — от идеи до релиза",
-  "Гибкие методологии (Agile, Scrum, Kanban)",
-  "Масштабируемая архитектура для роста продукта",
-  "Высокая скорость выхода на рынок (Time-to-Market)",
-  "Дизайн и функциональность, ориентированные на пользователей",
-  "Интеграция с внешними сервисами и API",
+  "service_product_benefit_1",
+  "service_product_benefit_2",
+  "service_product_benefit_3",
+  "service_product_benefit_4",
+  "service_product_benefit_5",
+  "service_product_benefit_6",
 ]);
-
 
 const steps = ref([
-  {step: "Анализ и стратегия", description: "Формируем видение продукта, изучаем рынок и определяем ключевые метрики."},
-  {step: "Проектирование", description: "Создаем прототипы, продумываем пользовательские сценарии и архитектуру."},
-  {step: "Разработка", description: "Программируем фронтенд и бэкенд, настраиваем базы данных и API."},
-  {step: "Тестирование", description: "Проводим автоматизированные и ручные тесты, исправляем баги."},
-  {step: "Запуск и поддержка", description: "Размещаем продукт, собираем аналитику и улучшаем функционал."},
+  {step: "service_product_step_1", description: "service_product_step_1_desc"},
+  {step: "service_product_step_2", description: "service_product_step_2_desc"},
+  {step: "service_product_step_3", description: "service_product_step_3_desc"},
+  {step: "service_product_step_4", description: "service_product_step_4_desc"},
+  {step: "service_product_step_5", description: "service_product_step_5_desc"},
 ]);
-
 
 const whyUs = ref([
-  {
-    title: "Комплексный подход",
-    description: "Объединяем исследования, дизайн и разработку для создания успешного продукта."
-  },
-  {
-    title: "Гибкость и адаптивность",
-    description: "Подстраиваемся под задачи бизнеса и выбираем оптимальные технологии."
-  },
-  {
-    title: "Экспертность",
-    description: "Работаем с различными индустриями и знаем, как создавать востребованные продукты."
-  },
-  {title: "Долгосрочное партнерство", description: "Поддерживаем и развиваем продукт даже после его запуска."},
+  {title: "service_product_why_1", description: "service_product_why_1_desc"},
+  {title: "service_product_why_2", description: "service_product_why_2_desc"},
+  {title: "service_product_why_3", description: "service_product_why_3_desc"},
+  {title: "service_product_why_4", description: "service_product_why_4_desc"},
 ]);
 
-
-const tools = ref(["Figma", "Jira", "Confluence", "Miro", "Docker", "Kubernetes", "Python", "JavaScript", "Node.js"]);
-
+const tools = ref([
+  "Figma",
+  "Jira",
+  "Confluence",
+  "Miro",
+  "Docker",
+  "Kubernetes",
+  "Python",
+  "JavaScript",
+  "Node.js",
+]);
 
 const experts = ref([
-  {img: icExpertAM, name: "Промышленность"},
-  {img: icExpertAH, name: "Здравоохранение"},
-  {img: icExpertAT, name: "Информационные технологии"},
-  {img: icExpertAF, name: "Финансы"},
-  {img: icExpertAR, name: "Торговля"},
-  {img: icExpertAA, name: "Сельское хозяйство"},
-  {img: icExpertAMA, name: "Медиа"},
-  {img: icExpertAFS, name: "Фитнес-индустрия"},
-  {img: icExpertART, name: "Ресторанный бизнес "},
+  {img: icExpertAM, name: "service_product_expert_1"},
+  {img: icExpertAH, name: "service_product_expert_2"},
+  {img: icExpertAT, name: "service_product_expert_3"},
+  {img: icExpertAF, name: "service_product_expert_4"},
+  {img: icExpertAR, name: "service_product_expert_5"},
+  {img: icExpertAA, name: "service_product_expert_6"},
+  {img: icExpertAMA, name: "service_product_expert_7"},
+  {img: icExpertAFS, name: "service_product_expert_8"},
+  {img: icExpertART, name: "service_product_expert_9"},
 ]);
 </script>
 
 <template>
   <section class="service-section">
     <div class="container">
-
       <div class="service-section__heading">
-        <h1>{{ serviceInfo.title }}</h1>
-        <p>{{ serviceInfo.description }}</p>
+        <h1>{{ $t(serviceInfo.title) }}</h1>
+        <p>{{ $t(serviceInfo.description) }}</p>
       </div>
 
       <div class="content-block content-block--advantages">
-        <h2>Преимущества</h2>
+        <h2>{{ $t("service_product_advantages") }}</h2>
         <ul class="list">
           <li v-for="(benefit, index) in benefits" :key="index">
             <span class="list-number">{{ String(index + 1).padStart(2, '0') }}</span>
-            {{ benefit }}
+            {{ $t(benefit) }}
           </li>
         </ul>
       </div>
 
       <div class="content-block">
-        <h2>Основные этапы работы</h2>
+        <h2>{{ $t("service_product_steps") }}</h2>
         <ul class="list">
           <li v-for="(step, index) in steps" :key="index">
-            <strong>{{ step.step }}:</strong> {{ step.description }}
+            <strong>{{ $t(step.step) }}:</strong> {{ $t(step.description) }}
           </li>
         </ul>
       </div>
 
       <div class="content-block">
-        <h2>Почему выбирают нас</h2>
-        <ul class=" list--grid">
+        <h2>{{ $t("service_product_why") }}</h2>
+        <ul class="list--grid">
           <li v-for="(item, index) in whyUs" :key="index">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.description }}</p>
+            <h3>{{ $t(item.title) }}</h3>
+            <p>{{ $t(item.description) }}</p>
           </li>
         </ul>
       </div>
 
       <div class="content-block">
-        <h2>Технологии и инструменты</h2>
-        <ul class=" list--tools">
+        <h2>{{ $t("service_product_tools") }}</h2>
+        <ul class="list--tools">
           <li v-for="(tool, index) in tools" :key="index">{{ tool }}</li>
         </ul>
       </div>
 
       <div class="content-block">
-        <h2>Отраслевая экспертиза</h2>
+        <h2>{{ $t("service_product_expertise") }}</h2>
         <div class="expert-block">
           <div class="expert-block__item" v-for="(expert, index) in experts" :key="index">
             <picture>
-              <img :src="expert.img" :alt="expert.name"/>
+              <img :src="expert.img" :alt="$t(expert.name)"/>
             </picture>
-            <div class="name">{{ expert.name }}</div>
+            <div class="name">{{ $t(expert.name) }}</div>
           </div>
         </div>
       </div>
@@ -395,5 +388,3 @@ const experts = ref([
   }
 }
 </style>
-
-

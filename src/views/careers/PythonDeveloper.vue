@@ -3,44 +3,40 @@ import CareersVCNS from "@/components/Careers/CareersVCNS.vue";
 import CareersForm from "@/components/Careers/CareersForm.vue";
 
 const pythonDeveloperJob = {
-  title: 'Бэкенд инженер Python',
-  responsibilities: 'Разрабатывать новые серверные приложения, поддерживать и оптимизировать существующие сервисы.Разрабатывать модули интеграции со сторонними сервисами.',
+  title: "careers_python_title",
+  responsibilities: "careers_python_responsibilities",
   requirements: [
-    'Опыт работы с Docker, Redis, RabbitMQ, PostgreSQL, Python3, Django Rest Framework, Celery.',
-    'Знание основ RESTful API, асинхронного программирования.',
-    'Умение писать чистый, тестируемый и документированный код.',
-    'Умение работать в команде, использовать системы контроля версий (Git) и инструменты совместной разработки (Worksection, Slack).',
-    'Желание изучать новые технологии и решать сложные задачи.'
+    "careers_python_req_1",
+    "careers_python_req_2",
+    "careers_python_req_3",
+    "careers_python_req_4",
+    "careers_python_req_5"
   ],
   conditions: [
-    'Стабильная заработная плата, оформление в соответствии с ТК.',
-    'График работы 5/2.',
-    'Уникальные проекты, амбициозные задачи.',
-    'Лояльность и отсутствие бюрократии.',
-    'Возможность карьерного, профессионального и финансового роста.',
-    'Увлекательные корпоративные мероприятия.'
+    "careers_python_cond_1",
+    "careers_python_cond_2",
+    "careers_python_cond_3",
+    "careers_python_cond_4",
+    "careers_python_cond_5",
+    "careers_python_cond_6"
   ],
-  location: 'Минск / Удаленная работа',
-  level: 'Middle',
-  employmentType: 'Полная',
-  workSchedule: 'Рабочий день 5/2'
+  location: "careers_python_location",
+  level: "careers_python_level",
+  employmentType: "careers_python_employment",
+  workSchedule: "careers_python_schedule"
 };
 </script>
 
 <template>
   <CareersVCNS
-      :title="pythonDeveloperJob.title"
-      :responsibilities="pythonDeveloperJob.responsibilities"
-      :requirements="pythonDeveloperJob.requirements"
-      :conditions="pythonDeveloperJob.conditions"
-      :location="pythonDeveloperJob.location"
-      :level="pythonDeveloperJob.level"
-      :employmentType="pythonDeveloperJob.employmentType"
-      :workSchedule="pythonDeveloperJob.workSchedule"
+      :title="$t(pythonDeveloperJob.title)"
+      :responsibilities="$t(pythonDeveloperJob.responsibilities)"
+      :requirements="pythonDeveloperJob.requirements.map(key => $t(key))"
+      :conditions="pythonDeveloperJob.conditions.map(key => $t(key))"
+      :location="$t(pythonDeveloperJob.location)"
+      :level="$t(pythonDeveloperJob.level)"
+      :employmentType="$t(pythonDeveloperJob.employmentType)"
+      :workSchedule="$t(pythonDeveloperJob.workSchedule)"
   />
   <CareersForm/>
 </template>
-
-<style scoped lang="scss">
-
-</style>

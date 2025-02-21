@@ -8,12 +8,12 @@ const menuItems = reactive([
   {
     text: 'navigation.services',
     children: [
-      {link: '/services/software-development', text: 'Software development'},
-      {link: '/services/product-development', text: 'Product development'},
-      {link: '/services/web-development', text: 'Web development'},
-      {link: '/services/crm-erp-development', text: 'Development and expansion of Crm/Erp systems'},
-      {link: '/services/mobile-app-development', text: 'Mobile app development'},
-      {link: '/services/ux-ui-design', text: 'UX/UI design'},
+      {link: '/services/software-development', text: 'services_technology.services_develop'},
+      {link: '/services/product-development', text: 'services_technology.services_product'},
+      {link: '/services/web-development', text: 'services_technology.services_web'},
+      {link: '/services/crm-erp-development', text: 'services_technology.services_crm'},
+      {link: '/services/mobile-app-development', text: 'services_technology.services_mobile'},
+      {link: '/services/ux-ui-design', text: 'services_technology.services_design'},
     ],
     showDropdown: false
   },

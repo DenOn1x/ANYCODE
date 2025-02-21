@@ -10,11 +10,12 @@ import FormCareer from "@/components/FormCareer.vue";
   <section class="careers-request" id="career-job">
     <div class="container">
       <div class="careers-request__top">
-        <h2>Хотите работать с нами?</h2>
+        <h2>{{ $t('careers_request_title') }}</h2>
         <div class="careers-request__sub-title">
-          Заполните форму и наша команда по привлечению талантов свяжется с вами для уточнения подробностей
+          {{ $t('careers_request_subtitle') }}
         </div>
       </div>
+
       <div class="careers-request__wrapper">
         <div class="careers-request__form">
           <FormCareer/>
@@ -23,24 +24,21 @@ import FormCareer from "@/components/FormCareer.vue";
           <div class="careers-request__welcome-person">
             <div class="careers-request__welcome-person-avatar">
               <picture>
-                <img :src="anycodeRc" alt="anycodeRc"/>
+                <img :src="anycodeRc" alt="Recruitment Lead"/>
               </picture>
             </div>
             <div class="careers-request__welcome-person-content">
-              <div class="careers-request__welcome-person-content-top">Руднева Анастасия</div>
-              <div class="careers-request__welcome-person-content-bottom">Recruitment Lead</div>
+              <div class="careers-request__welcome-person-content-top">
+                {{ $t('careers_request_recruiter_name') }}
+              </div>
+              <div class="careers-request__welcome-person-content-bottom">
+                {{ $t('careers_request_recruiter_position') }}
+              </div>
             </div>
           </div>
           <div class="careers-request__welcome-person-desc">
-            <p>
-              Привет, я Анастасия, Recruitment Lead AnyCode. Мы предлагаем кандидатам интересные проекты от топовых
-              компаний, прозрачный рост и крутые бонусы. Количество проектов увеличивается, поэтому мы стремимся усилить
-              свою команду специалистами разных профилей и уровней.
-            </p>
-            <p>
-              Присылайте CV, даже если не нашли на сайте подходящей вакансии.
-              Будем расти вместе!
-            </p>
+            <p>{{ $t('careers_request_recruiter_desc_1') }}</p>
+            <p>{{ $t('careers_request_recruiter_desc_2') }}</p>
           </div>
         </div>
       </div>

@@ -6,8 +6,8 @@ import Button from "@/UI/Button.vue";
 <template>
   <div class="modal-body">
     <div class="modal-top">
-      <h2>Оставить заявку</h2>
-      <div class="modal-top__sub-title">Наши специалисты свяжутся с вами в ближайшее время</div>
+      <h2>{{ $t('request_quote') }}</h2>
+      <div class="modal-top__sub-title">{{ $t('our_specialists_will_contact_you_shortly') }}</div>
     </div>
     <form action="#" method="POST">
       <div class="modal__fields">
@@ -27,7 +27,7 @@ import Button from "@/UI/Button.vue";
           <span class="modal__error"></span>
         </div>
         <div class="modal__field">
-          <label for="TEXT">Сообщение</label>
+          <label for="TEXT">{{ $t('message') }}</label>
           <textarea name="your-text" id="TEXT"></textarea>
           <span class="modal__error"></span>
         </div>
@@ -37,7 +37,7 @@ import Button from "@/UI/Button.vue";
           <label class="custom-checkbox">
             <input type="checkbox" value="1"/>
             <span class="checkmark"></span>
-            Нажимая на кнопку , я выражаю согласие на обработку моих <a href="#">персональных данных</a>
+            {{ $t('consent_text') }} <a href="#">{{ $t('personal_data') }}</a>
           </label>
         </div>
       </div>

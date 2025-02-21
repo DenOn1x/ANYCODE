@@ -3,43 +3,39 @@ import CareersVCNS from "@/components/Careers/CareersVCNS.vue";
 import CareersForm from "@/components/Careers/CareersForm.vue";
 
 const salesDeveloperJob = {
-  title: 'Sales manager',
-  responsibilities: 'Развивать и удерживать текущих клиентов, превращая их в лояльных партнеров. Быть на связи с клиентом: от консультаций до помощи в решении сложных вопросов. Выполнять план продаж, открывая для клиентов новые возможности. Вести CRM (Odoo) и отчётность.',
+  title: "careers_sales_title",
+  responsibilities: "careers_sales_responsibilities",
   requirements: [
-    'Опыт не менее 1 года на должности менеджера по работе с клиентами в сфере B2B или по работе с клиентами, в идеале в индустрии SaaS , IT.',
-    'Письменный и разговорный английский: B1 и выше.',
-    'Глубокие аналитические способности, коммуникативные и презентационные навыки.',
-    'Знание CRM системы.'
+    "careers_sales_req_1",
+    "careers_sales_req_2",
+    "careers_sales_req_3",
+    "careers_sales_req_4"
   ],
   conditions: [
-    'Стабильная заработная плата, оформление в соответствии с ТК.',
-    'График работы 5/2.',
-    'Уникальные проекты, амбициозные задачи.',
-    'Лояльность и отсутствие бюрократии.',
-    'Возможность карьерного, профессионального и финансового роста.',
-    'Увлекательные корпоративные мероприятия.'
+    "careers_sales_cond_1",
+    "careers_sales_cond_2",
+    "careers_sales_cond_3",
+    "careers_sales_cond_4",
+    "careers_sales_cond_5",
+    "careers_sales_cond_6"
   ],
-  location: 'Минск / Удаленная работа',
-  level: 'Middle',
-  employmentType: 'Полная',
-  workSchedule: 'Рабочий день 5/2'
+  location: "careers_sales_location",
+  level: "careers_sales_level",
+  employmentType: "careers_sales_employment",
+  workSchedule: "careers_sales_schedule"
 };
 </script>
 
 <template>
   <CareersVCNS
-      :title="salesDeveloperJob.title"
-      :responsibilities="salesDeveloperJob.responsibilities"
-      :requirements="salesDeveloperJob.requirements"
-      :conditions="salesDeveloperJob.conditions"
-      :location="salesDeveloperJob.location"
-      :level="salesDeveloperJob.level"
-      :employmentType="salesDeveloperJob.employmentType"
-      :workSchedule="salesDeveloperJob.workSchedule"
+      :title="$t(salesDeveloperJob.title)"
+      :responsibilities="$t(salesDeveloperJob.responsibilities)"
+      :requirements="salesDeveloperJob.requirements.map(key => $t(key))"
+      :conditions="salesDeveloperJob.conditions.map(key => $t(key))"
+      :location="$t(salesDeveloperJob.location)"
+      :level="$t(salesDeveloperJob.level)"
+      :employmentType="$t(salesDeveloperJob.employmentType)"
+      :workSchedule="$t(salesDeveloperJob.workSchedule)"
   />
   <CareersForm/>
 </template>
-
-<style scoped lang="scss">
-
-</style>

@@ -1,5 +1,5 @@
 <script setup>
-import {ref} from "vue";
+import { ref } from "vue";
 
 import ic_fb from "@/assets/images/svg/ic_fb.svg?url";
 import ic_tg from "@/assets/images/svg/ic_tg.svg?url";
@@ -11,8 +11,6 @@ import Modal from '@/components/Modals/Modal.vue';
 import QuizForm from "@/components/Quiz/QuizForm.vue";
 
 const showModalQuiz = ref(false);
-
-
 </script>
 
 <template>
@@ -21,10 +19,10 @@ const showModalQuiz = ref(false);
       <div class="contacts__wrapper">
         <div class="contacts__content">
           <div class="contacts__content-heading">
-            <h1>Ваши идеи — наш код. <br> <span>Давайте обсудим!</span></h1>
+            <h1>{{ $t('contacts_title') }}</h1>
           </div>
           <div class="contacts__content-form">
-            <FormCall/>
+            <FormCall />
           </div>
         </div>
 
@@ -32,20 +30,20 @@ const showModalQuiz = ref(false);
           <div class="contacts__cards-wrapper">
             <div class="contacts__card">
               <a href="tel:+375298481820" class="contacts__card-link">
-                <img :src="ic_wp" alt="ic_wp"/>
+                <img :src="ic_wp" alt="WhatsApp" />
                 +375 (29) 848-18-20
               </a>
-              <p>Свяжитесь с нами по телефону — обсудим ваш проект и ответим на все вопросы, или оставьте заявку, и мы
-                подготовим для вас персональное предложение!</p>
-              <Button :label="$t('get_quote')" color="stroke" @click="showModalQuiz = true"/>
+              <p>{{ $t('contacts_phone_info') }}</p>
+              <Button :label="$t('get_quote')" color="stroke" @click="showModalQuiz = true" />
             </div>
             <div class="contacts__card">
-              <p><b>Наш офис</b></p>
+              <p><b>{{ $t('contacts_office') }}</b></p>
               <a href="#" class="contacts__card-link">
-                8, Shartava, Batumi 6000, Грузия
+                {{ $t('contacts_address') }}
               </a>
             </div>
           </div>
+
           <div class="contacts__cards-wrapper">
             <div class="contacts__card">
               <a href="mailto:anycode.it@gmail.com" class="contacts__card-link">
@@ -54,23 +52,21 @@ const showModalQuiz = ref(false);
               <a href="mailto:anycode.support@gmail.com" class="contacts__card-link">
                 anycode.support@gmail.com
               </a>
-              <p>Пишите нам — ответим в ближайшее время.</p>
+              <p>{{ $t('contacts_email_info') }}</p>
             </div>
             <div class="contacts__card">
-              <p><b>Мы в социальных сетях</b></p>
+              <p><b>{{ $t('contacts_social') }}</b></p>
               <a href="#" class="contacts__card-link">
-                <img :src="ic_tg" alt="ic_tg"/>
+                <img :src="ic_tg" alt="Telegram" />
                 anycode.tg
               </a>
               <a href="#" class="contacts__card-link">
-                <img :src="ic_fb" alt="ic_fb"/>
+                <img :src="ic_fb" alt="Facebook" />
                 anycode.fb
               </a>
-              <p>Следите за новостями компании, нашими проектами и событиями.</p>
+              <p>{{ $t('contacts_social_info') }}</p>
             </div>
           </div>
-
-
         </div>
       </div>
     </div>
@@ -175,7 +171,6 @@ const showModalQuiz = ref(false);
       border-radius: 20px;
       padding: 24px;
       box-shadow: rgba(255, 255, 255, 0.55) 0 0 30px;
-
     }
   }
 
@@ -197,12 +192,9 @@ const showModalQuiz = ref(false);
     padding: 24px;
     background: #202328;
     border-radius: 20px;
-
     display: flex;
     flex-direction: column;
-
     position: relative;
-
 
     @media screen and (min-width: 1199.98px) {
       &:last-child {
@@ -225,7 +217,6 @@ const showModalQuiz = ref(false);
       width: fit-content;
       align-items: center;
       gap: 10px;
-
       font-size: 14px;
       font-weight: 500;
       line-height: 148%;
@@ -256,7 +247,6 @@ const showModalQuiz = ref(false);
         line-height: 148%;
         color: #FFF;
       }
-
     }
 
     .btn-stroke {

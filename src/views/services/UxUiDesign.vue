@@ -12,107 +12,107 @@ import icExpertAMA from "@/assets/images/svg/expert/ic_media.svg?url";
 import icExpertAFS from "@/assets/images/svg/expert/ic_fitness.svg?url";
 import icExpertART from "@/assets/images/svg/expert/ic_restaurant.svg?url";
 
-
 const serviceInfo = ref({
-  title: "UX/UI Дизайн",
-  description:
-      "Мы создаем удобные, современные и интуитивно понятные интерфейсы, ориентированные на пользователя и бизнес-цели.",
+  title: "service_ux_ui_title",
+  description: "service_ux_ui_description",
 });
 
 const benefits = ref([
-  "Улучшение пользовательского опыта",
-  "Рост конверсии и продаж",
-  "Современные UI-тренды",
-  "Кроссплатформенная адаптация",
-  "Гибкость и масштабируемость",
+  "service_ux_ui_benefit_1",
+  "service_ux_ui_benefit_2",
+  "service_ux_ui_benefit_3",
+  "service_ux_ui_benefit_4",
+  "service_ux_ui_benefit_5",
 ]);
 
 const steps = ref([
-  {step: "Исследование", description: "Анализ целевой аудитории, конкурентов и бизнес-требований."},
-  {step: "Прототипирование", description: "Создание wireframes и тестирование пользовательских сценариев."},
-  {step: "UI-дизайн", description: "Разработка визуальной концепции, подбор цветовой схемы и типографики."},
-  {step: "Тестирование", description: "Проверка удобства использования и внесение правок."},
-  {step: "Передача в разработку", description: "Готовим макеты для верстки и программирования."},
+  {step: "service_ux_ui_step_1", description: "service_ux_ui_step_1_desc"},
+  {step: "service_ux_ui_step_2", description: "service_ux_ui_step_2_desc"},
+  {step: "service_ux_ui_step_3", description: "service_ux_ui_step_3_desc"},
+  {step: "service_ux_ui_step_4", description: "service_ux_ui_step_4_desc"},
+  {step: "service_ux_ui_step_5", description: "service_ux_ui_step_5_desc"},
 ]);
 
 const whyUs = ref([
-  {title: "Опыт", description: "Более 5 лет разрабатываем интерфейсы для IT-компаний и стартапов."},
-  {
-    title: "Глубокая аналитика",
-    description: "Проводим исследования, чтобы создать решения, которые действительно работают.",
-  },
-  {title: "Индивидуальный подход", description: "Адаптируем дизайн под бизнес-задачи и целевую аудиторию."},
-  {title: "Гарантия качества", description: "Тестируем каждую версию дизайна, чтобы достичь лучшего результата."},
+  {title: "service_ux_ui_why_1", description: "service_ux_ui_why_1_desc"},
+  {title: "service_ux_ui_why_2", description: "service_ux_ui_why_2_desc"},
+  {title: "service_ux_ui_why_3", description: "service_ux_ui_why_3_desc"},
+  {title: "service_ux_ui_why_4", description: "service_ux_ui_why_4_desc"},
 ]);
 
-const tools = ref(["Figma", "Adobe XD", "Sketch", "InVision", "Zeplin"]);
+const tools = ref([
+  "service_ux_ui_tool_1",
+  "service_ux_ui_tool_2",
+  "service_ux_ui_tool_3",
+  "service_ux_ui_tool_4",
+  "service_ux_ui_tool_5",
+]);
 
 const experts = ref([
-  {img: icExpertAM, name: "Промышленность"},
-  {img: icExpertAH, name: "Здравоохранение"},
-  {img: icExpertAT, name: "Информационные технологии"},
-  {img: icExpertAF, name: "Финансы"},
-  {img: icExpertAR, name: "Торговля"},
-  {img: icExpertAA, name: "Сельское хозяйство"},
-  {img: icExpertAMA, name: "Медиа"},
-  {img: icExpertAFS, name: "Фитнес-индустрия"},
-  {img: icExpertART, name: "Ресторанный бизнес "},
+  {img: icExpertAM, name: "service_ux_ui_expert_1"},
+  {img: icExpertAH, name: "service_ux_ui_expert_2"},
+  {img: icExpertAT, name: "service_ux_ui_expert_3"},
+  {img: icExpertAF, name: "service_ux_ui_expert_4"},
+  {img: icExpertAR, name: "service_ux_ui_expert_5"},
+  {img: icExpertAA, name: "service_ux_ui_expert_6"},
+  {img: icExpertAMA, name: "service_ux_ui_expert_7"},
+  {img: icExpertAFS, name: "service_ux_ui_expert_8"},
+  {img: icExpertART, name: "service_ux_ui_expert_9"},
 ]);
 </script>
 
 <template>
   <section class="service-section">
     <div class="container">
-
       <div class="service-section__heading">
-        <h1>{{ serviceInfo.title }}</h1>
-        <p>{{ serviceInfo.description }}</p>
+        <h1>{{ $t(serviceInfo.title) }}</h1>
+        <p>{{ $t(serviceInfo.description) }}</p>
       </div>
 
       <div class="content-block content-block--advantages">
-        <h2>Преимущества</h2>
+        <h2>{{ $t("service_ux_ui_advantages") }}</h2>
         <ul class="list">
           <li v-for="(benefit, index) in benefits" :key="index">
             <span class="list-number">{{ String(index + 1).padStart(2, '0') }}</span>
-            {{ benefit }}
+            {{ $t(benefit) }}
           </li>
         </ul>
       </div>
 
       <div class="content-block">
-        <h2>Основные этапы работы</h2>
+        <h2>{{ $t("service_ux_ui_steps") }}</h2>
         <ul class="list">
           <li v-for="(step, index) in steps" :key="index">
-            <strong>{{ step.step }}:</strong> {{ step.description }}
+            <strong>{{ $t(step.step) }}:</strong> {{ $t(step.description) }}
           </li>
         </ul>
       </div>
 
       <div class="content-block">
-        <h2>Почему выбирают нас</h2>
-        <ul class=" list--grid">
+        <h2>{{ $t("service_ux_ui_why") }}</h2>
+        <ul class="list--grid">
           <li v-for="(item, index) in whyUs" :key="index">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.description }}</p>
+            <h3>{{ $t(item.title) }}</h3>
+            <p>{{ $t(item.description) }}</p>
           </li>
         </ul>
       </div>
 
       <div class="content-block">
-        <h2>Технологии и инструменты</h2>
-        <ul class=" list--tools">
-          <li v-for="(tool, index) in tools" :key="index">{{ tool }}</li>
+        <h2>{{ $t("service_ux_ui_tools") }}</h2>
+        <ul class="list--tools">
+          <li v-for="(tool, index) in tools" :key="index">{{ $t(tool) }}</li>
         </ul>
       </div>
 
       <div class="content-block">
-        <h2>Отраслевая экспертиза</h2>
+        <h2>{{ $t("service_ux_ui_expertise") }}</h2>
         <div class="expert-block">
           <div class="expert-block__item" v-for="(expert, index) in experts" :key="index">
             <picture>
-              <img :src="expert.img" :alt="expert.name"/>
+              <img :src="expert.img" :alt="$t(expert.name)"/>
             </picture>
-            <div class="name">{{ expert.name }}</div>
+            <div class="name">{{ $t(expert.name) }}</div>
           </div>
         </div>
       </div>

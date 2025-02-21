@@ -1,23 +1,21 @@
 <script setup>
-
 </script>
 
 <template>
   <section class="not-found">
     <div class="container">
       <div class="not-found__content">
-        <h1>404</h1>
-        <div class="sub-title">Page not found</div>
-        <p>The page you are trying to access does not exist or has been deleted</p>
+        <h1>{{ $t("not_found_title") }}</h1>
+        <div class="sub-title">{{ $t("not_found_subtitle") }}</div>
+        <p>{{ $t("not_found_description") }}</p>
         <p>
-          Go to
-          <router-link :to="`/${$i18n.locale}`">Homepage</router-link>
+          {{ $t("not_found_homepage") }}
+          <router-link :to="`/${$i18n.locale}`">{{ $t("not_found_homepage_link") }}</router-link>
         </p>
       </div>
     </div>
   </section>
 </template>
-
 
 <style scoped lang="scss">
 .not-found {
@@ -67,6 +65,4 @@
     }
   }
 }
-
-
 </style>
