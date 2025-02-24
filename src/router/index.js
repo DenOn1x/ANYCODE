@@ -1,6 +1,5 @@
 import {createRouter, createWebHistory} from "vue-router";
 import {nextTick} from 'vue';
-import { createRouter, createWebHistory } from 'vue-router';
 import i18n, { availableLanguages } from '@/i18n/i18n.js';
 
 import Index from "@/views/Index.vue";
