@@ -1,3 +1,5 @@
+import {createRouter, createWebHistory} from "vue-router";
+import {nextTick} from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import i18n, { availableLanguages } from '@/i18n/i18n.js';
 
@@ -30,8 +32,6 @@ const routes = [
         path: '/',
         redirect: () => `/${getCurrentLocale()}`,
     },
-
-    // Главная
     {
         path: '/:lang(ru|en)?',
         name: 'home',
@@ -39,20 +39,23 @@ const routes = [
     },
 
     {
-        path: '/:lang(ru|en)?/about',
-        name: 'about',
+        path: "/:lang(ru|en)?/about",
+        name: "about",
         component: About,
+        meta: {}
     },
     {
         path: '/:lang(ru|en)?/contacts',
         name: 'contacts',
         component: Contacts,
+        meta: {}
     },
 
     {
         path: '/:lang(ru|en)?/services',
         name: 'services',
         component: Services,
+        meta: {},
         children: [
             {
                 path: 'software-development',
@@ -91,12 +94,14 @@ const routes = [
         path: '/:lang(ru|en)?/products',
         name: 'products',
         component: Products,
+        meta: {}
     },
 
     {
         path: '/:lang(ru|en)?/careers',
         name: 'careers',
         component: Careers,
+        meta: {},
         children: [
             {
                 path: 'android-developer',
@@ -125,6 +130,7 @@ const routes = [
         path: '/:lang(ru|en)?/policy',
         name: 'policy',
         component: Policy,
+        meta: {}
     },
 
     {
@@ -162,6 +168,15 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes,
+    scrollBehavior(to, from, savedPosition) {
+        return new Promise((resolve) => {
+            nextTick(() => {
+                setTimeout(() => {
+                    resolve({top: 0, behavior: "smooth"});
+                }, 500);
+            });
+        });
+    },
 });
 
 router.beforeEach((to, from, next) => {

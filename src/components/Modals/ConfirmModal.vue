@@ -3,6 +3,7 @@ import {defineProps, defineEmits} from "vue";
 
 const props = defineProps({
   isOpen: Boolean,
+  message: String,
 });
 const emit = defineEmits(["close"]);
 </script>
@@ -10,7 +11,7 @@ const emit = defineEmits(["close"]);
 <template>
   <div v-if="isOpen" class="modal-overlay" @click.self="emit('close')">
     <div class="modal">
-      <p>Сообщение успешно отправлено!</p>
+      <p>{{ message }}</p>
       <button @click="emit('close')">Закрыть</button>
     </div>
   </div>
@@ -20,11 +21,13 @@ const emit = defineEmits(["close"]);
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, .9);
-  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, .7);
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (min-width: 575.98px) {
+    border-radius: 20px;
+  }
 
   .modal {
     border-radius: 20px;

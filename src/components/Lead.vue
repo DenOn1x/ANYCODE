@@ -44,7 +44,7 @@ const showModalForm = ref(false);
         </div>
         <div class="lead__bg">
           <div class="lead__bg-help">
-            <img :src="IconChevronHelp" alt=""/>
+            <img :src="IconChevronHelp" alt="icChevron"/>
           </div>
           <picture>
             <img :src="anycodeImg" alt="anycodeMain"/>
@@ -59,23 +59,23 @@ const showModalForm = ref(false);
           </ul>
           <ul class="lead__socials">
             <li>
-              <a href="#">
-                <img :src="ic_fb" alt=""/>
+              <a href="https://www.facebook.com/anycodeIT/" target="_blank">
+                <img :src="ic_fb" alt="facebook"/>
               </a>
             </li>
             <li>
               <a href="#">
-                <img :src="ic_tg" alt=""/>
+                <img :src="ic_tg" alt="telegram"/>
               </a>
             </li>
             <li>
-              <a href="#">
-                <img :src="ic_inst" alt=""/>
+              <a href="https://www.instagram.com/anycode.it/" target="_blank">
+                <img :src="ic_inst" alt="instagram"/>
               </a>
             </li>
             <li>
-              <a href="#">
-                <img :src="ic_wp" alt=""/>
+              <a href="tel:+375298481820">
+                <img :src="ic_wp" alt="whatsapp"/>
               </a>
             </li>
           </ul>

@@ -1,16 +1,5 @@
-<template>
-  <div v-if="isVisible" class="modal-backdrop" @click="handleBackdropClick">
-    <div :class="['modal-content', modalClass, { 'leave': !visible }]" @click.stop>
-      <slot></slot>
-      <button class="modal-close" @click="close">
-        <span></span>
-      </button>
-    </div>
-  </div>
-</template>
-
 <script setup>
-import { ref, watch, onMounted, onUnmounted } from 'vue';
+import {ref, watch, onMounted, onUnmounted} from 'vue';
 
 const props = defineProps({
   modelValue: Boolean,
@@ -32,7 +21,7 @@ const close = () => {
     isVisible.value = false;
     isAnimating.value = false;
     emit('update:modelValue', false);
-    checkNoScroll(); // Проверяем, нужно ли убирать no-scroll
+    checkNoScroll();
   }, 300);
 };
 
@@ -42,7 +31,6 @@ const handleBackdropClick = () => {
   }
 };
 
-// Функция проверки перед удалением 'no-scroll'
 const checkNoScroll = () => {
   const mobileMenuOpen = document.documentElement.classList.contains('mobile-menu-open');
   if (!visible.value && !mobileMenuOpen) {
@@ -55,7 +43,7 @@ watch(() => props.modelValue, (newValue) => {
     visible.value = true;
     isVisible.value = true;
     isAnimating.value = true;
-    document.documentElement.classList.add('no-scroll'); // Отключаем прокрутку
+    document.documentElement.classList.add('no-scroll');
     setTimeout(() => {
       isAnimating.value = false;
     }, 300);
@@ -76,11 +64,20 @@ onMounted(() => {
 
 onUnmounted(() => {
   document.removeEventListener('keydown', onEsc);
-  checkNoScroll(); // Убираем класс при размонтировании компонента, если меню закрыто
+  checkNoScroll();
 });
 </script>
 
-
+<template>
+  <div v-if="isVisible" class="modal-backdrop" @click="handleBackdropClick">
+    <div :class="['modal-content', modalClass, { 'leave': !visible }]" @click.stop>
+      <slot></slot>
+      <button class="modal-close" @click="close">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</template>
 
 <style scoped>
 .modal-backdrop {
@@ -102,7 +99,6 @@ onUnmounted(() => {
   width: 100%;
   animation-duration: 0.3s;
   animation-fill-mode: forwards;
-  padding: 0 15px;
   margin-top: auto;
   background-color: #070707;
   box-shadow: rgba(255, 255, 255, 0.55) 0 0 30px;
@@ -117,7 +113,7 @@ onUnmounted(() => {
 
   @media screen and (min-width: 575.98px) {
     margin: 0;
-    border-radius: 40px;
+    border-radius: 20px;
 
   }
 }
