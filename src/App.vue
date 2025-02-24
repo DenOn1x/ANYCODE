@@ -4,6 +4,7 @@ import LayoutHeader from '@/components/layout/Header.vue';
 import LayoutFooter from '@/components/layout/Footer.vue';
 import CustomCursor from '@/UI/Cursor.vue';
 
+
 const loading = ref(true);
 const showPreloader = ref(true);
 const isLargeScreen = ref(window.innerWidth > 767.98);
@@ -38,7 +39,7 @@ onMounted(() => {
       <div v-if="!loading" :key="$route.fullPath" class="transition-wrapper">
         <layout-header/>
         <main class="page">
-          <router-view/>
+          <router-view :openModal="openModal"/>
         </main>
         <layout-footer/>
       </div>
@@ -50,7 +51,10 @@ onMounted(() => {
       </main>
       <layout-footer/>
     </div>
+
   </CustomCursor>
+
+
 </template>
 
 

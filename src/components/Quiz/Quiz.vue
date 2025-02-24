@@ -7,8 +7,8 @@ import QuizForm from "@/components/Quiz/QuizForm.vue";
   <section class="quiz">
     <div class="container">
       <div class="quiz__top">
-        <h2>{{$t('quiz_top')}}</h2>
-        <div class="quiz__desc">{{$t('quiz_desc')}}</div>
+        <h2>{{ $t('quiz_top') }}</h2>
+        <div class="quiz__desc">{{ $t('quiz_desc') }}</div>
       </div>
       <div class="quiz__wrapper">
         <QuizForm/>

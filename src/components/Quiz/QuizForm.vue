@@ -149,7 +149,7 @@ onMounted(() => {
   }
 }
 
-.quiz__body {
+::v-deep .quiz__body {
   padding: 24px 0;
 }
 

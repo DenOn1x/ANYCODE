@@ -71,7 +71,6 @@ const toggleAccordion = (itemId) => {
   flex-direction: column;
 
   .accordion__item {
-  //border-top: 1px solid rgba(255, 255, 255, 0.7); //margin: -1px 0; cursor: pointer;
 
     &:not(:last-child) {
       border-bottom: .5px solid rgba(255, 255, 255, 0.7);

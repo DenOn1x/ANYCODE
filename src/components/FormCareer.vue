@@ -1,9 +1,9 @@
 <script setup>
-import { ref } from "vue";
-import { useI18n } from "vue-i18n";
+import {ref} from "vue";
+import {useI18n} from "vue-i18n";
 import Button from "@/UI/Button.vue";
 
-const { t } = useI18n();
+const {t} = useI18n();
 
 const name = ref("");
 const surname = ref("");
@@ -17,7 +17,7 @@ const errors = ref({
   name: "",
   email: "",
   surname: "",
-  message:"",
+  message: "",
   consent: ""
 });
 
@@ -175,6 +175,7 @@ const resetForm = () => {
     font-size: 12px;
     margin-top: 5px;
   }
+
   &__fields {
     display: grid;
     gap: 30px;

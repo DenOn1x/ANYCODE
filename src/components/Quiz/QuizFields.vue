@@ -1,8 +1,9 @@
 <script setup>
+import {ref, computed} from "vue";
+import {useI18n} from "vue-i18n";
 
 import Button from "@/UI/Button.vue";
-import {useI18n} from "vue-i18n";
-import {ref} from "vue";
+import ConfirmModal from "@/components/Modals/ConfirmModal.vue";
 
 const {t} = useI18n();
 
@@ -10,10 +11,17 @@ const name = ref("");
 const email = ref("");
 const phone = ref("");
 const errors = ref({});
+const isModalOpen = ref(false);
 
 const props = defineProps({
   selectedOptions: Object,
 });
+
+const clearError = (field) => {
+  errors.value[field] = "";
+};
+
+const isActive = (value) => value.trim() !== "";
 
 const validateForm = () => {
   let isValid = true;
@@ -56,10 +64,12 @@ const submitQuiz = async () => {
     const data = await response.json();
 
     if (data.success) {
-      console.log("success")
+      console.log("s")
       resetForm()
+      isModalOpen.value = true;
+
     } else {
-      console.log("fail")
+      console.log("f")
     }
   } catch (error) {
     console.error("Ошибка запроса:", error);
@@ -84,19 +94,20 @@ const resetForm = () => {
       <div class="quiz-end__content">
         <form @submit.prevent="submitQuiz" class="quiz-end__fields">
           <div class="quiz-end__fields">
-            <div class="quiz-end__field">
+            <div class="quiz-end__field" :class="{ active: isActive(name) }">
               <label for="NAME">{{ $t('name') }}</label>
-              <input v-model="name" type="text" name="your-name" id="NAME" placeholder="">
+              <input v-model="name" @input="clearError('name')" type="text" name="your-name" id="NAME" placeholder="">
               <span class="quiz-end__error" v-if="errors.name">{{ errors.name }}</span>
             </div>
-            <div class="quiz-end__field">
+            <div class="quiz-end__field" :class="{ active: isActive(email) }">
               <label for="MAIL">{{ $t('email') }}</label>
-              <input v-model="email" type="text" name="your-mail" id="MAIL" placeholder="">
+              <input v-model="email" @input="clearError('email')" type="text" name="your-mail" id="MAIL" placeholder="">
               <span class="quiz-end__error" v-if="errors.email">{{ errors.email }}</span>
             </div>
-            <div class="quiz-end__field">
+            <div class="quiz-end__field" :class="{ active: isActive(phone) }">
               <label for="NUMBER">{{ $t('phone') }}</label>
-              <input v-model="phone" type="text" name="your-phone" id="NUMBER" placeholder="">
+              <input v-model="phone" @input="clearError('phone')" type="text" name="your-phone" id="NUMBER"
+                     placeholder="">
               <span class="quiz-end__error" v-if="errors.phone">{{ errors.phone }}</span>
             </div>
             <Button :label="$t('submit')"
@@ -107,15 +118,25 @@ const resetForm = () => {
       </div>
     </div>
   </div>
+
+  <ConfirmModal :isOpen="isModalOpen" @close="isModalOpen = false"/>
+
 </template>
 
-<style scoped lang="scss">
-.quiz-end {
 
+<style scoped lang="scss">
+
+.quiz-end {
   &__error {
-    color: red;
     font-size: 12px;
-    margin-top: 5px;
+    color: rgba(255, 0, 0, 0.7);
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+  }
+
+  &__body {
+    padding: 24px 0;
   }
 
   &__question {
@@ -128,18 +149,32 @@ const resetForm = () => {
 
   &__fields {
     display: grid;
-    gap: 30px;
+    gap: 40px;
   }
 
   &__field {
     display: flex;
     flex-direction: column;
+    position: relative;
+
+    &.active {
+      label {
+        top: calc(50% - 20px);
+
+      }
+    }
 
     label {
       font-size: 12px;
       font-weight: 300;
       line-height: 148%;
       color: rgba(255, 255, 255, 0.7);
+
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: .3s ease;
     }
 
     input {
