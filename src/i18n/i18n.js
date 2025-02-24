@@ -8,8 +8,10 @@ const messages = {
 };
 
 const i18n = createI18n ( {
+    legacy: false,
     locale: 'ru',
     fallbackLocale: "en",
     messages,
 });
 export default i18n;
+export const availableLanguages = ["en", "ru"];
