@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import {ref} from "vue";
 
 import ic_fb from "@/assets/images/svg/ic_fb.svg?url";
 import ic_tg from "@/assets/images/svg/ic_tg.svg?url";
@@ -9,6 +9,7 @@ import Button from "@/UI/Button.vue";
 import FormCall from "@/components/FormCall.vue";
 import Modal from '@/components/Modals/Modal.vue';
 import QuizForm from "@/components/Quiz/QuizForm.vue";
+import ic_inst from "@/assets/images/svg/ic_inst.svg?url";
 
 const showModalQuiz = ref(false);
 </script>
@@ -22,7 +23,7 @@ const showModalQuiz = ref(false);
             <h1>{{ $t('contacts_title') }}</h1>
           </div>
           <div class="contacts__content-form">
-            <FormCall />
+            <FormCall/>
           </div>
         </div>
 
@@ -30,11 +31,11 @@ const showModalQuiz = ref(false);
           <div class="contacts__cards-wrapper">
             <div class="contacts__card">
               <a href="tel:+375298481820" class="contacts__card-link">
-                <img :src="ic_wp" alt="WhatsApp" />
+                <img :src="ic_wp" alt="WhatsApp"/>
                 +375 (29) 848-18-20
               </a>
               <p>{{ $t('contacts_phone_info') }}</p>
-              <Button :label="$t('get_quote')" color="stroke" @click="showModalQuiz = true" />
+              <Button :label="$t('get_quote')" color="stroke" @click="showModalQuiz = true"/>
             </div>
             <div class="contacts__card">
               <p><b>{{ $t('contacts_office') }}</b></p>
@@ -56,13 +57,17 @@ const showModalQuiz = ref(false);
             </div>
             <div class="contacts__card">
               <p><b>{{ $t('contacts_social') }}</b></p>
-              <a href="#" class="contacts__card-link">
-                <img :src="ic_tg" alt="Telegram" />
-                anycode.tg
+              <a href="https://www.facebook.com/anycodeIT/" target="_blank" class="contacts__card-link">
+                <img :src="ic_fb" alt="Facebook"/>
+                anycode.fb
               </a>
               <a href="#" class="contacts__card-link">
-                <img :src="ic_fb" alt="Facebook" />
-                anycode.fb
+                <img :src="ic_tg" alt="Telegram"/>
+                anycode.tg
+              </a>
+              <a href="https://www.instagram.com/anycode.it/" target="_blank" class="contacts__card-link">
+                <img :src="ic_inst" alt="Instagram"/>
+                anycode.inst
               </a>
               <p>{{ $t('contacts_social_info') }}</p>
             </div>
@@ -231,7 +236,9 @@ const showModalQuiz = ref(false);
       }
 
       img {
-
+        min-width: 20px;
+        width: 20px;
+        height: 20px;
       }
     }
 

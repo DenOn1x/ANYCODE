@@ -1,20 +1,19 @@
 <script setup>
-import icChevronPrpl from "@/assets/images/svg/ic_chevron_prpl.svg?url"
+import icChevronPrpl from "@/assets/images/svg/ic_chevron_prpl.svg?url";
 
 
 defineProps({
   number: Number,
   title: String,
   subTitle: String,
-  text: String
+  text: String,
+  link: String,
 });
-
-
 </script>
 
 <template>
   <div class="other-products__card card-other-product">
-    <a href="#" class="card-other-product__content">
+    <a :href="link" class="card-other-product__content">
       <div class="card-other-product__content-top">
         <div class="card-other-product__num">{{ number }}</div>
         <div class="card-other-product__title">{{ title }}</div>
@@ -23,7 +22,7 @@ defineProps({
         <div class="card-other-product__sub-title">{{ subTitle }}</div>
         <div class="card-other-product__text">{{ text }}</div>
       </div>
-      <router-link to="#">
+      <router-link :to="link">
         <div class="card-other-product__arrow">
           <img :src="icChevronPrpl" alt="ic_chevron"/>
         </div>
@@ -41,6 +40,7 @@ defineProps({
     </a>
   </div>
 </template>
+
 
 <style lang="scss" scoped>
 

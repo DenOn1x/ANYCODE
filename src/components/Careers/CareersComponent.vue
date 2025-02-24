@@ -1,38 +1,37 @@
 <script setup>
-import { defineProps } from 'vue';
-import { useRouter } from 'vue-router';
-import anycodeCareers from '@/assets/images/anycode-careers.png';
+import {defineProps} from "vue";
+import anycodeCareers from "@/assets/images/anycode-careers.png";
 
-const props = defineProps({
+defineProps({
   jobs: {
     type: Array,
     default: () => [
       {
-        title: 'Android инженер',
-        location: 'Офис, Удаленная работа',
-        type: 'Middle, Полный рабочий день',
-        link: '/careers/android-developer',
+        title: "Android инженер",
+        location: "Офис, Удаленная работа",
+        type: "Middle, Полный рабочий день",
+        link: "/careers/android-developer",
       },
       {
-        title: 'Odoo разработчик',
-        location: 'Офис, Удаленная работа',
-        type: 'Junior, Middle, Полный рабочий день',
-        link: '/careers/crm',
+        title: "Odoo разработчик",
+        location: "Офис, Удаленная работа",
+        type: "Junior, Middle, Полный рабочий день",
+        link: "/careers/crm",
       },
       {
-        title: 'Бэкенд инженер Python',
-        location: 'Офис, Удаленная работа',
-        type: 'Junior, Middle, Полный рабочий день',
-        link: '/careers/python-developer',
+        title: "Бэкенд инженер Python",
+        location: "Офис, Удаленная работа",
+        type: "Junior, Middle, Полный рабочий день",
+        link: "/careers/python-developer",
       },
       {
-        title: 'Sales manager',
-        location: 'Офис, Удаленная работа',
-        type: 'Middle, Полный рабочий день',
-        link: '/careers/sales-manager',
-      }
+        title: "Sales manager",
+        location: "Офис, Удаленная работа",
+        type: "Middle, Полный рабочий день",
+        link: "/careers/sales-manager",
+      },
     ],
-  }
+  },
 });
 </script>
 
@@ -40,9 +39,9 @@ const props = defineProps({
   <section class="careers">
     <div class="container">
       <div class="careers__top">
-        <h1>{{ $t('careers_title') }}</h1>
+        <h1>{{ $t("careers_title") }}</h1>
         <div class="careers__sub-title">
-          {{ $t('careers_subtitle') }}
+          {{ $t("careers_subtitle") }}
         </div>
       </div>
 
@@ -54,18 +53,29 @@ const props = defineProps({
         </div>
 
         <div class="careers__cards">
-          <a href="#" v-for="(job, index) in props.jobs" :key="index" class="careers__card">
+          <router-link
+              v-for="(job, index) in jobs"
+              :key="index"
+              :to="job.link"
+              class="careers__card"
+          >
             <div class="careers__card-top">
-              <div class="careers__card-top-title">{{ $t(`careers.${job.title}`) }}</div>
-              <div class="careers__card-top-loc">{{ $t(`careers.${job.location}`) }}</div>
+              <div class="careers__card-top-title">
+                {{ $t(`careers.${job.title}`) }}
+              </div>
+              <div class="careers__card-top-loc">
+                {{ $t(`careers.${job.location}`) }}
+              </div>
             </div>
             <div class="careers__card-bottom">
-              <div class="careers__card-bottom-who">{{ $t(`careers.${job.type}`) }}</div>
-              <router-link :to="job.link" class="careers__card-bottom-link">
-                {{ $t('learn_more') }}
-              </router-link>
+              <div class="careers__card-bottom-who">
+                {{ $t(`careers.${job.type}`) }}
+              </div>
+              <span class="careers__card-bottom-link">
+                {{ $t("learn_more") }}
+              </span>
             </div>
-          </a>
+          </router-link>
         </div>
       </div>
     </div>

@@ -1,13 +1,21 @@
 <script setup>
+import {ref} from "vue";
+
+import Button from "@/UI/Button.vue";
 import Faq from "@/components/Faq/Faq.vue";
+import Modal from '@/components/Modals/Modal.vue';
+import ModalQuote from "@/components/Modals/ModalQuote.vue";
 
 import Rating from "@/assets/images/svg/ic_rating.svg?url";
 import Conf from "@/assets/images/i-conf.jpg?url";
-import Button from "@/UI/Button.vue";
 
 import anycodeImg from "@/assets/images/tt1.png";
 import personImg from "@/assets/images/person-f-001.jpg";
 import personImgD from "@/assets/images/person-f-002.jpg";
+
+
+const showModalForm = ref(false);
+
 </script>
 
 <template>
@@ -169,6 +177,10 @@ import personImgD from "@/assets/images/person-f-002.jpg";
   </section>
 
   <Faq/>
+
+  <Modal v-model="showModalForm" modalClass="modal-quote">
+    <ModalQuote/>
+  </Modal>
 </template>
 
 <style scoped lang="scss">
