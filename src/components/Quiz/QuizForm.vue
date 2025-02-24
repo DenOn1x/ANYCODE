@@ -76,7 +76,7 @@ onMounted(() => {
 <template>
   <div class="quiz__form">
     <div class="quiz__title">{{ $t('quiz_title') }}</div>
-    <form action="#" method="POST" class="quiz__cards">
+    <form class="quiz__cards">
       <Splide ref="splideRef" :options="splideOptions" data-slider="quiz" aria-label="">
         <SplideSlide>
           <QuizStart v-model="selectedOptions[0]"/>
@@ -94,7 +94,7 @@ onMounted(() => {
           <QuizCompany v-model="selectedOptions[4]"/>
         </SplideSlide>
         <SplideSlide>
-          <QuizFields/>
+          <QuizFields :selectedOptions="selectedOptions"/>
         </SplideSlide>
       </Splide>
       <div class="quiz-progress">

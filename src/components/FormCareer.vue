@@ -1,39 +1,138 @@
 <script setup>
-
+import { ref } from "vue";
+import { useI18n } from "vue-i18n";
 import Button from "@/UI/Button.vue";
 
-import {ref} from 'vue';
+const { t } = useI18n();
 
-const fileName = ref('');
+const name = ref("");
+const surname = ref("");
+const email = ref("");
+const message = ref("");
+const file = ref(null);
+const fileName = ref("");
+const consent = ref(false);
+
+const errors = ref({
+  name: "",
+  email: "",
+  surname: "",
+  message:"",
+  consent: ""
+});
+
 
 const handleFileChange = (event) => {
-  const file = event.target.files[0];
-  fileName.value = file ? file.name : '';
+  const selectedFile = event.target.files[0];
+  if (selectedFile) {
+    file.value = selectedFile;
+    fileName.value = selectedFile.name;
+  } else {
+    file.value = null;
+    fileName.value = "";
+  }
 };
+
+const validateForm = () => {
+  let isValid = true;
+  errors.value = {
+    name: "",
+    email: "",
+    surname: "",
+    message: "",
+    consent: ""
+  };
+
+  if (!name.value.trim()) {
+    errors.value.name = t("errors.name");
+    isValid = false;
+  }
+  if (!surname.value.trim()) {
+    errors.value.surname = t("errors.surname");
+    isValid = false;
+  }
+  if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+    errors.value.email = t("errors.email");
+    isValid = false;
+  }
+  if (!message.value.trim()) {
+    errors.value.message = t("errors.message");
+    isValid = false;
+  }
+  if (!consent.value) {
+    errors.value.consent = t("errors.consent");
+    isValid = false;
+  }
+
+  return isValid;
+};
+
+const submitForm = async () => {
+  if (!validateForm()) return;
+
+  const formData = new FormData();
+  formData.append("name", name.value);
+  formData.append("surname", surname.value);
+  formData.append("email", email.value);
+  formData.append("message", message.value);
+  if (file.value) {
+    formData.append("file", file.value);
+  }
+
+  try {
+    const response = await fetch("https://api.anycodesoftware.com/api/send-vacancy", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      console.error("Success");
+      resetForm()
+    } else {
+      console.error("Fail");
+    }
+  } catch (error) {
+    console.error("Ошибка запроса:", error);
+  }
+};
+
+const resetForm = () => {
+  name.value = "";
+  email.value = "";
+  surname.value = "";
+  message.value = "";
+  consent.value = false;
+  file.value = null;
+  fileName.value = "";
+};
+
 </script>
 
+
 <template>
-  <form action="#" method="POST">
+  <form @submit.prevent="submitForm">
     <div class="careers-request__fields">
       <div class="careers-request__field">
         <label for="NAME">{{ $t('name') }}</label>
-        <input type="text" name="your-name" id="NAME" placeholder="">
-        <span class="careers-request__error"></span>
+        <input v-model="name" type="text" name="your-name" id="NAME" placeholder="">
+        <span class="careers-request__error" v-if="errors.name">{{ errors.name }}</span>
       </div>
       <div class="careers-request__field">
         <label for="SURNAME">{{ $t('surname') }}</label>
-        <input type="text" name="your-surname" id="SURNAME" placeholder="">
-        <span class="careers-request__error"></span>
+        <input v-model="surname" type="text" name="your-surname" id="SURNAME" placeholder="">
+        <span class="careers-request__error" v-if="errors.surname">{{ errors.surname }}</span>
       </div>
       <div class="careers-request__field">
         <label for="MAIL">{{ $t('email') }}</label>
-        <input type="text" name="your-mail" id="MAIL" placeholder="">
-        <span class="careers-request__error"></span>
+        <input v-model="email" type="text" name="your-mail" id="MAIL" placeholder="">
+        <span class="careers-request__error" v-if="errors.email">{{ errors.email }}</span>
       </div>
       <div class="careers-request__field">
         <label for="TEXT">{{ $t('expectations_text') }}</label>
-        <textarea name="your-text" id="TEXT"></textarea>
-        <span class="careers-request__error"></span>
+        <textarea v-model="message" name="your-text" id="TEXT"></textarea>
+        <span class="careers-request__error" v-if="errors.message">{{ errors.message }}</span>
       </div>
 
       <div class="careers-request__field">
@@ -55,13 +154,15 @@ const handleFileChange = (event) => {
       </div>
 
       <Button :label="$t('submit')"
+              type="submit"
               color="fill"/>
       <div class="careers-request__privacy">
         <label class="custom-checkbox">
-          <input type="checkbox" value="1"/>
+          <input type="checkbox" v-model="consent"/>
           <span class="checkmark"></span>
           {{ $t('consent_text') }} <a href="#">{{ $t('personal_data') }}</a>
         </label>
+        <span class="careers-request__error" v-if="errors.consent">{{ errors.consent }}</span>
       </div>
     </div>
   </form>
@@ -69,6 +170,11 @@ const handleFileChange = (event) => {
 
 <style scoped lang="scss">
 .careers-request {
+  &__error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
   &__fields {
     display: grid;
     gap: 30px;

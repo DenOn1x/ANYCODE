@@ -1,34 +1,113 @@
 <script setup>
-
+import { ref } from "vue";
+import { useI18n } from "vue-i18n";
 import Button from "@/UI/Button.vue";
+
+const { t } = useI18n();
+
+const name = ref("");
+const email = ref("");
+const phone = ref("");
+const consent = ref(false);
+
+const errors = ref({
+  name: "",
+  email: "",
+  phone: "",
+  consent: ""
+});
+
+
+const validateForm = () => {
+  let isValid = true;
+  errors.value = { name: "", email: "", phone: "", message: "", consent: "" };
+
+  if (!name.value.trim()) {
+    errors.value.name = t("errors.name");
+    isValid = false;
+  }
+  if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+    errors.value.email = t("errors.email");
+    isValid = false;
+  }
+  if (!phone.value.trim() || !/^\+?\d{7,15}$/.test(phone.value)) {
+    errors.value.phone = t("errors.phone");
+    isValid = false;
+  }
+  if (!consent.value) {
+    errors.value.consent = t("errors.consent");
+    isValid = false;
+  }
+
+  return isValid;
+};
+
+const submitForm = async () => {
+  if (!validateForm()) return;
+
+  const formData = {
+    name: name.value,
+    email: email.value,
+    phone: phone.value,
+  };
+
+  try {
+    const response = await fetch("https://api.anycodesoftware.com/api/send-lead-call", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      console.error("Запрос успешно отправлен");
+      resetForm();
+    } else {
+      console.error("Запрос не отправлен");
+    }
+  } catch (error) {
+    console.error("Ошибка запроса:", error);
+  }
+};
+
+const resetForm = () => {
+  name.value = "";
+  email.value = "";
+  phone.value = "";
+  consent.value = false;
+};
+
 </script>
 
 <template>
-  <form action="#" method="POST">
+  <form @submit.prevent="submitForm">
     <div class="call__fields">
       <div class="call__field">
         <label for="NAME">{{ $t('name') }}</label>
-        <input type="text" name="your-name" id="NAME" placeholder="">
-        <span class="call__error"></span>
+        <input v-model="name" type="text" name="your-name" id="NAME" placeholder="">
+        <span class="call__error" v-if="errors.name">{{ errors.name }}</span>
       </div>
       <div class="call__field">
         <label for="MAIL">{{ $t('email') }}</label>
-        <input type="text" name="your-mail" id="MAIL" placeholder="">
-        <span class="call__error"></span>
+        <input v-model="email" type="text" name="your-mail" id="MAIL" placeholder="">
+        <span class="call__error" v-if="errors.email">{{ errors.email }}</span>
       </div>
       <div class="call__field">
         <label for="NUMBER">{{ $t('phone') }}</label>
-        <input type="text" name="your-phone" id="NUMBER" placeholder="">
-        <span class="call__error"></span>
+        <input v-model="phone" type="text" name="your-phone" id="NUMBER" placeholder="">
+        <span class="call__error" v-if="errors.phone">{{ errors.phone }}</span>
       </div>
       <Button :label="$t('submit')"
+              type="submit"
               color="fill"/>
       <div class="call-privacy">
         <label class="custom-checkbox">
-          <input type="checkbox" value="1"/>
+          <input type="checkbox" v-model="consent"/>
           <span class="checkmark"></span>
           {{ $t('consent_text') }} <a href="#">{{ $t('personal_data') }}</a>
         </label>
+        <span class="call__error" v-if="errors.consent">{{ errors.consent }}</span>
       </div>
     </div>
   </form>
@@ -38,6 +117,12 @@ import Button from "@/UI/Button.vue";
 .call__fields {
   display: grid;
   gap: 30px;
+}
+
+.call__error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
 .call__field {

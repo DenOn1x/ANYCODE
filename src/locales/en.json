@@ -142,6 +142,14 @@
   "file_formats": ".doc.docx.pdf.ppt.pptx - no more than 3 MB",
   "consent_text": "By clicking the button, I agree to the processing of my",
   "our_specialists_will_contact_you_shortly": "Our specialists will contact you shortly",
+  "errors": {
+    "name": "Enter your name",
+    "surname": "Enter your surname",
+    "email": "Enter a valid email",
+    "phone": "Enter a valid phone number",
+    "message": "Enter a message",
+    "consent": "Please confirm your consent"
+  },
   "get_quote": "Get a quote",
   "learn_more": "Learn more",
   "contact_us": "Contact us",
