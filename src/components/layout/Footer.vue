@@ -109,7 +109,7 @@ const isExternalLink = (href) => !href.startsWith("tel:");
           </div>
         </div>
         <div class="footer__bottom">
-          <a href="#">{{ $t("privacy_policy") }}</a>
+          <router-link to="#">{{ $t("privacy_policy") }}</router-link>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import {createRouter, createWebHistory} from "vue-router";
 import {nextTick} from 'vue';
-import i18n, { availableLanguages } from '@/i18n/i18n.js';
+import i18n, {availableLanguages} from '@/i18n/i18n.js';
 
 import Index from "@/views/Index.vue";
 import About from "@/views/About.vue";
@@ -171,8 +171,12 @@ const router = createRouter({
         return new Promise((resolve) => {
             nextTick(() => {
                 setTimeout(() => {
-                    resolve({top: 0, behavior: "smooth"});
-                }, 500);
+                    if (savedPosition) {
+                        resolve(savedPosition);
+                    } else {
+                        resolve({top: 0});
+                    }
+                }, 600);
             });
         });
     },
@@ -182,11 +186,11 @@ router.beforeEach((to, from, next) => {
     const lang = to.params.lang || getCurrentLocale();
 
     if (!to.params.lang) {
-        return next({ path: `/${getCurrentLocale()}${to.fullPath}`, replace: true });
+        return next({path: `/${getCurrentLocale()}${to.fullPath}`, replace: true});
     }
 
     if (!availableLanguages.includes(lang)) {
-        return next({ path: '/ru', replace: true });
+        return next({path: '/ru', replace: true});
     }
 
     if (i18n.global.locale.value !== lang) {

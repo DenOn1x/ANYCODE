@@ -13,7 +13,7 @@ defineProps({
 
 <template>
   <div class="other-products__card card-other-product">
-    <a :href="link" class="card-other-product__content">
+    <router-link :to="link" class="card-other-product__content">
       <div class="card-other-product__content-top">
         <div class="card-other-product__num">{{ number }}</div>
         <div class="card-other-product__title">{{ title }}</div>
@@ -37,7 +37,7 @@ defineProps({
           <div class="circle"></div>
         </div>
       </div>
-    </a>
+    </router-link>
   </div>
 </template>
 

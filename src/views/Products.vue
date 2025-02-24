@@ -91,13 +91,14 @@ const sliderProducts = [
           </div>
         </div>
 
-        <SliderProducts  prevButtonClass="slider-five-prev"
-                         nextButtonClass="slider-five-next" :slides="[{ img: product.img }, ...product.slides.map(img => ({ img }))]" />
+        <SliderProducts prevButtonClass="slider-five-prev"
+                        nextButtonClass="slider-five-next"
+                        :slides="[{ img: product.img }, ...product.slides.map(img => ({ img }))]"/>
       </div>
     </div>
   </section>
 
-  <Quiz />
+  <Quiz/>
 </template>
 
 

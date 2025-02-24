@@ -29,17 +29,11 @@
     "services_mobile": "Mobile app development",
     "services_design": "UX/UI design"
   },
-
-  "services_develop_text":"Complete software development lifecycle: from requirements analysis and design to programming, testing, and deployment. We create high-quality and reliable solutions, ensuring seamless operation and support to keep your business ahead of the competition.",
-
+  "services_develop_text": "Complete software development lifecycle: from requirements analysis and design to programming, testing, and deployment. We create high-quality and reliable solutions, ensuring seamless operation and support to keep your business ahead of the competition.",
   "services_product_text": "Product creation encompasses the entire development process: from concept and research to design, implementation, testing, and market launch. We turn ideas into successful and in-demand solutions, ensuring their sustainable growth and support for your business success.",
-
   "services_web_text": "We develop web solutions that cover the entire process of creating websites and online applications, from planning to launch. We bring competitive and reliable web products to life, attracting customers, meeting their needs, and increasing conversion rates.",
-
   "services_crm_text": "These systems can manage all customer data in one place, simplifying personalized service and task automation. They also provide analytics and reporting, improving sales and marketing management, leading to more efficient business operations and increased profits.",
-
   "services_mobile_text": "Mobile device software development includes everything needed to create applications for phones and tablets. We offer intuitive and useful applications that users will actively engage with and find convenient.",
-
   "services_design_text": "Design plays a crucial role in attracting potential customers and increasing sales. We develop branded and intuitive designs for websites and applications that encourage users to take desired actions — whether it's making a purchase, subscribing, or registering.",
   "other_product_text": "Do you already have a product?",
   "other_product_desc": "We will conduct a product audit, create a plan for changes, and organize the development",
@@ -189,7 +183,7 @@
   "careers_vacancy_contact": "Contact Us",
   "careers_vacancy_apply": "Apply Now",
   "careers_android_title": "Android Engineer",
-  "careers_android_responsibilities": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dolores ducimus exercitationem hic in repudiandae sapiente? Adipisci asperiores eum id!",
+  "careers_android_responsibilities": "Development and maintenance of mobile applications on Android (Kotlin/Java). API integration, performance optimization, and enhancement of user experience. Working with architectures (MVVM, MVI), bug fixing, and collaboration with the team.",
   "careers_android_req_1": "At least 2 years of experience in Android development.",
   "careers_android_req_2": "Knowledge of Kotlin, OOP principles, data structures, and classic algorithms.",
   "careers_android_req_3": "Understanding of REST API and clean architecture principles.",
@@ -267,7 +261,6 @@
   "service_crm_why": "Why Choose Us",
   "service_crm_tools": "Technologies and Tools",
   "service_crm_expertise": "Industry Expertise",
-
   "service_crm_benefit_1": "Automation of routine processes and reduction of human error",
   "service_crm_benefit_2": "Flexibility and adaptation of the system to unique business processes",
   "service_crm_benefit_3": "Integration with external services, APIs, payment systems, and 1C",
@@ -283,7 +276,6 @@
   "service_crm_benefit_13": "Ensured system stability even under high load",
   "service_crm_benefit_14": "Support for mobile devices and easy access from anywhere in the world",
   "service_crm_benefit_15": "User-friendly interface for employees without technical skills",
-
   "service_crm_step_1": "Analysis and Planning",
   "service_crm_step_1_desc": "Define business requirements, develop system architecture, and create a technical specification.",
   "service_crm_step_2": "Prototyping",
@@ -294,7 +286,6 @@
   "service_crm_step_4_desc": "Conduct load and functional testing to identify and fix issues.",
   "service_crm_step_5": "Deployment and Support",
   "service_crm_step_5_desc": "Launch the system, train staff, and provide technical support.",
-
   "service_crm_why_1": "Experience",
   "service_crm_why_1_desc": "Developing CRM/ERP systems for businesses of various scales for over 5 years.",
   "service_crm_why_2": "Deep Customization",
@@ -315,12 +306,10 @@
   "service_mobile_why": "Why Choose Us",
   "service_mobile_tools": "Technologies and Tools",
   "service_mobile_expertise": "Industry Expertise",
-
   "service_mobile_benefit_1": "Development of native and cross-platform applications for iOS and Android.",
   "service_mobile_benefit_2": "Increase in conversion rates and sales.",
   "service_mobile_benefit_3": "Optimized performance and fast operation on mobile devices.",
   "service_mobile_benefit_4": "Modern and user-friendly UI/UX adapted for touch control.",
-
   "service_mobile_step_1": "Analytics and Planning",
   "service_mobile_step_1_desc": "Defining goals, audience, technical requirements, and application functionality.",
   "service_mobile_step_2": "UX Design",
@@ -333,7 +322,6 @@
   "service_mobile_step_5_desc": "Checking functionality, fixing errors, and optimizing performance.",
   "service_mobile_step_6": "Deployment and Support",
   "service_mobile_step_6_desc": "Publishing on the App Store and Google Play, monitoring, and regular updates.",
-
   "service_mobile_why_1": "Expertise in Mobile Development",
   "service_mobile_why_1_desc": "We have been developing mobile applications for businesses, startups, and large companies for over 5 years.",
   "service_mobile_why_2": "Modern Technologies",
@@ -344,7 +332,6 @@
   "service_mobile_why_4_desc": "From analytics and design to testing, deployment, and support.",
   "service_mobile_why_5": "Flexible Approach",
   "service_mobile_why_5_desc": "We adapt to client tasks, offer optimal solutions, and adjust projects as needed.",
-
   "service_mobile_expert_1": "Manufacturing",
   "service_mobile_expert_2": "Healthcare",
   "service_mobile_expert_3": "Information Technology",
@@ -361,14 +348,12 @@
   "service_product_why": "Why Choose Us",
   "service_product_tools": "Technologies & Tools",
   "service_product_expertise": "Industry Expertise",
-
   "service_product_benefit_1": "Turnkey development — from idea to release.",
   "service_product_benefit_2": "Flexible methodologies (Agile, Scrum, Kanban).",
   "service_product_benefit_3": "Scalable architecture for product growth.",
   "service_product_benefit_4": "High speed of market entry (Time-to-Market).",
   "service_product_benefit_5": "User-centered design and functionality.",
   "service_product_benefit_6": "Integration with external services and APIs.",
-
   "service_product_step_1": "Analysis & Strategy",
   "service_product_step_1_desc": "We define the product vision, analyze the market, and set key metrics.",
   "service_product_step_2": "Design",
@@ -379,7 +364,6 @@
   "service_product_step_4_desc": "We conduct automated and manual tests, fix bugs.",
   "service_product_step_5": "Launch & Support",
   "service_product_step_5_desc": "We deploy the product, collect analytics, and improve functionality.",
-
   "service_product_why_1": "Comprehensive Approach",
   "service_product_why_1_desc": "We combine research, design, and development to create a successful product.",
   "service_product_why_2": "Flexibility & Adaptability",
@@ -388,7 +372,6 @@
   "service_product_why_3_desc": "We work with various industries and know how to create in-demand products.",
   "service_product_why_4": "Long-term Partnership",
   "service_product_why_4_desc": "We support and develop the product even after its launch.",
-
   "service_product_tool_1": "Figma",
   "service_product_tool_2": "Jira",
   "service_product_tool_3": "Confluence",
@@ -398,7 +381,6 @@
   "service_product_tool_7": "Python",
   "service_product_tool_8": "JavaScript",
   "service_product_tool_9": "Node.js",
-
   "service_product_expert_1": "Manufacturing",
   "service_product_expert_2": "Healthcare",
   "service_product_expert_3": "Information Technology",
@@ -415,14 +397,12 @@
   "service_software_why": "Why Choose Us",
   "service_software_tools": "Technologies and Tools",
   "service_software_expertise": "Industry Expertise",
-
   "service_software_benefit_1": "Software development for any business tasks",
   "service_software_benefit_2": "High performance and reliability of solutions",
   "service_software_benefit_3": "Flexibility and adaptation to changes in business processes",
   "service_software_benefit_4": "Integration with existing systems and services",
   "service_software_benefit_5": "Utilization of cutting-edge technologies and architectures",
   "service_software_benefit_6": "Support and scaling after release",
-
   "service_software_step_1": "Requirements Gathering",
   "service_software_step_1_desc": "We analyze business processes, form technical specifications, and define project goals.",
   "service_software_step_2": "Architecture Design",
@@ -433,7 +413,6 @@
   "service_software_step_4_desc": "We conduct automated and manual tests to identify and fix bugs.",
   "service_software_step_5": "Deployment and Support",
   "service_software_step_5_desc": "We deploy software on servers, optimize performance, and provide technical support.",
-
   "service_software_why_1": "Technical Expertise",
   "service_software_why_1_desc": "We work with various programming languages and frameworks.",
   "service_software_why_2": "Individual Approach",
@@ -442,7 +421,6 @@
   "service_software_why_3_desc": "We use modern tools and architectural approaches.",
   "service_software_why_4": "Quality Guarantee",
   "service_software_why_4_desc": "We design software with scalability and fault tolerance in mind.",
-
   "service_software_tool_1": "Python",
   "service_software_tool_2": "JavaScript",
   "service_software_tool_3": "Node.js",
@@ -451,7 +429,6 @@
   "service_software_tool_6": "PostgreSQL",
   "service_software_tool_7": "MongoDB",
   "service_software_tool_8": "REST API",
-
   "service_software_expert_1": "Manufacturing",
   "service_software_expert_2": "Healthcare",
   "service_software_expert_3": "Information Technology",
@@ -468,13 +445,11 @@
   "service_ux_ui_why": "Why Choose Us",
   "service_ux_ui_tools": "Technologies and Tools",
   "service_ux_ui_expertise": "Industry Expertise",
-
   "service_ux_ui_benefit_1": "Improved user experience",
   "service_ux_ui_benefit_2": "Increased conversion and sales",
   "service_ux_ui_benefit_3": "Modern UI trends",
   "service_ux_ui_benefit_4": "Cross-platform adaptation",
   "service_ux_ui_benefit_5": "Flexibility and scalability",
-
   "service_ux_ui_step_1": "Research",
   "service_ux_ui_step_1_desc": "We analyze the target audience, competitors, and business requirements.",
   "service_ux_ui_step_2": "Prototyping",
@@ -485,7 +460,6 @@
   "service_ux_ui_step_4_desc": "We check usability and make adjustments.",
   "service_ux_ui_step_5": "Handoff to Development",
   "service_ux_ui_step_5_desc": "We prepare designs for front-end and back-end implementation.",
-
   "service_ux_ui_why_1": "Experience",
   "service_ux_ui_why_1_desc": "More than 5 years of developing interfaces for IT companies and startups.",
   "service_ux_ui_why_2": "Deep Analytics",
@@ -494,13 +468,11 @@
   "service_ux_ui_why_3_desc": "We adapt the design to business objectives and target audience.",
   "service_ux_ui_why_4": "Quality Assurance",
   "service_ux_ui_why_4_desc": "We test every design version to achieve the best results.",
-
   "service_ux_ui_tool_1": "Figma",
   "service_ux_ui_tool_2": "Adobe XD",
   "service_ux_ui_tool_3": "Sketch",
   "service_ux_ui_tool_4": "InVision",
   "service_ux_ui_tool_5": "Zeplin",
-
   "service_ux_ui_expert_1": "Manufacturing",
   "service_ux_ui_expert_2": "Healthcare",
   "service_ux_ui_expert_3": "Information Technology",
@@ -517,7 +489,6 @@
   "service_web_dev_why": "Why Choose Us",
   "service_web_dev_tools": "Technologies and Tools",
   "service_web_dev_expertise": "Industry Expertise",
-
   "service_web_dev_benefit_1": "Development of adaptive and cross-browser web solutions",
   "service_web_dev_benefit_2": "High performance and fast page loading",
   "service_web_dev_benefit_3": "Modern technologies and frameworks",
@@ -529,7 +500,6 @@
   "service_web_dev_benefit_9": "User experience optimization to increase conversions",
   "service_web_dev_benefit_10": "Ensuring accessibility across all devices",
   "service_web_dev_benefit_11": "Technical support and further project development",
-
   "service_web_dev_step_1": "Business Analytics",
   "service_web_dev_step_1_desc": "Analysis of requirements, competitive environment, and target audience.",
   "service_web_dev_step_2": "Planning",
@@ -542,7 +512,6 @@
   "service_web_dev_step_5_desc": "Checking functionality, security, and adaptability of the web application.",
   "service_web_dev_step_6": "Launch and Support",
   "service_web_dev_step_6_desc": "Deploying the project and providing technical support after release.",
-
   "service_web_dev_why_1": "Expertise",
   "service_web_dev_why_1_desc": "Over 5 years of experience working with web technologies.",
   "service_web_dev_why_2": "Custom Solutions",
@@ -553,7 +522,6 @@
   "service_web_dev_why_4_desc": "We conduct testing at all stages of development.",
   "service_web_dev_why_5": "Modern Technologies",
   "service_web_dev_why_5_desc": "We use best practices and frameworks for reliable solutions.",
-
   "service_web_dev_tool_1": "Vue.js",
   "service_web_dev_tool_2": "React",
   "service_web_dev_tool_3": "Nuxt.js",
@@ -562,7 +530,6 @@
   "service_web_dev_tool_6": "PHP",
   "service_web_dev_tool_7": "HTML",
   "service_web_dev_tool_8": "CSS",
-
   "service_web_dev_expert_1": "Manufacturing",
   "service_web_dev_expert_2": "Healthcare",
   "service_web_dev_expert_3": "Information Technology",
@@ -575,31 +542,26 @@
   "about_main_title": "AnyCode — Leader in Software Development",
   "about_main_description": "Anycode has over 3 years of experience in IT development, testing, and consulting. We collaborate with leading clients from the US and Europe, work with a broad technology stack, and implement projects in various industries.",
   "request_about_quote": "Request a Quote",
-
   "founder_1_name": "Denis Oniskevich",
   "founder_1_role": "Co-founder",
   "founder_1_position": "CPO, Head of Frontend Development",
   "founder_2_name": "Daniil Popov",
   "founder_2_role": "Co-founder",
   "founder_2_position": "CTO, Head of Backend Development",
-
   "about_conference_title": "Growing, Learning, Inspiring",
   "about_conference_text_1": "Our goal is to be at the center of technological changes and new ideas. Attending international conferences, we exchange experiences with industry experts, track trends, and implement cutting-edge solutions into our work.",
   "about_conference_text_2": "Participating in professional events allows us to gain fresh knowledge and connect with like-minded people. We share ideas, discuss industry challenges, and form collaborations that lead to innovative solutions.",
   "about_conference_text_3": "We believe that a strong team is the key to success. That's why we hold regular team-building events that help strengthen internal team bonds and enhance creativity, teamwork, and strategic planning.",
-
   "about_company_numbers_title": "Our Company in Numbers",
   "about_company_numbers_text_1": "We help clients solve business challenges with modern IT solutions.",
   "about_company_numbers_text_2": "We continuously improve our technical expertise and expand project geography.",
   "about_company_numbers_text_3": "We develop an internal expert community and help expand knowledge and skills in various fields.",
-
   "about_stats_projects": "successful projects in various industries",
   "about_stats_client_duration": "years, on average, our collaboration with clients lasts",
   "about_stats_technologies": "technologies in our portfolio",
   "about_stats_employees": "employees worldwide",
   "about_stats_middle_senior": "of employees are Middle/Senior level",
   "about_stats_industries": "industries in which we implement projects",
-
   "products_rating_title": "We regularly earn recognition in rankings, demonstrating a high level of professionalism and efficiency in our work.",
   "products_rating_award_1": "Breakthrough of the Year in IT Services at the Global Business Tech Awards in London.",
   "products_rating_award_2": "Award for Innovation in Artificial Intelligence at the AI Excellence Awards.",
@@ -610,23 +572,18 @@
   "services_intro_text": "to help you scale, optimize, and automate processes.",
   "services_request_quote": "Request a Quote",
   "products_page_title": "Unlocking Access to Technologies that Move Your Business Forward",
-
   "product_1_name": "AnycodeBoard",
   "product_1_category": "TaskManager",
   "product_1_description": "A comprehensive solution for effective project, team, and task management. The platform combines convenient tools for planning, monitoring, and collaboration, ensuring transparency and control over all processes.",
-
   "product_2_name": "Anycode AI",
   "product_2_category": "AI-Based Platform for Code and Multimedia Content Generation",
   "product_2_description": "An innovative AI platform that helps developers, designers, and teams automate coding, image editing, and video creation processes. It leverages artificial intelligence to accelerate development and improve content quality.",
-
   "product_3_name": "Soapy",
   "product_3_category": "Handmade Natural Soap Online Store",
   "product_3_description": "An online store for selling handmade natural and eco-friendly soap, created from organic ingredients with skin care in mind. Each soap is developed with a unique formula to ensure maximum care and an aromatherapy effect.",
-
   "product_4_name": "Crypto Finance Hub",
   "product_4_category": "Finance and Cryptocurrency Investment Management Platform",
   "product_4_description": "A convenient solution for monitoring financial flows, analyzing income and expenses, and tracking trading performance. The platform allows users to manage investments easily and respond quickly to market changes.",
-
   "product_5_name": "ManuTrack",
   "product_5_category": "Manufacturing Operations Management System",
   "product_5_description": "A digital platform for optimizing manufacturing processes, quality control, and tracking completed operations in production. It enables workers and operators to monitor work progress, register defects, and ensure compliance with standards.",

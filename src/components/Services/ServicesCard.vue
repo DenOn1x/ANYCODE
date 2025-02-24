@@ -20,10 +20,10 @@ defineProps({
         {{ text }}
       </div>
     </div>
-    <a :href="link" class="card-services__link">
+    <router-link :to="link" class="card-services__link">
       <Button :label="$t('learn_more')"
               color="fill"/>
-    </a>
+    </router-link>
 
   </div>
 </template>

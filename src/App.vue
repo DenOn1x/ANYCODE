@@ -62,6 +62,7 @@ onMounted(() => {
 @import "styles/reset";
 @import "styles/global";
 
+
 html {
   scrollbar-gutter: stable;
 
