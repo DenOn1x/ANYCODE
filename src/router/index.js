@@ -1,4 +1,6 @@
 import {createRouter, createWebHistory} from "vue-router";
+import {nextTick} from 'vue';
+
 import i18n from "@/i18n/i18n.js";
 
 import Index from "@/views/Index.vue";
@@ -161,7 +163,16 @@ const routes = [
 
 const router = createRouter({
     history: createWebHistory(),
-    routes
+    routes,
+    scrollBehavior(to, from, savedPosition) {
+        return new Promise((resolve) => {
+            nextTick(() => {
+                setTimeout(() => {
+                    resolve({top: 0, behavior: "smooth"});
+                }, 500);
+            });
+        });
+    },
 });
 
 router.beforeEach((to, from, next) => {

@@ -12,6 +12,7 @@ const email = ref("");
 const phone = ref("");
 const errors = ref({});
 const isModalOpen = ref(false);
+const modalMessage = ref("");
 
 const props = defineProps({
   selectedOptions: Object,
@@ -64,15 +65,17 @@ const submitQuiz = async () => {
     const data = await response.json();
 
     if (data.success) {
-      console.log("s")
       resetForm()
-      isModalOpen.value = true;
-
+      modalMessage.value = "Сообщение успешно отправлено!";
     } else {
-      console.log("f")
+      modalMessage.value = "Упс! Что-то пошло не так.";
     }
+    isModalOpen.value = true;
+
   } catch (error) {
     console.error("Ошибка запроса:", error);
+    modalMessage.value = "Упс! Что-то пошло не так.";
+    isModalOpen.value = true;
   }
 };
 
@@ -119,7 +122,7 @@ const resetForm = () => {
     </div>
   </div>
 
-  <ConfirmModal :isOpen="isModalOpen" @close="isModalOpen = false"/>
+  <ConfirmModal :isOpen="isModalOpen" :message="modalMessage" @close="isModalOpen = false" />
 
 </template>
 
