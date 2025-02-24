@@ -25,30 +25,39 @@ const showModalForm = ref(false);
               :title="$t('ecommerce_title')"
               :subTitle="$t('ecommerce_sub')"
               :text="$t('ecommerce_text')"
+              link="/services/web-development"
           />
           <OtherProduct
               :number="2"
               :title="$t('mobile_app_title')"
               :subTitle="$t('develop')"
               :text="$t('mobile_app_text')"
+              link="/services/mobile-app-development"
+
           />
           <OtherProduct
               :number="3"
               :title="$t('crm_title')"
               :subTitle="$t('develop')"
               :text="$t('crm_text')"
+              link="/services/crm-erp-development"
+
           />
           <OtherProduct
               :number="4"
               :title="$t('api_title')"
               :subTitle="$t('develop')"
               :text="$t('api_text')"
+              link="/services/software-development"
+
           />
           <OtherProduct
               :number="5"
               :title="$t('design_title')"
               :subTitle="$t('design')"
               :text="$t('design_text')"
+              link="/services/ux-ui-design"
+
           />
         </div>
         <Button

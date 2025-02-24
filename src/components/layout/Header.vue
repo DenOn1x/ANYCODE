@@ -92,7 +92,7 @@ onUnmounted(() => {
                 </div>
                 <ul class="header__socials">
                   <li>
-                    <a href="#">
+                    <a href="https://www.facebook.com/anycodeIT/" target="_blank">
                       <img :src="ic_fb" alt="facebook"/>
                     </a>
                   </li>
@@ -102,12 +102,12 @@ onUnmounted(() => {
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="https://www.instagram.com/anycode.it/" target="_blank">
                       <img :src="ic_inst" alt="instagram"/>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="tel:+375298481820">
                       <img :src="ic_wp" alt="whatsapp"/>
                     </a>
                   </li>

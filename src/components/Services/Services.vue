@@ -7,9 +7,9 @@ import ServicesCard from "@/components/Services/ServicesCard.vue";
   <section class="services">
     <div class="container">
       <div class="services__top">
-        <h2>{{$t('services_text')}} <br> {{$t('services_br')}}</h2>
+        <h2>{{ $t('services_text') }} <br> {{ $t('services_br') }}</h2>
         <div class="services__desc">
-          {{$t('services_desc')}}
+          {{ $t('services_desc') }}
         </div>
       </div>
     </div>
@@ -20,31 +20,37 @@ import ServicesCard from "@/components/Services/ServicesCard.vue";
               number="01"
               :title="$t('services_technology.services_develop')"
               :text="$t('services_develop_text')"
+              link="/services/software-development"
           />
           <ServicesCard
               number="02"
               :title="$t('services_technology.services_product')"
               :text="$t('services_product_text')"
+              link="/services/product-development"
           />
           <ServicesCard
               number="03"
               :title="$t('services_technology.services_web')"
               :text="$t('services_web_text')"
+              link="/services/web-development"
           />
           <ServicesCard
               number="04"
               :title="$t('services_technology.services_crm')"
               :text="$t('services_crm_text')"
+              link="/services/crm-erp-development"
           />
           <ServicesCard
               number="05"
               :title="$t('services_technology.services_mobile')"
               :text="$t('services_mobile_text')"
+              link="/services/mobile-app-development"
           />
           <ServicesCard
               number="06"
               :title="$t('services_technology.services_design')"
               :text="$t('services_design_text')"
+              link="/services/ux-ui-design"
           />
         </div>
       </div>

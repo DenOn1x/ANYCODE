@@ -116,7 +116,7 @@ onMounted(() => {
             <div class="add-vcns__ttl">{{ $t('careers_vacancy_contact') }}</div>
             <ul class="add-vcns__socials">
               <li>
-                <a href="#">
+                <a href="https://www.facebook.com/anycodeIT/" target="_blank">
                   <img :src="ic_fb" alt="Facebook" />
                 </a>
               </li>
@@ -126,12 +126,12 @@ onMounted(() => {
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="https://www.instagram.com/anycode.it/" target="_blank">
                   <img :src="ic_inst" alt="Instagram" />
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="tel:+375298481820">
                   <img :src="ic_wp" alt="WhatsApp" />
                 </a>
               </li>

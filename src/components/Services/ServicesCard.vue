@@ -4,7 +4,8 @@ import Button from "@/UI/Button.vue";
 defineProps({
   number: Number,
   title: String,
-  text: String
+  text: String,
+  link: String,
 });
 </script>
 
@@ -19,7 +20,7 @@ defineProps({
         {{ text }}
       </div>
     </div>
-    <a href="#" class="card-services__link">
+    <a :href="link" class="card-services__link">
       <Button :label="$t('learn_more')"
               color="fill"/>
     </a>

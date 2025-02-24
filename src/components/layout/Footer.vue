@@ -40,24 +40,25 @@ const footerItems = [
     title: "navigation.services",
     content: "services",
     items: [
-      "services_technology.services_develop",
-      "services_technology.services_product",
-      "services_technology.services_web",
-      "services_technology.services_crm",
-      "services_technology.services_mobile",
-      "services_technology.services_design",
+      {text: "services_technology.services_develop", link: "/services/software-development"},
+      {text: "services_technology.services_product", link: "/services/product-development"},
+      {text: "services_technology.services_web", link: "/services/web-development"},
+      {text: "services_technology.services_crm", link: "/services/crm-erp-development"},
+      {text: "services_technology.services_mobile", link: "/services/mobile-app-development"},
+      {text: "services_technology.services_design", link: "/services/ux-ui-design"},
     ],
     isList: true,
   },
 ];
 
 const socialLinks = [
-  {href: "#", src: ic_fb},
+  {href: "https://www.facebook.com/anycodeIT/", src: ic_fb},
   {href: "#", src: ic_tg},
-  {href: "#", src: ic_inst},
-  {href: "#", src: ic_wp},
+  {href: "https://www.instagram.com/anycode.it/", src: ic_inst},
+  {href: "tel:+375298481820", src: ic_wp},
 ];
 
+const isExternalLink = (href) => !href.startsWith("tel:");
 </script>
 
 <template>
@@ -72,12 +73,12 @@ const socialLinks = [
               </router-link>
             </div>
             <div class="footer__about">
-              {{ $t('footer_about') }}
+              {{ $t("footer_about") }}
             </div>
             <ul class="footer__socials">
               <li v-for="link in socialLinks" :key="link.src">
-                <a :href="link.href">
-                  <img :src="link.src" alt=""/>
+                <a :href="link.href" :target="isExternalLink(link.href) ? '_blank' : '_self'">
+                  <img :src="link.src" alt="social_l"/>
                 </a>
               </li>
             </ul>
@@ -98,8 +99,8 @@ const socialLinks = [
                 <div v-if="openList === item.content || !isMobile">
                   <component :is="item.component" v-if="!item.isList"/>
                   <ul v-if="item.isList">
-                    <li v-for="service in item.items" :key="service">
-                      <a href="#">{{ $t(service) }}</a>
+                    <li v-for="service in item.items" :key="service.text">
+                      <router-link :to="service.link">{{ $t(service.text) }}</router-link>
                     </li>
                   </ul>
                 </div>
@@ -108,12 +109,13 @@ const socialLinks = [
           </div>
         </div>
         <div class="footer__bottom">
-          <a href="#">{{ $t('privacy_policy') }}</a>
+          <a href="#">{{ $t("privacy_policy") }}</a>
         </div>
       </div>
     </div>
   </footer>
 </template>
+
 
 <style lang="scss" scoped>
 .footer {
