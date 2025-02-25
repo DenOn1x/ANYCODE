@@ -39,6 +39,14 @@ const sliderProducts = [
     category: "product_1_category",
     description: "product_1_description",
     slides: [ProductC2, ProductC3, ProductC4, ProductC5, ProductC6],
+    features: [
+      "feature_task_board",
+      "feature_team_access_management",
+      "feature_progress_tracking",
+      "feature_service_integration",
+      "feature_theme_support"
+    ],
+    tools: ["React", "TypeScript", "Redux", "TailwindCSS", "Node.js", "FastAPI"],
   },
   {
     id: "product_2",
@@ -46,6 +54,13 @@ const sliderProducts = [
     name: "product_2_name",
     category: "product_2_category",
     description: "product_2_description",
+    features: [
+      "feature_ai_code_design",
+      "feature_instant_image_editing",
+      "feature_ai_chatbot",
+      "feature_flexible_settings"
+    ],
+    tools: ["Python", "FastAPI", "Next.js", "TypeScript", "TailwindCSS", "TensorFlow", "OpenAI API"],
     slides: [ProductD2, ProductD3, ProductD4, ProductD5],
   },
   {
@@ -54,6 +69,13 @@ const sliderProducts = [
     name: "product_3_name",
     category: "product_3_category",
     description: "product_3_description",
+    features: [
+      "feature_product_catalog",
+      "feature_skin_filter_system",
+      "feature_skincare_blog",
+      "feature_discount_gift_sets"
+    ],
+    tools: ["Vue js", "TypeScript", "TailwindCSS", "Python"],
     slides: [ProductE2, ProductE3, ProductE4, ProductE5],
   },
   {
@@ -62,6 +84,13 @@ const sliderProducts = [
     name: "product_4_name",
     category: "product_4_category",
     description: "product_4_description",
+    features: [
+      "feature_financial_analysis",
+      "feature_investment_reports",
+      "feature_interactive_charts",
+      "feature_qr_code_transfers",
+    ],
+    tools: ["React", "TypeScript", "Next.js", "Chart.js", "Node.js"],
     slides: [ProductA2, ProductA3, ProductA4],
   },
   {
@@ -70,6 +99,14 @@ const sliderProducts = [
     name: "product_5_name",
     category: "product_5_category",
     description: "product_5_description",
+    features: [
+      "feature_start_pause_stop",
+      "feature_built_in_instructions",
+      "feature_serial_number_registration",
+      "feature_quality_reports",
+      "feature_search_filter_system"
+    ],
+    tools: ["Python", "Odoo", "PostgreSQL", "React", "TypeScript"],
     slides: [ProductB2, ProductB3, ProductB4],
   },
 ];
@@ -91,9 +128,18 @@ const sliderProducts = [
           </div>
         </div>
 
-        <SliderProducts prevButtonClass="slider-five-prev"
-                        nextButtonClass="slider-five-next"
-                        :slides="[{ img: product.img }, ...product.slides.map(img => ({ img }))]"/>
+        <SliderProducts
+            prevButtonClass="slider-five-prev"
+            nextButtonClass="slider-five-next"
+            :slides="[
+    {
+      img: product.img,
+      features: product.features || [],
+      tools: product.tools || []
+    },
+    ...product.slides.map(img => ({ img, features: [], tools: [] }))
+  ]"
+        />
       </div>
     </div>
   </section>

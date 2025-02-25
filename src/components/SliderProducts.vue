@@ -76,7 +76,7 @@ onMounted(async () => {
                 <div class="slide-details">
                   <h3>Особенности</h3>
                   <ul>
-                    <li v-for="(feature, i) in slide.features" :key="i">{{ feature }}</li>
+                    <li v-for="(feature, i) in slide.features" :key="i">{{ $t(feature) }}</li>
                   </ul>
                   <div class="slide-details__dev">
                     <h3>Используемые технологии</h3>
@@ -202,7 +202,7 @@ onMounted(async () => {
     }
 
     &__content {
-      display: none;
+      //display: none;
       flex: 0 0 320px;
       padding: 24px;
       box-shadow: rgba(255, 255, 255, 0.55) 0 0 20px;

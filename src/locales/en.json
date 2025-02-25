@@ -591,5 +591,32 @@
   "not_found_subtitle": "Page not found",
   "not_found_description": "The page you are trying to access does not exist or has been deleted.",
   "not_found_homepage": "Go to ",
-  "not_found_homepage_link": "Homepage"
+  "not_found_homepage_link": "Homepage",
+
+  "feature_task_board": "Task board (Kanban, lists, calendars)",
+  "feature_team_access_management": "Team access and role management",
+  "feature_progress_tracking": "Progress and priority tracking",
+  "feature_service_integration": "Integration with popular services",
+  "feature_theme_support": "Support for light and dark interface themes",
+
+  "feature_ai_code_design": "AI-powered code and design generation",
+  "feature_instant_image_editing": "Instant image editing",
+  "feature_ai_chatbot": "Intelligent chatbot for AI interaction",
+  "feature_flexible_settings": "Flexible settings and adaptability",
+
+  "feature_product_catalog": "Catalog of popular products and new arrivals",
+  "feature_skin_filter_system": "Convenient filter system by skin type and fragrance",
+  "feature_skincare_blog": "Blog with useful skincare articles",
+  "feature_discount_gift_sets": "Flexible discount system and gift sets",
+
+  "feature_financial_analysis": "Automated financial category analysis",
+  "feature_investment_reports": "Investment and trading loss reports",
+  "feature_interactive_charts": "Interactive charts and detailed data",
+  "feature_qr_code_transfers": "QR codes for quick fund transfers and receipts",
+
+  "feature_start_pause_stop": "Start, pause, and stop operations with time tracking",
+  "feature_built_in_instructions": "Built-in instructions and compliance with technical standards",
+  "feature_serial_number_registration": "Serial number registration of products",
+  "feature_quality_reports": "Quality reports indicating defect reasons",
+  "feature_search_filter_system": "Convenient search and filtering system for operations"
 }
