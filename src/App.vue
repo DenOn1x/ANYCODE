@@ -39,7 +39,7 @@ onMounted(() => {
       <div v-if="!loading" :key="$route.fullPath" class="transition-wrapper">
         <layout-header/>
         <main class="page">
-          <router-view :openModal="openModal"/>
+          <router-view/>
         </main>
         <layout-footer/>
       </div>
@@ -129,7 +129,7 @@ html {
 
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .fade-enter-from, .fade-leave-to {

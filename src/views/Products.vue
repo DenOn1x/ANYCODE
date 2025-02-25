@@ -129,8 +129,8 @@ const sliderProducts = [
         </div>
 
         <SliderProducts
-            prevButtonClass="slider-five-prev"
-            nextButtonClass="slider-five-next"
+            prevButtonClass="slider-prev"
+            nextButtonClass="slider-next"
             :slides="[
     {
       img: product.img,
