@@ -87,7 +87,7 @@ watch(selectedOptions, () => {
             :key="index"
             :class="{ 'q-active': currentSlide === index }"
         >
-          <component :is="component" v-model="selectedOptions[index]"/>
+          <component :is="component" v-model="selectedOptions[index]" v-bind="component === QuizFields ? { selectedOptions } : {}"/>
         </SplideSlide>
       </Splide>
 

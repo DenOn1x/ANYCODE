@@ -76,7 +76,6 @@ const submitForm = async () => {
     isModalOpen.value = true;
 
   } catch (error) {
-    console.error("Ошибка запроса:", error);
     modalMessage.value = "Упс! Что-то пошло не так.";
     isModalOpen.value = true;
   }
