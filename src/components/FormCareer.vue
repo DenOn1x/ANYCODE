@@ -2,6 +2,7 @@
 import {ref} from "vue";
 import {useI18n} from "vue-i18n";
 import Button from "@/UI/Button.vue";
+import ConfirmModal from "@/components/Modals/ConfirmModal.vue";
 
 const {t} = useI18n();
 
@@ -12,6 +13,8 @@ const message = ref("");
 const file = ref(null);
 const fileName = ref("");
 const consent = ref(false);
+const isModalOpen = ref(false);
+const modalMessage = ref("");
 
 const errors = ref({
   name: "",
@@ -20,6 +23,11 @@ const errors = ref({
   message: "",
   consent: ""
 });
+
+const clearError = (field) => {
+  errors.value[field] = "";
+};
+const isActive = (value) => value.trim() !== "";
 
 
 const handleFileChange = (event) => {
@@ -88,13 +96,18 @@ const submitForm = async () => {
     const data = await response.json();
 
     if (data.success) {
-      console.error("Success");
       resetForm()
+      modalMessage.value = "Сообщение успешно отправлено!";
     } else {
-      console.error("Fail");
+      modalMessage.value = "Упс! Что-то пошло не так.";
+
     }
+    isModalOpen.value = true;
+
   } catch (error) {
     console.error("Ошибка запроса:", error);
+    modalMessage.value = "Упс! Что-то пошло не так.";
+    isModalOpen.value = true;
   }
 };
 
@@ -114,24 +127,25 @@ const resetForm = () => {
 <template>
   <form @submit.prevent="submitForm">
     <div class="careers-request__fields">
-      <div class="careers-request__field">
+      <div class="careers-request__field" :class="{ active: isActive(name) }">
         <label for="NAME">{{ $t('name') }}</label>
-        <input v-model="name" type="text" name="your-name" id="NAME" placeholder="">
+        <input v-model="name" @input="clearError('name')" type="text" name="your-name" id="NAME" placeholder="">
         <span class="careers-request__error" v-if="errors.name">{{ errors.name }}</span>
       </div>
-      <div class="careers-request__field">
+      <div class="careers-request__field" :class="{ active: isActive(surname) }">
         <label for="SURNAME">{{ $t('surname') }}</label>
-        <input v-model="surname" type="text" name="your-surname" id="SURNAME" placeholder="">
+        <input v-model="surname" @input="clearError('surname')" type="text" name="your-surname" id="SURNAME"
+               placeholder="">
         <span class="careers-request__error" v-if="errors.surname">{{ errors.surname }}</span>
       </div>
-      <div class="careers-request__field">
+      <div class="careers-request__field" :class="{ active: isActive(email) }">
         <label for="MAIL">{{ $t('email') }}</label>
-        <input v-model="email" type="text" name="your-mail" id="MAIL" placeholder="">
+        <input v-model="email" @input="clearError('email')" type="text" name="your-mail" id="MAIL" placeholder="">
         <span class="careers-request__error" v-if="errors.email">{{ errors.email }}</span>
       </div>
-      <div class="careers-request__field">
+      <div class="careers-request__field" :class="{ active: isActive(message) }">
         <label for="TEXT">{{ $t('expectations_text') }}</label>
-        <textarea v-model="message" name="your-text" id="TEXT"></textarea>
+        <textarea v-model="message" @input="clearError('message')" name="your-text" id="TEXT"></textarea>
         <span class="careers-request__error" v-if="errors.message">{{ errors.message }}</span>
       </div>
 
@@ -166,30 +180,48 @@ const resetForm = () => {
       </div>
     </div>
   </form>
+
+  <ConfirmModal :isOpen="isModalOpen" :message="modalMessage" @close="isModalOpen = false"/>
+
 </template>
 
 <style scoped lang="scss">
 .careers-request {
   &__error {
-    color: red;
     font-size: 12px;
-    margin-top: 5px;
+    color: rgba(255, 0, 0, 0.7);
+    position: absolute;
+    bottom: -20px;
+    left: 0;
   }
 
   &__fields {
     display: grid;
-    gap: 30px;
+    gap: 40px;
   }
 
   &__field {
     display: flex;
     flex-direction: column;
+    position: relative;
+
+    &.active {
+      label {
+        top: calc(50% - 20px);
+      }
+    }
 
     label {
       font-size: 12px;
       font-weight: 300;
       line-height: 148%;
       color: rgba(255, 255, 255, 0.7);
+
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: .3s ease;
     }
 
     input {
@@ -282,6 +314,8 @@ const resetForm = () => {
   &__privacy {
     display: flex;
     align-items: flex-start;
+    position: relative;
+
   }
 
   .custom-checkbox {
