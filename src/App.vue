@@ -7,19 +7,14 @@ import CustomCursor from '@/UI/Cursor.vue';
 
 const loading = ref(true);
 const showPreloader = ref(true);
-const isLargeScreen = ref(window.innerWidth > 767.98);
 
 onMounted(() => {
-  if (!isLargeScreen.value) {
+  setTimeout(() => {
     loading.value = false;
     showPreloader.value = false;
-  } else {
-    setTimeout(() => {
-      loading.value = false;
-      showPreloader.value = false;
-    }, 1000);
-  }
+  }, 1000);
 });
+
 </script>
 
 <template>
@@ -30,12 +25,7 @@ onMounted(() => {
   </div>
 
   <CustomCursor>
-    <transition
-        v-if="isLargeScreen"
-        name="fade"
-        mode="out-in"
-        appear
-    >
+    <transition name="fade" mode="out-in" appear>
       <div v-if="!loading" :key="$route.fullPath" class="transition-wrapper">
         <layout-header/>
         <main class="page">
@@ -44,14 +34,6 @@ onMounted(() => {
         <layout-footer/>
       </div>
     </transition>
-    <div v-else-if="!loading" :key="$route.fullPath" class="transition-wrapper">
-      <layout-header/>
-      <main class="page">
-        <router-view/>
-      </main>
-      <layout-footer/>
-    </div>
-
   </CustomCursor>
 
 
@@ -72,9 +54,9 @@ html {
 }
 
 .page {
-  margin-top: 80px;
+  padding-top: 80px;
   @media screen and (min-width: 767.98px) {
-    margin-top: 0;
+    padding-top: 0;
   }
 }
 
